@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Skill packages (generated, not source)
+*.skill
+
+# Editor
+.vscode/
+.idea/
+
+# Temp
+*.tmp
+*.bak
