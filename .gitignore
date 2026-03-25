@@ -15,3 +15,6 @@ Thumbs.db
 
 # Docs (local only)
 skillsDocWritingGuide.md
+
+# Agent generated files
+.agents/
