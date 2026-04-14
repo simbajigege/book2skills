@@ -10,11 +10,11 @@ github_url: "https://github.com/simbajigege/book2skills/skills/harness-step1-cre
 download_url: "/skills/harness-step1-create-agent-md.zip"
 related_skills:
   - title: "Harness Step 2 — Fill docs/ with Real Content"
-    url: "/en/harness-step2-fill-docs"
+    url: "/en/book/harness-step2-fill-docs"
   - title: "Harness Step 3 — Session State Management"
-    url: "/en/harness-step3-session-management"
+    url: "/en/book/harness-step3-session-management"
   - title: "SEO Metadata Audit"
-    url: "/en/seo-metadata-audit"
+    url: "/en/book/seo-metadata-audit"
 examples:
   - human: "I'm starting to use Claude Code heavily on a Node.js monorepo — three services, shared packages, Turborepo build system. Every new session I have to explain the structure from scratch. Help me set up harness engineering, starting with AGENTS.md."
     ai: |

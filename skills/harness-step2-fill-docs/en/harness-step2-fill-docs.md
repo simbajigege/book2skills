@@ -10,11 +10,11 @@ github_url: "https://github.com/simbajigege/book2skills/skills/harness-step2-fil
 download_url: "/skills/harness-step2-fill-docs.zip"
 related_skills:
   - title: "Harness Step 1 — Create AGENTS.md & Knowledge Base"
-    url: "/en/harness-step1-create-agent-md"
+    url: "/en/book/harness-step1-create-agent-md"
   - title: "Harness Step 3 — Session State Management"
-    url: "/en/harness-step3-session-management"
+    url: "/en/book/harness-step3-session-management"
   - title: "SEO Metadata Audit"
-    url: "/en/seo-metadata-audit"
+    url: "/en/book/seo-metadata-audit"
 examples:
   - human: "I ran harness-step1 and got the docs/ skeleton. Now I want to fill it in. The project is a Go microservices backend with a React dashboard. Start with ARCHITECTURE.md and CONVENTIONS.md."
     ai: |

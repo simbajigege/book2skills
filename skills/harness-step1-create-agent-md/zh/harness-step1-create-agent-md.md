@@ -10,11 +10,11 @@ github_url: "https://github.com/simbajigege/book2skills/skills/harness-step1-cre
 download_url: "/skills/harness-step1-create-agent-md.zip"
 related_skills:
   - title: "Harness Step 2 — 填充 docs/ 知识库内容"
-    url: "/zh/harness-step2-fill-docs"
+    url: "/zh/book/harness-step2-fill-docs"
   - title: "Harness Step 3 — 建立跨 Session 状态管理"
-    url: "/zh/harness-step3-session-management"
+    url: "/zh/book/harness-step3-session-management"
   - title: "SEO Metadata Audit"
-    url: "/zh/seo-metadata-audit"
+    url: "/zh/book/seo-metadata-audit"
 examples:
   - human: "我有一个 FastAPI 后端 + Next.js 前端的项目，最近开始用 Claude Code 开发，但每次开新会话都要重新解释项目结构。帮我创建 AGENTS.md，让 agent 能快速定向。"
     ai: |

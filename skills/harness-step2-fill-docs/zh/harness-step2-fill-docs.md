@@ -10,11 +10,11 @@ github_url: "https://github.com/simbajigege/book2skills/skills/harness-step2-fil
 download_url: "/skills/harness-step2-fill-docs.zip"
 related_skills:
   - title: "Harness Step 1 — 创建 AGENTS.md 与知识库"
-    url: "/zh/harness-step1-create-agent-md"
+    url: "/zh/book/harness-step1-create-agent-md"
   - title: "Harness Step 3 — 建立跨 Session 状态管理"
-    url: "/zh/harness-step3-session-management"
+    url: "/zh/book/harness-step3-session-management"
   - title: "SEO Metadata Audit"
-    url: "/zh/seo-metadata-audit"
+    url: "/zh/book/seo-metadata-audit"
 examples:
   - human: "AGENTS.md 和 docs/ 骨架已经建好了，但里面大部分是占位符。帮我把 docs/ARCHITECTURE.md 和 docs/CONVENTIONS.md 填充成有实质内容的文档。"
     ai: |

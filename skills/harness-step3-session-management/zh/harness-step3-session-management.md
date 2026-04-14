@@ -10,11 +10,11 @@ github_url: "https://github.com/simbajigege/book2skills/skills/harness-step3-ses
 download_url: "/skills/harness-step3-session-management.zip"
 related_skills:
   - title: "Harness Step 1 — 创建 AGENTS.md 与知识库"
-    url: "/zh/harness-step1-create-agent-md"
+    url: "/zh/book/harness-step1-create-agent-md"
   - title: "Harness Step 2 — 填充 docs/ 知识库内容"
-    url: "/zh/harness-step2-fill-docs"
+    url: "/zh/book/harness-step2-fill-docs"
   - title: "SEO Metadata Audit"
-    url: "/zh/seo-metadata-audit"
+    url: "/zh/book/seo-metadata-audit"
 examples:
   - human: "AGENTS.md 和 docs/ 都已经建好了。现在我想解决 agent 失忆的问题——每次开新会话都要重新告诉它上次做到哪里了。帮我建立状态管理。"
     ai: |

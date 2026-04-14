@@ -10,11 +10,11 @@ github_url: "https://github.com/simbajigege/book2skills/skills/harness-step3-ses
 download_url: "/skills/harness-step3-session-management.zip"
 related_skills:
   - title: "Harness Step 1 — Create AGENTS.md & Knowledge Base"
-    url: "/en/harness-step1-create-agent-md"
+    url: "/en/book/harness-step1-create-agent-md"
   - title: "Harness Step 2 — Fill docs/ with Real Content"
-    url: "/en/harness-step2-fill-docs"
+    url: "/en/book/harness-step2-fill-docs"
   - title: "SEO Metadata Audit"
-    url: "/en/seo-metadata-audit"
+    url: "/en/book/seo-metadata-audit"
 examples:
   - human: "My AGENTS.md and docs/ are solid now. The remaining pain point is that every new Claude Code session starts cold — I have to re-explain what we were working on. Set up session state management for me."
     ai: |
