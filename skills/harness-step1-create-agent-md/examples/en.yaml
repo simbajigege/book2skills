@@ -1,0 +1,96 @@
+# en.yaml — harness-step1-create-agent-md examples
+
+- human: "I'm starting to use Claude Code heavily on a Node.js monorepo — three services, shared packages, Turborepo build system. Every new session I have to explain the structure from scratch. Help me set up harness engineering, starting with AGENTS.md."
+  ai: |
+    I'll scan the repo first, then generate the files.
+
+    **Scan findings:**
+    - Build system: Turborepo (`turbo.json` detected)
+    - Services: `apps/api/` (Express), `apps/web/` (Next.js), `apps/worker/`
+    - Shared packages: `packages/db/`, `packages/ui/`, `packages/config/`
+    - Package manager: `pnpm` (workspace)
+    - Test runner: Vitest
+
+    ---
+
+    Generated `AGENTS.md` (written to repo root):
+
+    ```markdown
+    # MyMonorepo — Agent Guide
+
+    ## What This Is
+    A Node.js monorepo with three apps (API, Web, Worker) and shared packages,
+    managed with Turborepo and pnpm workspaces.
+
+    ## Quick Orientation
+    - **Stack**: Node.js 20 + TypeScript / Express / Next.js 14 / Turborepo
+    - **API entry**: `apps/api/src/index.ts`
+    - **Web entry**: `apps/web/src/app/layout.tsx`
+    - **Dev (all)**: `pnpm dev` (runs all apps in parallel via Turborepo)
+    - **Dev (single)**: `pnpm --filter api dev`
+    - **Test**: `pnpm test`
+    - **Build**: `pnpm build`
+
+    ## Knowledge Map
+    Read the relevant doc before making any changes:
+
+    | I want to understand... | Read this |
+    |------------------------|-----------|
+    | Module boundaries, dependency rules | `docs/ARCHITECTURE.md` |
+    | Naming conventions, file structure | `docs/CONVENTIONS.md` |
+    | Why we chose this tech stack | `docs/TECH_DECISIONS.md` |
+    | Definition of done | `docs/QUALITY.md` |
+    | Active work | `docs/exec-plans/active/` |
+    | Backlog | `docs/exec-plans/backlog.md` |
+    | Known tech debt | `docs/exec-plans/tech-debt-tracker.md` |
+
+    ## Hard Rules
+    - Never import from `apps/*` inside `packages/*` — packages must not depend on apps
+    - Do not modify `packages/db/migrations/` directly — use the migration CLI
+    - `apps/web/out/` is build output, never edit manually
+    ```
+
+    Also created `docs/` skeleton with placeholder content in all five files.
+
+    **What needs your input:**
+    - `docs/TECH_DECISIONS.md` has several "TODO: reason unknown" entries — fill in why you chose Turborepo over Nx, and why pnpm over npm
+    - `docs/exec-plans/backlog.md` is empty — tell me 3–5 features you're planning to ship next
+
+    Run `/harness-step2-fill-docs` next so I can deep-read the codebase and replace placeholders with real content.
+
+- human: "What's the difference between what goes in AGENTS.md vs docs/ARCHITECTURE.md? I'm not sure where to draw the line."
+  ai: |
+    Think of it this way: **AGENTS.md is a table of contents, docs/ is the book.**
+
+    ## The Rule in One Sentence
+
+    If an agent needs to *find* something → AGENTS.md.
+    If an agent needs to *understand* something → docs/.
+
+    ---
+
+    ## Concrete Examples
+
+    | Information | Where it goes | Why |
+    |-------------|---------------|-----|
+    | "Backend entry is `apps/api/src/index.ts`" | AGENTS.md | Agent needs this to navigate immediately |
+    | "Run `pnpm dev` to start all services" | AGENTS.md | Orientation info — needs to be instant |
+    | "The API layer must not import from the DB layer directly" | docs/ARCHITECTURE.md | This is a rule with reasoning, not a navigation aid |
+    | "We use Turborepo because Nx was too heavyweight for our team size" | docs/TECH_DECISIONS.md | Historical decision with context |
+    | "A task is done when tests pass and the PR description explains the 'why'" | docs/QUALITY.md | Standards require explanation |
+
+    ---
+
+    ## The Failure Mode to Avoid
+
+    The most common mistake is copy-pasting architecture explanations into AGENTS.md because it "feels important." It's important, but it belongs in docs/.
+
+    If your AGENTS.md is over 150 lines, it almost certainly has docs/ content in it.
+    Move the explanations to the appropriate docs/ file and replace them with a one-line pointer:
+
+    ```markdown
+    ## Architecture
+    See docs/ARCHITECTURE.md — read before touching any module boundaries.
+    ```
+
+    That one line is all AGENTS.md needs on the topic of architecture. The agent will follow the pointer.

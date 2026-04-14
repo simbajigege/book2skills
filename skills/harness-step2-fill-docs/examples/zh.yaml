@@ -1,0 +1,99 @@
+# zh.yaml — harness-step2-fill-docs examples
+
+- human: "AGENTS.md 和 docs/ 骨架已经建好了，但里面大部分是占位符。帮我把 docs/ARCHITECTURE.md 和 docs/CONVENTIONS.md 填充成有实质内容的文档。"
+  ai: |
+    好，我先深度扫描代码，再写文档。**结论先行，不写任何我无法从代码推断的内容**。
+
+    ---
+
+    ## 扫描过程
+
+    读取了：`backend/main.py`、`backend/bookskill/service/`、`backend/base/database_operations/`、
+    `frontend/src/app/[locale]/`、`frontend/src/services/`、`pyproject.toml`、`package.json`
+
+    ---
+
+    ## 写入 `docs/ARCHITECTURE.md`
+
+    ```markdown
+    # 架构说明
+
+    ## 分层规则（后端）
+
+    HTTP 请求 → Routes（仅校验 + 序列化）→ Services（全部业务逻辑）→
+    DatabaseOperations（SQL 封装）→ PostgreSQL / Redis
+
+    严禁跨层跳级：Routes 不得直接调 DatabaseOperations。
+
+    ## 模块划分
+
+    - `base/`：框架基础层，无业务逻辑
+    - `user/`：认证域（JWT + Google OAuth2）
+    - `shop/`：支付域（Stripe/PayPal 适配器模式）
+    - `bookskill/`：核心业务域（书籍解析 + Skill 生成 + 对话）
+
+    依赖方向：bookskill / shop → user → base，不可反向。
+    ```
+
+    写入 `docs/CONVENTIONS.md`：
+
+    ```markdown
+    # 代码约定
+
+    ## 文件命名（后端）
+    - 路由文件：`{domain}_routes.py`（示例：`book_routes.py`）
+    - 服务文件：`{domain}_service.py`（示例：`book_parse_service.py`）
+    - DB 操作：`{table}_operation.py`（示例：`book_operation.py`）
+
+    ## 变量命名
+    - Python：全部 snake_case，类名 PascalCase
+    - TypeScript：变量 camelCase，组件 PascalCase，常量 UPPER_SNAKE_CASE
+    ```
+
+    ---
+
+    **标注了「待补充」的地方（需要你来填）：**
+    - `TECH_DECISIONS.md`：Redis 队列的选型原因 — 从代码中只能看到用法，看不到为什么不用 Celery
+    - `QUALITY.md`：书籍处理流水线的预期完成时间 — 需要实测数据
+
+    其余内容全部从代码推断，可以直接使用。
+
+- human: "TECH_DECISIONS.md 里有好几个「待补充」，这些内容我说不清楚当时为什么这样选，怎么办？"
+  ai: |
+    不知道原因是正常的——选型决策往往在代码里看不到。以下两种处理方式，按情况选：
+
+    ---
+
+    ## 方式 1：写「推断原因」并标注
+
+    从代码的用法里，可以反推出一些合理理由。我来写，你来确认或纠正：
+
+    ```markdown
+    ### Redis 任务队列（而非 Celery）
+    **推断原因**：书籍处理是单次异步任务，不需要 Celery 的定时调度、任务链、
+    优先级队列等复杂能力；Redis list 的 blpop/rpush 够用，运维更简单。
+    **⚠ 待确认**：如果当时有其他考虑，请补充在此。
+    ```
+
+    这比空着强——agent 有参考依据，你也不需要从零重建记忆。
+
+    ---
+
+    ## 方式 2：接受不确定性，直接标注
+
+    ```markdown
+    ### Redis 任务队列
+    **选择原因**：原始决策原因不明，请补充。
+    **当前观察**：用于书籍处理异步任务（worker 进程 blpop 消费）。
+    **替代方案**：Celery（更重，有自动重试、定时任务能力）。
+    ```
+
+    这种写法诚实，也比完全空白有用——至少告诉 agent"这里有个未记录的决策"，
+    不会让 agent 凭空猜测或改掉它。
+
+    ---
+
+    ## 建议
+
+    优先用方式 1，让我来写推断版本，你花 2 分钟确认一遍比从零回忆快得多。
+    遇到完全想不起来的，用方式 2，不要为了填满而捏造原因。

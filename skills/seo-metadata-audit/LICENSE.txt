@@ -1,0 +1,3 @@
+Skill distillation for personal/educational use.
+This skill encodes frameworks and methodologies from the source book listed in SKILL.md.
+It is not a verbatim reproduction of the source material.

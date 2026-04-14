@@ -1,6 +1,7 @@
 ---
 name: seo-metadata-audit
 description: Perform a comprehensive SEO metadata audit on any webpage or HTML document, grounded in the 10 most important HTML meta tags. Use this skill whenever the user shares a URL, HTML source, or page content and asks about SEO, metadata, title tags, meta descriptions, canonical tags, schema markup, open graph tags, social sharing, mobile optimization, or why a page might not be ranking well. Also trigger for requests like "check my SEO", "review my page's metadata", "audit this site", "improve my search ranking", "generate an SEO report", or "what's wrong with my page's SEO". When in doubt, use this skill — it's better to run a partial audit than to answer SEO questions without it.
+license: "Skill distillation for personal/educational use. Do not reproduce source passages verbatim."
 ---
 
 # SEO Metadata Audit

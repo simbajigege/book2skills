@@ -1,0 +1,104 @@
+# en.yaml — harness-step2-fill-docs examples
+
+- human: "I ran harness-step1 and got the docs/ skeleton. Now I want to fill it in. The project is a Go microservices backend with a React dashboard. Start with ARCHITECTURE.md and CONVENTIONS.md."
+  ai: |
+    Scanning the codebase first. I'll only write what I can actually infer — anything uncertain gets flagged.
+
+    ---
+
+    ## Scan Results
+
+    Read: `cmd/api/main.go`, `internal/handler/`, `internal/service/`, `internal/repository/`,
+    `internal/domain/`, `go.mod`, `frontend/src/`, `frontend/package.json`
+
+    Key observations:
+    - Clean architecture pattern: `handler → service → repository → postgres`
+    - Domain types live in `internal/domain/` — imported by all layers
+    - `internal/repository/` uses `sqlx`, raw SQL (no ORM)
+    - Frontend: React 18 + Vite + Zustand for state
+
+    ---
+
+    ## Writing `docs/ARCHITECTURE.md`
+
+    ```markdown
+    # Architecture
+
+    ## Backend Layering
+
+    HTTP → Handler (gin, request parsing only) → Service (all business logic)
+         → Repository (sqlx, SQL queries) → PostgreSQL
+
+    Dependency direction is strict: handlers import services, services import repositories,
+    repositories import domain types. No layer may skip upward.
+
+    Domain types (`internal/domain/`) are the only package imported across layers freely.
+
+    ## Key Constraint
+    Handlers must not call repository methods directly.
+    Business rules must not live in handlers.
+    SQL must not live in services.
+    ```
+
+    ## Writing `docs/CONVENTIONS.md`
+
+    ```markdown
+    # Conventions
+
+    ## File Naming (Go)
+    - Handlers: `{domain}_handler.go` — e.g. `user_handler.go`
+    - Services: `{domain}_service.go`
+    - Repositories: `{domain}_repository.go`
+    - Domain types: `{domain}.go` inside `internal/domain/`
+
+    ## Naming
+    - Exported identifiers: PascalCase
+    - Unexported: camelCase
+    - Error variables: `ErrXxx` pattern
+    - Interfaces: noun or `XxxService`, `XxxRepository` (never `IXxx`)
+    ```
+
+    ---
+
+    **Marked "TODO: confirm" — needs your input:**
+    - `TECH_DECISIONS.md`: Why `sqlx` over GORM? Inferred reason: team wanted SQL control over magic. Please confirm.
+    - `TECH_DECISIONS.md`: Why Zustand over Redux? Inferred: smaller bundle, simpler API for this dashboard's scale. Confirm?
+    - `QUALITY.md`: What's the p95 API response time target? Can't infer from code.
+
+- human: "The ARCHITECTURE.md looks good but the dependency rule section is vague. How do I make it more actionable for an agent?"
+  ai: |
+    The key is to make every rule answer "what happens if I break this?" — agents follow rules better when consequences are explicit.
+
+    ## Weak vs. Strong Rule Writing
+
+    **Weak (what you have):**
+    ```markdown
+    Dependency direction is strict: handlers import services, services import repositories.
+    No layer may skip upward.
+    ```
+
+    **Strong (actionable):**
+    ```markdown
+    ## Dependency Rules
+
+    | Layer | May import | May NOT import |
+    |-------|-----------|----------------|
+    | `handler/` | `service/`, `domain/` | `repository/` directly |
+    | `service/` | `repository/`, `domain/` | `handler/` |
+    | `repository/` | `domain/` | `service/`, `handler/` |
+    | `domain/` | stdlib only | anything internal |
+
+    **Why this matters:** A handler that calls a repository bypasses service-layer
+    validation and transaction management. A repository that imports a service creates
+    a circular dependency that breaks compilation.
+
+    **How to check:** `go build ./...` catches circular imports at compile time.
+    For layer violations, run `go vet` with the custom layering linter (see docs/linting.md).
+    ```
+
+    ## The Two Ingredients of an Actionable Rule
+
+    1. **A table or explicit list** — agents parse structured data better than prose descriptions of the same information
+    2. **A verify command** — if the agent can run a command to check compliance, it will
+
+    Apply the same pattern to every rule in the file. If a rule can't be verified by running something, at minimum add an example of what a violation looks like so the agent can spot it in a diff.
