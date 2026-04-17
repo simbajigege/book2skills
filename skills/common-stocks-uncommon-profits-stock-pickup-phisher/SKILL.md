@@ -25,6 +25,7 @@ When the user asks about a company or stock:
 2. **Load the relevant reference file** for detailed criteria
 3. **Apply Fisher's framework systematically**
 4. **Give a structured verdict** with reasoning
+5. **Cite Fisher's original words** for every key claim (see Citation Rules below)
 
 **Question routing:**
 - "Is X a growth stock?" or "Evaluate X" → Apply **The 15 Points** (see `references/fifteen-points.md`)
@@ -33,6 +34,35 @@ When the user asks about a company or stock:
 - "Should I sell X?" → Apply **Selling Rules** (see `references/when-to-buy-sell.md`)
 - "How many stocks should I own?" → Apply **Diversification** (see `references/donts.md`)
 - General pitfalls / mistakes → Apply **Don'ts** (see `references/donts.md`)
+
+---
+
+## CITATION RULES
+
+Every substantive claim based on Fisher's methodology must include a citation to the original text.
+
+**Quote files (load the relevant one):**
+- Points 1–15 → `quotes/fifteen-points-quotes.md`
+- Scuttlebutt research → `quotes/scuttlebutt-quotes.md`
+- When to buy / sell → `quotes/when-to-buy-sell-quotes.md`
+- Philosophy / general principles → `quotes/philosophy-quotes.md`
+
+**Citation format — always use this exact structure:**
+
+> "Fisher's exact words here."
+>
+> — [*Common Stocks and Uncommon Profits*, Part X · Ch. Y](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-uncommon-profits-stock-pickup-phisher/quotes/FILENAME.md#ANCHOR)
+
+**Anchor mapping (filename → anchor):**
+- fifteen-points-quotes.md: `#point-1-market-potential`, `#point-2-new-products-determination`, `#point-3-rd-effectiveness`, `#point-4-sales-organization`, `#point-5-profit-margin`, `#point-6-improving-margins`, `#point-7-labor-relations`, `#point-8-executive-relations`, `#point-9-management-depth`, `#point-10-cost-controls`, `#point-11-industry-specific-factors`, `#point-12-long-range-outlook`, `#point-13-equity-dilution`, `#point-14-transparency-in-adversity`, `#point-15-integrity`
+- scuttlebutt-quotes.md: `#scuttlebutt-core-principle`, `#scuttlebutt-sources`, `#scuttlebutt-competitors`, `#scuttlebutt-customers`, `#scuttlebutt-before-management`
+- when-to-buy-sell-quotes.md: `#when-to-buy-temporary-adversity`, `#when-to-buy-company-misfortune`, `#when-to-sell-only-three-reasons`, `#when-not-to-sell-price-alone`, `#when-not-to-sell-market-fear`, `#three-year-rule`, `#in-and-out-trap`
+- philosophy-quotes.md: `#concentration-not-diversification`, `#compounding-hold-forever`, `#market-not-efficient`, `#appraisal-drives-price`, `#low-pe-trap`, `#vivid-spirit-leadership`, `#honey-jar-margins`, `#scuttlebutt-vs-annual-reports`, `#mistakes-take-small-losses`, `#patience-under-adversity`
+
+**Rules:**
+- Include at least one citation per major section of your response
+- Match the anchor to the closest relevant principle
+- If no exact quote matches, cite the closest chapter and note it is a paraphrase
 
 ---
 
