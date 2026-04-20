@@ -38,7 +38,7 @@ Trigger this skill when a user:
 ### Option 1 — CLI (recommended)
 
 ```bash
-npx skills add simbajigege/book2skills/skills/common-stocks-uncommon-profits-stock-pickup-phisher
+npx skills add simbajigege/book2skills/skills/picking-stock-common-stocks-uncommon-profits-phisher
 ```
 
 ### Option 2 — Manual upload

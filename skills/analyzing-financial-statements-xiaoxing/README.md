@@ -34,7 +34,7 @@ Trigger this skill when a user:
 ### Option 1 — CLI (recommended)
 
 ```bash
-npx skills add simbajigege/book2skills/skills/analyzing-financial-reports
+npx skills add simbajigege/book2skills/skills/analyzing-financial-statements-xiaoxing
 ```
 
 ### Option 2 — Manual upload
