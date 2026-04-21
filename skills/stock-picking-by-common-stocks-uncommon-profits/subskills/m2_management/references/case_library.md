@@ -1,7 +1,7 @@
 # M2 管理层质量深度分析 — 原文引用库
 # 知识来源：《Common Stocks and Uncommon Profits and Other Writings》Philip A. Fisher 著，1996年修订版
 # 本文件仅包含 Module 2 使用的引用条目，供 module.md 按 REF-ID 引用
-# GitHub: https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m2_management/references/case_library.md
+# GitHub: https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m2_management/references/case_library.md
 
 ---
 
@@ -24,7 +24,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[外部 CEO 是危险信号](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m2_management/references/case_library.md)
+📖 原书引用：[外部 CEO 是危险信号](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m2_management/references/case_library.md)
 
 > "The need to recruit the chief executive from outside is a particularly dangerous sign."
 >
@@ -52,7 +52,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[薪资与利润的正确关系 Point 7](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m2_management/references/case_library.md)
+📖 原书引用：[薪资与利润的正确关系 Point 7](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m2_management/references/case_library.md)
 
 > "The investor who buys into a situation in which a significant part of earnings comes from paying below-standard wages for the area involved may in time have serious trouble on his hands."
 >
@@ -80,7 +80,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[真正的长期利润导向 Point 12](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m2_management/references/case_library.md)
+📖 原书引用：[真正的长期利润导向 Point 12](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m2_management/references/case_library.md)
 
 > "The investor wanting maximum results should favor companies with a truly long-range outlook concerning profits."
 >
@@ -108,7 +108,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[坏消息时的沟通透明度 Point 14](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m2_management/references/case_library.md)
+📖 原书引用：[坏消息时的沟通透明度 Point 14](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m2_management/references/case_library.md)
 
 > "Does the management talk freely to its investors about its affairs when things are going badly as well as when they are going well? Or does it 'clam up' when trouble develops?"
 >
@@ -136,7 +136,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[保守投资的第二维度：管理层](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m2_management/references/case_library.md)
+📖 原书引用：[保守投资的第二维度：管理层](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m2_management/references/case_library.md)
 
 > "A growth-oriented management of integrity, depth, and entrepreneurial spirit is the second dimension of conservative investment."
 >
@@ -164,7 +164,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[公司成长无限——管理层传承](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m2_management/references/case_library.md)
+📖 原书引用：[公司成长无限——管理层传承](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m2_management/references/case_library.md)
 
 > "The company behind the common stock can have a practice of selecting management talent in depth and training such talent in company policies, methods, and techniques in a way which will retain and pass on the corporate vigor for generations."
 >

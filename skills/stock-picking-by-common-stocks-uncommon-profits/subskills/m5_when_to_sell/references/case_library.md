@@ -1,7 +1,7 @@
 # M5 卖出/持有决策 — 原文引用库
 # 知识来源：《Common Stocks and Uncommon Profits and Other Writings》Philip A. Fisher 著，1996年修订版
 # 本文件仅包含 Module 5 使用的引用条目，供 module.md 按 REF-ID 引用
-# GitHub: https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m5_when_to_sell/references/case_library.md
+# GitHub: https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m5_when_to_sell/references/case_library.md
 
 ---
 
@@ -24,7 +24,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[Fisher 三个有效卖出理由](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m5_when_to_sell/references/case_library.md)
+📖 原书引用：[Fisher 三个有效卖出理由](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m5_when_to_sell/references/case_library.md)
 
 > "I believe there are three reasons, and three reasons only, for the sale of any common stock which has been originally selected according to the investment principles already discussed."
 >
@@ -52,7 +52,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[因熊市恐惧卖出的后果](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m5_when_to_sell/references/case_library.md)
+📖 原书引用：[因熊市恐惧卖出的后果](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m5_when_to_sell/references/case_library.md)
 
 > "When a bear market has come, I have not seen one time in ten when the investor actually got back into the same shares before they had gone up above his selling price."
 >
@@ -80,7 +80,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[股价上涨不是卖出理由](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m5_when_to_sell/references/case_library.md)
+📖 原书引用：[股价上涨不是卖出理由](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m5_when_to_sell/references/case_library.md)
 
 > "Outstanding companies, the only type which I believe the investor should buy, just don't function this way. Many of the arguments commonly heard for selling the good one sound equally silly."
 >
@@ -108,7 +108,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[等回本是最昂贵的心理偏差](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m5_when_to_sell/references/case_library.md)
+📖 原书引用：[等回本是最昂贵的心理偏差](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m5_when_to_sell/references/case_library.md)
 
 > "More money has probably been lost by investors holding a stock they really did not want until they could 'at least come out even' than from any other single reason."
 >
@@ -137,7 +137,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[Fisher 持有哲学总结](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m5_when_to_sell/references/case_library.md)
+📖 原书引用：[Fisher 持有哲学总结](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m5_when_to_sell/references/case_library.md)
 
 > "If the job has been correctly done when a common stock is purchased, the time to sell it is—almost never."
 >
@@ -165,7 +165,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[持续持有测试方法](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m5_when_to_sell/references/case_library.md)
+📖 原书引用：[持续持有测试方法](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m5_when_to_sell/references/case_library.md)
 
 > "This is for the investor to ask himself whether at the next peak of a business cycle... the comparative per-share earnings will probably show at least as great an increase from present levels as the present levels show from the last known peak. If the answer is in the affirmative, the stock probably should be held."
 >

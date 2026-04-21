@@ -1,7 +1,7 @@
 # M3 Scuttlebutt 竞争情报收集 — 原文引用库
 # 知识来源：《Common Stocks and Uncommon Profits and Other Writings》Philip A. Fisher 著，1996年修订版
 # 本文件仅包含 Module 3 使用的引用条目，供 module.md 按 REF-ID 引用
-# GitHub: https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m3_scuttlebutt/references/case_library.md
+# GitHub: https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m3_scuttlebutt/references/case_library.md
 
 ---
 
@@ -24,7 +24,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[五家公司交叉询问法](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m3_scuttlebutt/references/case_library.md)
+📖 原书引用：[五家公司交叉询问法](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m3_scuttlebutt/references/case_library.md)
 
 > "Go to five companies in an industry, ask each of them intelligent questions about the points of strength and weakness of the other four, and nine times out of ten a surprisingly detailed and accurate picture of all five will emerge."
 >
@@ -52,7 +52,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[绝对保护消息来源](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m3_scuttlebutt/references/case_library.md)
+📖 原书引用：[绝对保护消息来源](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m3_scuttlebutt/references/case_library.md)
 
 > "The inquiring investor must be able to make clear beyond any doubt that his source of information will never be revealed. Then he must scrupulously live up to this policy."
 >
@@ -80,7 +80,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[前员工偏见评估](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m3_scuttlebutt/references/case_library.md)
+📖 原书引用：[前员工偏见评估](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m3_scuttlebutt/references/case_library.md)
 
 > "Former employees are also frequently biased. Those who were forced out or who left unhappily should be used with caution and checked with other sources."
 >
@@ -108,7 +108,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[Scuttlebutt 先于管理层访谈](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m3_scuttlebutt/references/case_library.md)
+📖 原书引用：[Scuttlebutt 先于管理层访谈](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m3_scuttlebutt/references/case_library.md)
 
 > "It is only after 'scuttlebutt' has obtained for you a large part of the data... that I am ready really to go to work."
 >
@@ -136,7 +136,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[年报是销售工具，需超越](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m3_scuttlebutt/references/case_library.md)
+📖 原书引用：[年报是销售工具，需超越](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m3_scuttlebutt/references/case_library.md)
 
 > "Don't buy into a company because you like the 'tone' of its annual report... This is why the investor must go beyond these reports and get at the underlying facts."
 >

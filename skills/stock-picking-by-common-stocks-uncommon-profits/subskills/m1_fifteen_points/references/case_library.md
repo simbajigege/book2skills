@@ -1,7 +1,7 @@
 # M1 15要点评估框架 — 原文引用库
 # 知识来源：《Common Stocks and Uncommon Profits and Other Writings》Philip A. Fisher 著，1996年修订版
 # 本文件仅包含 Module 1 使用的引用条目，供 module.md 按 REF-ID 引用
-# GitHub: https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m1_fifteen_points/references/case_library.md
+# GitHub: https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m1_fifteen_points/references/case_library.md
 
 ---
 
@@ -24,7 +24,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[两种成长公司的区分](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m1_fifteen_points/references/case_library.md)
+📖 原书引用：[两种成长公司的区分](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m1_fifteen_points/references/case_library.md)
 
 > "Those companies which decade by decade have consistently shown spectacular growth might be divided into two groups... No company grows for a long period of years just because it is lucky."
 >
@@ -52,7 +52,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[15要点框架总纲](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m1_fifteen_points/references/case_library.md)
+📖 原书引用：[15要点框架总纲](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m1_fifteen_points/references/case_library.md)
 
 > "There are fifteen points with which I believe the investor should concern himself. A company could well be an investment bonanza if it failed fully to qualify on a very few of them."
 >
@@ -80,7 +80,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[销售组织是业务基础 Point 4](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m1_fifteen_points/references/case_library.md)
+📖 原书引用：[销售组织是业务基础 Point 4](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m1_fifteen_points/references/case_library.md)
 
 > "In this competitive age, the products or services of few companies are so outstanding that they will sell to their maximum potentialities if they are not expertly merchandised. It is the making of a sale that is the most basic single activity of any business."
 >
@@ -108,7 +108,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[最大利润不来自边际企业 Point 5](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m1_fifteen_points/references/case_library.md)
+📖 原书引用：[最大利润不来自边际企业 Point 5](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m1_fifteen_points/references/case_library.md)
 
 > "I believe that the greatest long-range investment profits are never obtained by investing in marginal companies."
 >
@@ -136,7 +136,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[未来利润率比历史更重要 Point 6](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m1_fifteen_points/references/case_library.md)
+📖 原书引用：[未来利润率比历史更重要 Point 6](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m1_fifteen_points/references/case_library.md)
 
 > "It is not the profit margins of the past but those of the future that are basically important to the investor."
 >
@@ -164,7 +164,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[管理层授权 Point 9](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m1_fifteen_points/references/case_library.md)
+📖 原书引用：[管理层授权 Point 9](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m1_fifteen_points/references/case_library.md)
 
 > "Those organizations where the top brass personally interfere with and try to handle routine day-to-day operating matters seldom turn out to be the most attractive type of investments."
 >
@@ -192,7 +192,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[诚信一票否决 Point 15](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m1_fifteen_points/references/case_library.md)
+📖 原书引用：[诚信一票否决 Point 15](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m1_fifteen_points/references/case_library.md)
 
 > "Regardless of how high the rating may be in all other matters, however, if there is a serious question of the lack of a strong management sense of trusteeship for stockholders, the investor should never seriously consider participating in such an enterprise."
 >

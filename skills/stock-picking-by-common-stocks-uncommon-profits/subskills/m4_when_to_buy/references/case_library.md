@@ -1,7 +1,7 @@
 # M4 买入时机判断 — 原文引用库
 # 知识来源：《Common Stocks and Uncommon Profits and Other Writings》Philip A. Fisher 著，1996年修订版
 # 本文件仅包含 Module 4 使用的引用条目，供 module.md 按 REF-ID 引用
-# GitHub: https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m4_when_to_buy/references/case_library.md
+# GitHub: https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m4_when_to_buy/references/case_library.md
 
 ---
 
@@ -24,7 +24,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[新工厂调试困难期是最佳买入时机](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m4_when_to_buy/references/case_library.md)
+📖 原书引用：[新工厂调试困难期是最佳买入时机](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m4_when_to_buy/references/case_library.md)
 
 > "At this point the stock might well prove a sensational buy. Once the extra sales effort has produced enough volume to make the first production scale plant pay, normal sales effort is frequently enough to continue the upward movement of the sales curve for many years."
 >
@@ -52,7 +52,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[因恐惧市场推迟买入代价高昂](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m4_when_to_buy/references/case_library.md)
+📖 原书引用：[因恐惧市场推迟买入代价高昂](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m4_when_to_buy/references/case_library.md)
 
 > "Postponing an attractive purchase because of fear of what the general market might do will, over the years, prove very costly. This is because the investor is ignoring a powerful influence about which he has positive knowledge through fear of a less powerful force about which, in the present state of human knowledge, he and everyone else is largely guessing."
 >
@@ -80,7 +80,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[战争风险时应买入而非卖出](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m4_when_to_buy/references/case_library.md)
+📖 原书引用：[战争风险时应买入而非卖出](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m4_when_to_buy/references/case_library.md)
 
 > "War is always bearish on money. To sell stock at the threatened or actual outbreak of hostilities so as to get into cash is extreme financial lunacy. Actually just the opposite should be done."
 >
@@ -110,7 +110,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[高 P/E 不等于高估](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m4_when_to_buy/references/case_library.md)
+📖 原书引用：[高 P/E 不等于高估](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m4_when_to_buy/references/case_library.md)
 
 > "This is why some of the stocks that at first glance appear highest priced may, upon analysis, be the biggest bargains."
 >
@@ -138,7 +138,7 @@
 **引用指令**：
 触发时输出格式：
 ```
-📖 原书引用：[不要为价格细节而错失机会](https://github.com/simbajigege/book2skills/blob/main/skills/common-stocks-philip-fisher/subskills/m4_when_to_buy/references/case_library.md)
+📖 原书引用：[不要为价格细节而错失机会](https://github.com/simbajigege/book2skills/blob/main/skills/stock-picking-by-common-stocks-uncommon-profits/subskills/m4_when_to_buy/references/case_library.md)
 
 > "If the stock seems the right one and the price seems reasonably attractive at current levels, buy 'at the market.' The extra eighth, or quarter, or half point that may be paid is insignificant compared to the profit that will be missed if the stock is not obtained."
 >
