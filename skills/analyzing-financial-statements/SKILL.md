@@ -1,6 +1,19 @@
 ---
 name: analyzing-financial-statements
-description: Analyzes company financial statements (balance sheet, income statement, cash flow) to assess asset quality, profit authenticity, cash flow health, solvency, and overall investment value. Use when the user provides financial data or a company name and asks whether financials are healthy, whether profits are real, whether there are red flags, or whether the company is a good investment. Trigger phrases: "analyze financials", "is this company healthy", "ROIC analysis", "cash flow diagnosis", "good company test". Based on the book "一本书读懂财报" by Xiao Xing (Tsinghua University).
+description: >
+  Apply Xiao Xing's financial statement analysis framework from 一本书读懂财报 (Understanding
+  Financial Reports in One Book). Use this skill whenever a user wants to assess whether a
+  company's assets are of high quality, verify whether reported profits are real, diagnose
+  cash flow health, evaluate solvency and turnover efficiency, or judge overall investment
+  value via ROIC. Covers industry context analysis, asset & liability quality check, profit
+  authenticity verification, cash flow diagnosis, solvency analysis, and good-company
+  composite scoring. Trigger phrases: "analyze financials", "is this company healthy",
+  "are profits real", "cash flow diagnosis", "ROIC analysis", "red flags in balance sheet",
+  "good company test", "财报分析", "利润质量", "现金流健康".
+license: >
+  Skill distillation of 《一本书读懂财报》 by Xiao Xing (肖星), Tsinghua University School
+  of Economics and Management, revised 2019. For personal and educational use.
+  Do not reproduce source passages verbatim.
 ---
 
 # Skill: 财报透视——识别上市公司资产、利润、现金流质量
