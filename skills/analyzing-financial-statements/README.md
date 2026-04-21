@@ -1,6 +1,6 @@
-# Analyzing Financial Reports
+# Analyzing Financial Statements
 
-A multi-module skill for reading Chinese public company financial statements and uncovering the real quality behind the numbers. Based on *一本书读懂财报* (Reading Financial Statements) by Professor Xiao Xing of Tsinghua University.
+A multi-module skill for reading company financial statements and uncovering the real quality behind the numbers. Based on *一本书读懂财报* (Understanding Financial Statements) by Professor Xiao Xing of Tsinghua University.
 
 ## What It Does
 
@@ -17,6 +17,7 @@ Trigger this skill when a user:
 - Shares financial data and wants to know if a metric looks normal for the industry
 - Suspects accounting manipulation or wants to spot red flags
 - Wants a holistic investment quality assessment across all three financial statements
+- Asks about ROIC vs WACC, cash flow diagnosis, or balance sheet structure
 
 ## Module Structure
 
@@ -34,7 +35,7 @@ Trigger this skill when a user:
 ### Option 1 — CLI (recommended)
 
 ```bash
-npx skills add simbajigege/book2skills/skills/analyzing-financial-statements-xiaoxing
+npx skills add simbajigege/book2skills/skills/analyzing-financial-statements
 ```
 
 ### Option 2 — Manual upload
@@ -46,7 +47,7 @@ npx skills add simbajigege/book2skills/skills/analyzing-financial-statements-xia
 ## File Structure
 
 ```
-analyzing-financial-reports/
+analyzing-financial-statements/
 ├── SKILL.md                          # Main orchestrator
 ├── README.md                         # This file
 ├── LICENSE.txt                       # License
