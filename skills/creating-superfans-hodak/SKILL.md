@@ -1,230 +1,383 @@
 ---
 name: creating-superfans-hodak
-description: "Turn customers into brand advocates using Hodak's SUPER model. Trigger: 'How do I get loyal customers?', 'customer retention', 'word-of-mouth growth', 'customer experience', 'turning customers into fans'."
+description: "Apply Hodak's SUPER Model. Trigger on: \"customer loyalty\", \"word of mouth\", \"retention\", \"service recovery\"."
 license: "Skill distillation for personal/educational use. Do not reproduce source passages verbatim."
 ---
 
 ## Overview
 
-This skill applies Brittany Hodak's framework from *Creating Superfans* — the definitive guide to transforming customers from passive buyers into enthusiastic brand advocates. Hodak defines a superfan as "a customer or stakeholder who is so delighted by their experience with a brand, product, or service that they become an enthusiastic advocate." Her central insight: superfans are not born, they are created — at the intersection of your story and every customer's story. This skill encodes Hodak's SUPER Model (Start with your story, Understand your customer's story, Personalize, Exceed expectations, Repeat) plus the Ladder to Superfandom, the role of employee experience, and the practical tactics for each stage of the customer journey.
+Use this skill to help founders, marketers, sales teams, customer success teams, support leaders, and operators turn ordinary customers into enthusiastic advocates. It applies Brittany Hodak's *Creating Superfans* framework to diagnose apathy, design memorable customer experiences, repair service failures, and make advocacy repeatable.
 
 ## When to Use This Skill
 
-Use this skill when a user asks:
-- "How do I get customers to come back and buy again?"
-- "How do I create word-of-mouth growth for my business?"
-- "My customers aren't loyal — how do I fix that?"
-- "How do I build a brand people are enthusiastic about?"
-- "What's the difference between awareness and actual customers?"
-- "How do I turn one-time buyers into repeat customers?"
-- "How do I create better customer experiences?"
-- "How do I differentiate from competitors on more than just price?"
-- "What do I do when a customer has a bad experience?"
-- "How do I get customers to recommend me to their friends?"
+Use this skill when the user asks how to:
+
+- Increase retention, repeat purchase, referrals, reviews, advocacy, or word of mouth
+- Diagnose why customers are satisfied but quiet
+- Differentiate a brand when products, prices, or features look similar
+- Improve customer experience across marketing, sales, onboarding, service, community, or social media
+- Personalize customer touchpoints without becoming intrusive
+- Recover from a bad customer experience
+- Scale excellent service through systems rather than heroics
+- Build a more customer-centric team culture
+
+Do not use this skill as a standalone paid ads, SEO, pricing, funnel analytics, or channel-growth playbook unless the user's question also involves customer experience, loyalty, or advocacy.
 
 ## Core Principle
 
-**Superfans are created at the intersection of your story and every customer's story.** Customer loyalty is not about having the best product or the lowest price — it is about creating a connection between what you stand for and what matters to the customer. When customers feel that your brand's story genuinely intersects with their own, they don't just buy — they advocate. The SUPER Model is the systematic framework for creating that intersection, repeatedly and at scale.
+Superfans are created at the intersection of the brand's story and the customer's story. The business must make customers feel seen, understood, and delighted enough to become advocates. The enemy is not only dissatisfaction; it is apathy. Many growth problems look like awareness problems but are actually failures to make the brand matter.
 
-The opposite of a superfan is not a hater — it is apathy. Apathy is the most dangerous force in customer relationships, and it can strike at any point in the customer journey, including after years of loyal engagement.
+## HOW TO USE THIS SKILL
 
----
+1. Diagnose where the customer's audience sits on the Ladder to Superfandom.
+2. Identify the weakest SUPER pillar: Story, Understanding, Personalization, Expectations, or Repeatability.
+3. Convert the diagnosis into specific customer touchpoint changes.
+4. Include measurement so the user can see whether customers are moving toward advocacy.
+5. When context is thin, ask for the customer type, product or service, current touchpoints, retention/referral symptoms, and one recent customer interaction.
 
-## DIMENSION 1: The Ladder to Superfandom
+## CITATION RULES
 
-**The Rule:** Every customer starts at apathy. Your job is to help them climb through six rungs toward advocacy. Apathy can strike at any rung — even at the top. Never stop working to prevent customers from falling back.
+Every substantive claim based on Hodak's methodology must include a citation to the original text.
 
-### The Six Rungs of the Ladder:
+**Quote files (load the relevant one):**
 
-| Rung | Definition | Apathy Risk |
-|------|-----------|------------|
-| **Apathy** | Customer doesn't know or care about you | Default starting state for everyone |
-| **Awareness** | Customer knows you exist | Forgetting, distraction, lack of follow-up |
-| **Attraction** | Customer is considering you | Losing to a competitor, slow response, poor first impression |
-| **Action** | First purchase made | Not wowing them; one-time purchase stays one-time |
-| **Adoption** | Second+ purchase; beginning to embrace brand | Inconsistent experience; better alternative appears |
-| **Affinity** | Loyal, repeat customer; likely part of loyalty program | Not feeling loved back; not being acknowledged |
-| **Advocacy** | Actively recommends you to others; superfan | Feeling taken for granted; brand story diverges from their story |
+- `main-framework-quotes.md`: core superfan definition, SUPER Model, brand story, origin story, and category-of-one principles
+- `customer-understanding-quotes.md`: customer validation, empathy, STORY model, active listening, and voice-of-customer principles
+- `personalization-quotes.md`: Platinum Rule, personalization expectations, gifting principles, CRM personalization, and meaningful personal touches
+- `exceeding-expectations-quotes.md`: experience expectations, before/after moments, repeatable memorable actions, handwritten notes, and experience measurement
+- `apology-recovery-quotes.md`: 5 As of apology, service recovery, bad-customer boundaries, and employee protection
 
-### Key Insight: The Apathy Problem
-- Most businesses treat stagnant growth as an **awareness problem** (not enough people know about us)
-- The real problem is usually an **apathy problem** (people know about you, but don't care enough)
-- "There has never been so much competition for human attention" — the battle is not for eyeballs, it's for caring
-- A customer who is angry is more valuable than a customer who is apathetic — anger means engagement; apathy means you've lost them silently
+**Citation format — always use this exact structure:**
 
-### Agent instruction:
-When a user describes customer growth problems, diagnose whether it's an awareness problem or an apathy problem. Ask: are there people who know about the brand but don't convert? Are existing customers not returning? That's apathy, not awareness — and the solution is fundamentally different.
+> "Author's exact words here."
+>
+> — [*Creating Superfans*, Ch. X](https://github.com/simbajigege/book2skills/blob/main/skills/creating-superfans-hodak/quotes/FILENAME.md#ANCHOR)
 
----
+**Anchor mapping:**
 
-## DIMENSION 2: The SUPER Model — S: Start with Your Story
+- `main-framework-quotes.md`: `#superfans-created-at-intersection`, `#superfan-definition`, `#great-is-no-longer-good-enough`, `#the-super-model`, `#category-of-one`, `#origin-story-purpose`, `#story-core-principle`, `#story-identity-connection`, `#customer-centricity-business-success`, `#transactional-value-of-superfans`, `#advocate-power`
+- `customer-understanding-quotes.md`: `#oprah-validation-principle`, `#superfandom-two-way-street`, `#empathy-precedes-authority`, `#story-model-for-customers`, `#sell-transformation-not-product`, `#active-listening-five-steps`, `#listening-with-curiosity`, `#dont-miss-opportunities`, `#voice-of-customer`, `#customers-want-to-feel-seen`, `#understand-before-selling`, `#do-your-research`
+- `personalization-quotes.md`: `#platinum-rule`, `#personalization-expectations`, `#personalization-at-scale`, `#gifting-principles`, `#think-outside-the-office`, `#acknowledge-family`, `#gifts-not-ads`, `#make-it-unique`, `#mark-important-dates`, `#half-birthday-opportunity`, `#personalization-exceeds-expectations`, `#crm-for-personalization`, `#small-personal-touches`
+- `exceeding-expectations-quotes.md`: `#experience-matters`, `#willingness-to-pay-more`, `#small-things-matter`, `#before-and-after-moments`, `#one-repeatable-action`, `#jim-harbaugh-example`, `#handwritten-notes-power`, `#service-recovery-paradox`, `#harbaugh-consistency`, `#every-interaction-matters`, `#measuring-experience`, `#create-experiences-worth-talking-about`
+- `apology-recovery-quotes.md`: `#the-five-as-of-apology`, `#acknowledge-without-excuses`, `#apologize-without-excuses`, `#company-cant-be-sorry`, `#ask-how-to-make-it-right`, `#dont-compare-customers`, `#adjust-prevent-recurrence`, `#customer-not-always-right`, `#protect-employees-from-bad-customers`, `#bad-customers-steal-resources`, `#fire-bad-customers`, `#well-handled-problems-create-loyalty`
 
-**The Rule:** Your clearly defined story is your superpower. It transforms you from a commodity into a category of one. Customers connect with people and purpose — not with features and benefits. Before you can connect with any customer's story, you must know your own.
+**Rules:**
 
-### What a Brand Story Must Do:
-- Explain **who you are** as a person or organization (not what you sell)
-- Provide an **origin story** that shows how you got here — what drove you to create this
-- Establish your **unique position** — what only you can offer, based on your specific history and experience
-- Create an **emotional connection point** before price, features, or benefits are even discussed
+- Include at least one citation per major section of a substantive response.
+- Match the anchor to the closest principle being applied.
+- If no exact quote matches the user's situation, cite the closest framework anchor and say the recommendation is an application of the framework.
+- Keep direct quotes short. Do not reproduce long book passages.
 
-### The Origin Story Framework:
-1. **Childhood connection**: What early experience or passion points to what you do now?
-2. **The problem you saw**: What gap or frustration led you to create/join this?
-3. **Why you are uniquely positioned**: What in your background makes you the right person to solve this?
-4. **The connection to your customer**: How does your story overlap with theirs?
+## DIMENSION 1: Ladder to Superfandom
 
-### The Craig Martyn Example (MyMetalBusinessCard.com):
-His onboarding email tells the story of a 15-year-old model train company founder who learned chemical etching — the same process used to make metal business cards. That story creates an instant emotional connection and credibility that "we sell metal cards" never could.
+**The Rule:** Diagnose the customer's rung before prescribing tactics. Customers move from apathy to awareness, attraction, action, adoption, affinity, and advocacy; each rung needs a different intervention.
 
-### Story Vignettes:
-- Your full origin story is not told all at once — build a collection of supporting vignettes for different audiences and contexts
-- Each vignette should connect one aspect of your past to one aspect of what you do for your customer
-- Different customers need different connection points — prepare multiple versions
+### Key questions to ask:
 
-### Agent instruction:
-When a user asks how to differentiate their brand or how to tell their brand story, apply the origin story framework. Help them draw the line from their past to their current offering, and identify the emotional connection point that no competitor can replicate.
+- Are people unaware of the brand, or aware but not motivated to care?
+- Where do customers drop off: before purchase, after first purchase, after repeat purchase, or before referral?
+- Are loyal customers quiet because the experience gave them nothing worth sharing?
+- Is apathy showing up among employees as well as customers?
 
----
+### Decision criteria / Checklist:
 
-## DIMENSION 3: The SUPER Model — U: Understand Your Customer's Story
+- Awareness issue: target customers genuinely do not know the brand exists.
+- Apathy issue: target customers know the brand exists but do not care enough to act.
+- Action-to-adoption gap: customers buy once but do not return.
+- Affinity-to-advocacy gap: customers like the brand but do not recommend it.
+- Advocacy risk: fans feel taken for granted or experience inconsistency.
 
-**The Rule:** You cannot create a superfan if you don't know who your customer is and what matters to them. When you try to attract everyone, you engage no one. Deep understanding of your customer's story enables you to make your story relevant to theirs.
+### Warning signals:
 
-### What "Understanding" Means:
-- **Demographics**: Age, location, income, family status, profession
-- **Psychographics**: Values, fears, aspirations, sources of pride
-- **Current story**: What problem are they trying to solve? What does success look like to them?
-- **Emotional drivers**: What do they want to feel as a result of doing business with you?
-- **Language**: How do they describe their own problem — in their words, not yours?
-
-### The Superfan Intersection:
-Superfans are created at the intersection of YOUR story and the CUSTOMER's story. This means:
-- You need deep clarity on both stories simultaneously
-- The intersection is where you make it clear that you share a common purpose or passion
-- "Your thing matters and is relevant to their thing" — this is the moment advocacy becomes possible
-
-### Targeting Insight:
-- "Smart marketers will bet on 10,000 engaged fans over 1 million casual followers any day"
-- Better to be deeply relevant to a defined audience than vaguely relevant to everyone
-- Understanding customer story prevents wasted marketing spend on people who will never care
+- The user wants more leads before fixing retention or referral problems.
+- Existing customers receive little attention after purchase.
+- Customers say they are "fine" but do not return or refer.
+- The team interprets silence as satisfaction.
 
 ### Agent instruction:
-When a user describes their target customer broadly ("everyone" or "anyone who needs X"), apply the understanding framework: help them narrow to a defined customer whose story intersects most powerfully with theirs. The more specific the intersection, the stronger the superfan potential.
 
----
+When the user describes stalled growth, classify the issue as awareness, apathy, retention, or advocacy. Then identify the rung where customers are stuck and explain why generic promotion will not solve a deeper experience problem.
 
-## DIMENSION 4: The SUPER Model — P: Personalize
+## DIMENSION 2: S — Start with Your Story
 
-**The Rule:** Personalization converts generic customer experiences into memorable ones. It signals to the customer that you see them as an individual, not a transaction. The most powerful personalization references something specific about the customer's story.
+**The Rule:** A clear story turns a brand from a commodity into a category of one; customers need a reason to connect beyond features and price.
 
-### Levels of Personalization:
-1. **Basic**: Using the customer's name, reference to their past purchase
-2. **Contextual**: Acknowledging where they are in their journey (new customer vs. returning)
-3. **Story-based**: Connecting your communication to something from their personal story — their interests, milestones, family, goals
-4. **Unexpected**: The surprise-and-delight moment that goes beyond what was asked
+### Key questions to ask:
 
-### The Jim Harbaugh Effect:
-Coach Harbaugh sent a handwritten note to a stranger's unborn child when asked about a gender reveal — connecting his brand (Michigan football) to a personal family milestone. That one interaction created a lifelong superfan more effectively than years of game attendance. Why? It connected their stories.
+- Why does the organization exist beyond selling the product?
+- What origin story explains how the brand got here?
+- What values or experiences make this brand meaningfully different?
+- Which part of the brand story can intersect with the customer's story?
+- Can employees tell the story consistently in their own words?
 
-### Personalization at Scale:
-- Personalization doesn't require 1:1 handcrafted attention for every customer — it requires systems
-- Segment customers by their stage on the ladder (adoption vs. affinity vs. advocacy) and personalize accordingly
-- Technology can help deliver personalized touchpoints without manual effort at scale
-- Even automated communications can be personalized by using specific triggers from customer behavior
+### Decision criteria / Checklist:
 
-### Agent instruction:
-When a user asks how to make customers feel more valued or how to improve retention, prescribe personalization at the story level. The goal is not just "use their first name" — it's to show the customer that your communication is responding to their specific situation and story, not a generic template.
+- The story explains "who we are" and "why we are here," not just what is sold.
+- The story contains an origin, a customer-relevant problem, and a point of difference.
+- The story can be adapted into short vignettes for sales, onboarding, service, and community.
+- The story helps customers feel that choosing the brand says something about them.
 
----
+### Warning signals:
 
-## DIMENSION 5: The SUPER Model — E: Exceed Expectations
-
-**The Rule:** Today's customers don't compare you only to your direct competitors — they compare you to the best experience they've had anywhere. Exceeding expectations is not a nice-to-have; it is the primary source of differentiation. The ordinary experience generates no advocacy.
-
-### The Expectation Benchmarks:
-- "When was the last time you told a friend, 'I've got to tell you about this new restaurant — it was just okay'?" — The ordinary generates no word of mouth
-- Customers are comparing your experience to Apple, Amazon, Disney, and every other brand that has set a high bar
-- The bar is continuously rising; "meeting expectations" last year may mean "falling short" this year
-
-### Every Employee is the Experience Department:
-- "Your brand isn't what you say it is. It's what your customers say it is."
-- Customers don't care if a problem was caused by a different department — they blame the brand
-- Every person wearing the brand (metaphorical name tag) is responsible for the experience
-- The frontline employee often shapes the experience more than any executive decision
-
-### Intentional Experience Design:
-- Map the customer journey: identify every touchpoint from first contact to post-purchase
-- For each touchpoint, ask: "What is the expected experience? What would exceed it?"
-- The "small things" matter most — a handwritten note, a follow-up call, remembering a preference
-- Design for recovery: when things go wrong (and they will), the recovery experience can create stronger advocacy than a problem-free experience
+- The story is a feature list, founder resume, slogan, or generic mission statement.
+- The user claims the product is "for everyone."
+- The brand competes mainly on price, availability, or feature parity.
 
 ### Agent instruction:
-When a user asks about customer service, retention, or "how to wow customers," apply the expectation-exceeding framework. Help them map their customer journey and identify 2-3 moments where a small, specific action would exceed what customers expect — particularly in the "small things" category that requires effort but not large cost.
 
----
+When the user asks about differentiation, messaging, or loyalty, help convert facts into an origin story. Then identify the strongest intersection between the brand's story and the customer's desired identity or transformation.
 
-## DIMENSION 6: The SUPER Model — R: Repeat
+## DIMENSION 3: U — Understand Your Customer's Story
 
-**The Rule:** A great customer experience doesn't happen by accident. It happens when systems are designed, taught, implemented, and measured — and then done again. Consistency is what converts a great moment into a brand reputation.
+**The Rule:** You cannot create superfans for customers you do not understand; empathy must precede authority.
 
-### The Repeat Principle:
-- One great experience earns advocacy temporarily; consistent great experiences earn it permanently
-- The goal is to build systems so that exceeding expectations is the default, not the exception
-- Even your most loyal superfan advocates can experience apathy if the experience becomes inconsistent
+### Key questions to ask:
 
-### Building Repeatability:
-1. **Document**: Write down exactly what a great experience looks like at each touchpoint
-2. **Train**: Ensure every person who represents the brand knows the standard and why it exists
-3. **Measure**: Track customer satisfaction at each stage of the ladder; know when apathy is rising
-4. **Iterate**: Use customer feedback to identify where the experience is falling short; fix and repeat
-5. **Celebrate**: Recognize employees who create exceptional experiences; build it into the culture
+- What struggle is the customer trying to resolve?
+- What transformation do they want after using the product or service?
+- What outcome, relationship, status, relief, or feeling matters most?
+- What language do customers use to describe the problem?
+- What do recent conversations, reviews, support tickets, churn notes, or social comments reveal?
 
-### The Employee → Customer Superfan Link:
-- Superfan employees create superfan customers
-- Apathetic employees create apathetic customers
-- Creating internal superfans (employees who are enthusiastic advocates) is a prerequisite for creating external superfans
-- Before fixing customer experience, ask: how do employees feel about working here?
+### Decision criteria / Checklist:
+
+- Use the STORY lens: Struggles, Transformation, Outcomes, Relationships, and "Why you?"
+- Replace assumptions with active listening and voice-of-customer evidence.
+- Segment by customer story and desired transformation, not only demographics.
+- Confirm understanding by retaining and relaying back what the customer said.
+
+### Warning signals:
+
+- The team leads with authority before showing empathy.
+- Sales or support scripts prevent useful follow-up questions.
+- Research exists but is not acted upon.
+- The user talks about "customers" as a generic group with no emotional context.
 
 ### Agent instruction:
-When a user asks about scaling customer experience or maintaining quality as a business grows, apply the repeat framework. The prescription is systematic: document the standard, train to it, measure it, iterate, and build it into culture. A great experience that can't be repeated is a marketing event, not a business strategy.
 
----
+When the user asks how to attract, sell to, or retain customers, uncover the customer's STORY before recommending tactics. Push from product-centered language toward customer transformation language.
+
+## DIMENSION 4: P — Personalize
+
+**The Rule:** Personalization shows customers they are seen as people, not transactions; the strongest personalization reflects something specific from the customer's story.
+
+### Key questions to ask:
+
+- What customer details are known, remembered, and respectfully used?
+- Where can the experience reflect stage, preferences, goals, or milestones?
+- What would feel personal without feeling invasive?
+- Can CRM, segmentation, triggers, or checklists make personalization repeatable?
+- Is the gift, note, message, or recommendation about the customer rather than the brand?
+
+### Decision criteria / Checklist:
+
+- Basic personalization: name, purchase, account, or lifecycle stage.
+- Contextual personalization: timing, use case, behavior, or journey moment.
+- Story-based personalization: family, goals, identity, milestones, or values.
+- Scaled personalization: automated triggers that still reflect real customer context.
+
+### Warning signals:
+
+- "Personalization" means only first-name merge fields.
+- Gifts carry the company's logo and function as ads.
+- Customer data is collected but not used to improve the experience.
+- Personalization crosses into surveillance or manipulation.
+
+### Agent instruction:
+
+When the user asks how to make customers feel valued, prescribe one or two personal touches tied to a real customer signal. Prefer low-cost, high-attention actions over expensive generic gestures.
+
+## DIMENSION 5: E — Exceed Expectations
+
+**The Rule:** Ordinary experiences rarely generate advocacy; customers talk about moments that are more thoughtful, human, or memorable than expected.
+
+### Key questions to ask:
+
+- What does the customer expect at each touchpoint?
+- Which touchpoints are most emotional, uncertain, inconvenient, or memorable?
+- What small action would surprise and delight without creating operational chaos?
+- Which before-purchase and after-purchase moments are neglected?
+- How can the team measure whether the experience is memorable?
+
+### Decision criteria / Checklist:
+
+- Map the journey from first awareness through post-purchase follow-up.
+- Identify before moments that set expectations and after moments that leave a lasting impression.
+- Choose one repeatable memorable action at key transaction points.
+- Build recovery moments for when expectations are missed.
+- Measure experience quality, not just transactional completion.
+
+### Warning signals:
+
+- The team thinks "no complaints" means a remarkable experience.
+- Follow-up happens only when asking for renewal, review, upsell, or payment.
+- The brand attempts grand gestures before fixing basic consistency.
+- Customers receive the same adequate experience every competitor provides.
+
+### Agent instruction:
+
+When the user asks how to "wow" customers, map the journey and select 2-3 small touchpoints where exceeding expectations would be visible, personal, and repeatable. Avoid vague delight advice.
+
+## DIMENSION 6: R — Repeat
+
+**The Rule:** Superfan creation must be systematized; a remarkable one-off gesture is not a customer experience strategy.
+
+### Key questions to ask:
+
+- Which excellent behaviors depend on one heroic employee?
+- What checklist, automation, training, or delegation would make the behavior repeatable?
+- How often does the team review and refine the customer experience process?
+- What metric shows whether customers are moving toward advocacy?
+- Are employees treated in a way that enables them to create great customer experiences?
+
+### Decision criteria / Checklist:
+
+- Document the desired experience at key touchpoints.
+- Eliminate, automate, delegate, or defer tasks that dilute customer focus.
+- Train the team on both the behavior and the reason behind it.
+- Review checklists and customer feedback regularly.
+- Recognize employees who create superfan moments.
+
+### Warning signals:
+
+- The customer experience depends on founder attention or a single star employee.
+- Processes measure speed but not care, clarity, or memory.
+- Employee apathy is ignored while customer enthusiasm is demanded.
+- Feedback is collected but not routed into operational changes.
+
+### Agent instruction:
+
+When the user asks how to scale customer experience, turn the best existing behavior into a documented, measured, teachable system. Include employee experience in the diagnosis.
+
+## DIMENSION 7: Service Recovery and the 5 As
+
+**The Rule:** A sincere, complete recovery can increase loyalty, but only if the organization acknowledges harm, apologizes without excuses, asks what would make it right, atones, and adjusts the system.
+
+### Key questions to ask:
+
+- What exactly went wrong from the customer's perspective?
+- Has the company acknowledged the impact without minimizing it?
+- Did a real person apologize plainly?
+- Has the customer been asked what would make it right?
+- What system or behavior must change to prevent recurrence?
+- Is this a good customer who deserves recovery, or an abusive/wrong-fit customer harming employees and better customers?
+
+### Decision criteria / Checklist:
+
+- Acknowledge: name the failure and its impact.
+- Apologize: say sorry without qualifiers or excuses.
+- Ask: invite the customer to say what would make it right.
+- Atone: execute the fix.
+- Adjust: change the process so the failure is less likely to repeat.
+
+### Warning signals:
+
+- The apology is signed only by "the company."
+- The response compares the customer to other customers.
+- The team compensates the customer but does not fix the root cause.
+- Bad customers are allowed to abuse employees or drain resources from good customers.
+
+### Agent instruction:
+
+When the user asks about an angry customer or service failure, structure the response around the 5 As. Also assess whether the customer relationship should be repaired, bounded, or ended.
+
+## DIMENSION 8: Supergroups — Apply SUPER Across the Organization
+
+**The Rule:** Customer centricity is not a department; every team that touches the customer can create or destroy superfans.
+
+### Key questions to ask:
+
+- Teams: do employees feel supported enough to support customers?
+- Social media: is the brand building relationships or broadcasting?
+- Marketing: does the message reinforce the story or only promote features?
+- Sales: does the process sell transformation or product specs?
+- Customer service: are support interactions treated as reputation-shaping moments?
+- Leadership: is customer feedback acted on across functions?
+
+### Decision criteria / Checklist:
+
+- Employee experience is treated as part of customer experience.
+- Social interactions use SUPER: story, understanding, personalization, expectation-exceeding, repeat.
+- Marketing communicates the brand story consistently.
+- Sales listens before prescribing and follows through after closing.
+- Support has authority and systems to recover well.
+- Voice-of-customer programs lead to visible changes.
+
+### Warning signals:
+
+- A CX owner exists, but customer centricity is not embedded in daily work.
+- Teams use customer stories as testimonials but not as operating input.
+- Social media escalates problems publicly instead of solving constructively.
+- Sales overpromises and service absorbs the mismatch.
+
+### Agent instruction:
+
+When the user's issue spans departments, map the SUPER Model across the relevant functions and identify where the customer experience breaks because internal teams are not aligned.
 
 ## Query Response Framework
 
-### Query Type 1: "How do I get more repeat customers / improve retention"
+### Query Type 1: "How do I improve retention or repeat purchase?"
 
-Step-by-step:
-1. Diagnose the ladder stage: where are customers falling off? (Action → Adoption gap is most common)
-2. Apply the apathy diagnostic: is this awareness or apathy?
-3. Identify which SUPER dimension is weakest: Story? Understanding? Personalization? Expectations? Consistency?
-4. Prescribe 2-3 specific actions for the weakest dimension
-5. Design a measurement: how will they know if retention is improving?
+1. Diagnose the ladder stage where customers fall off.
+2. Decide whether the root issue is apathy, weak onboarding, low personalization, ordinary experience, or inconsistent repeatability.
+3. Apply the weakest SUPER dimension.
+4. Recommend 2-3 concrete touchpoint changes.
+5. Define one retention metric and one qualitative customer-story signal.
 
-### Query Type 2: "How do I get customers to recommend me to others"
+### Query Type 2: "How do I get more referrals or word of mouth?"
 
-Step-by-step:
-1. Diagnose current ladder position: most customers stuck at affinity (loyal but not vocal)?
-2. Apply the story intersection test: are customers explicitly connecting your story to theirs?
-3. Identify the last "wow" moment you created — can it be systematized?
-4. Prescribe the personalization step that would turn affinity into advocacy: what specific moment would make them want to talk about you?
-5. Design the referral trigger: what specific action makes it easy to share?
+1. Check whether customers have reached affinity but not advocacy.
+2. Identify whether the brand story is connected to the customer's story.
+3. Find the most share-worthy customer moment.
+4. Design a repeatable memorable action and a low-friction advocacy trigger.
+5. Explain how the action moves the customer from quiet loyalty to advocacy.
 
-### Query Type 3: "How do I differentiate from competitors on something other than price"
+### Query Type 3: "How do I differentiate without lowering price?"
 
-Step-by-step:
-1. Apply the story framework: does the brand have a clear, differentiated origin story?
-2. Identify the intersection: where does your story most powerfully overlap with your best customers' stories?
-3. Map the experience: where in the customer journey are you currently delivering an ordinary experience?
-4. Apply the expectation-exceeding principle: what would "beyond remarkable" look like at the top 2-3 touchpoints?
-5. The prescription: your differentiation is in the experience — design it intentionally, then make it repeatable
+1. Extract the origin story and category-of-one point.
+2. Identify the customer's desired transformation.
+3. Map the customer journey and highlight ordinary touchpoints.
+4. Choose 2-3 moments where the experience can exceed expectations.
+5. Convert differentiation into repeatable behaviors, not slogans.
 
----
+### Query Type 4: "A customer had a bad experience. What should I do?"
+
+1. Summarize the failure from the customer's point of view.
+2. Apply the 5 As: acknowledge, apologize, ask, atone, adjust.
+3. Draft the recovery message or action plan.
+4. Decide whether this is a recoverable customer or a boundary-setting case.
+5. Identify the process change that prevents recurrence.
+
+### Query Type 5: "How do I scale customer experience as we grow?"
+
+1. Identify the current superfan-creating behaviors.
+2. Separate what can be eliminated, automated, delegated, deferred, or documented.
+3. Turn the best behaviors into checklists, training, CRM triggers, and review rhythms.
+4. Include employee experience as a prerequisite.
+5. Define a feedback loop using customer stories, reviews, retention, referrals, and frontline input.
 
 ## Output Format
 
-All responses should include:
-1. **The ladder stage diagnosis** — where is the customer on the journey?
-2. **The SUPER dimension** — which step(s) of the model are relevant?
-3. **The concrete action** — what specifically should they do?
-4. **The story connection** — how does this connect the brand's story to the customer's story?
+For substantial answers, use this structure:
+
+1. **Diagnosis:** ladder stage, apathy risk, and weakest SUPER pillar
+2. **Why this matters:** the Hodak principle being applied, with citation
+3. **Action plan:** 2-5 specific actions tied to touchpoints
+4. **Script or artifact:** message, checklist, journey map, CRM trigger, or service recovery draft when useful
+5. **Measurement:** one behavior metric and one customer-story signal
+6. **Watch-outs:** the mistake most likely to weaken the plan
+
+For quick answers, provide the diagnosis, the next action, and one citation.
+
+## Critical Reminders
+
+1. Do not confuse awareness with caring; many growth problems are apathy problems.
+2. A satisfied customer is not automatically a superfan; advocacy requires delight and a story worth sharing.
+3. Start with the brand story before trying to connect to the customer's story.
+4. Empathy must precede authority in sales, support, marketing, and research.
+5. Personalization should be about the customer, not about showing off the brand.
+6. Ordinary experiences rarely produce word of mouth.
+7. The smallest repeatable gesture can be more powerful than an expensive one-off campaign.
+8. Service failures require both emotional repair and system repair.
+9. Bad customers can harm good employees and better customers; recovery does not mean tolerating abuse.
+10. Superfan creation is iterative: document, train, measure, refine, and repeat.
