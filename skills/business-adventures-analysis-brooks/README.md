@@ -1,13 +1,14 @@
 # Business Adventures Analysis
 
-Apply John Brooks's business-history patterns to diagnose corporate failures, market panics, governance breakdowns, regulatory risk, product flops, and innovation dynamics.
+Apply John Brooks's business-history patterns to diagnose corporate failures, market panics, governance breakdowns, regulatory risk, product flops, fraud exposure, institutional fragility, and innovation dynamics.
 
 ## What It Does
 
+- Routes broad or narrow business cases to six focused diagnostic modules.
 - Maps current cases to recurring business patterns from *Business Adventures*.
-- Diagnoses product-market timing, governance, compliance, crisis, and market psychology failures.
-- Produces risk assessments and historical parallels.
-- Helps analysts separate human behavior, incentives, and institutional structure.
+- Diagnoses product-market timing, market panic, governance, compliance, crisis, fraud, and institutional fragility.
+- Produces risk assessments, historical parallels, and action recommendations.
+- Helps analysts separate human behavior, incentives, rules, information flow, and institutional structure.
 
 ## When to Use It
 
@@ -34,7 +35,14 @@ business-adventures-analysis-brooks/
 ├── SKILL.md
 ├── README.md
 ├── LICENSE.txt
-└── quotes/
+├── quotes/
+└── subskills/
+    ├── m1_failure_diagnosis/
+    ├── m2_market_panic/
+    ├── m3_regulatory_risk/
+    ├── m4_product_innovation/
+    ├── m5_governance_accountability/
+    └── m6_fraud_institutional_fragility/
 ```
 
 ## License

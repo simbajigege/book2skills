@@ -30,17 +30,19 @@ Clear messaging beats clever messaging. The user must leave with copy that quick
 
 ## Workflow Inventory
 
-| Workflow | User question pattern | Inputs | Steps | Output |
-|---|---|---|---|---|
-| BrandScript creation | "Apply StoryBrand to my business" | Offer, customer, problem, proof, desired action | Fill all seven SB7 elements | Complete BrandScript |
-| Website grunt test | "Review my homepage" | Existing copy or URL text | Test clarity, hierarchy, CTA, stakes, success | Rewrite and priority fixes |
-| One-liner creation | "What is my pitch?" | Customer, problem, solution, result | Problem + solution + result | One-liner variants |
-| CTA and funnel design | "What should the CTA be?" | Buying stage, friction, trust level | Direct and transitional CTA mapping | CTA set and placement |
-| Asset rewrite | "Rewrite this email/ad/page" | Draft copy, audience, goal | Reframe customer as hero and brand as guide | Revised copy |
+| Workflow | User question pattern | Inputs | Steps | Output | Should be subskill? |
+|---|---|---|---|---|---|
+| BrandScript creation | "Apply StoryBrand to my business" | Offer, customer, problem, proof, desired action | Fill all seven SB7 elements | Complete BrandScript | No — primary workflow |
+| Website grunt test | "Review my homepage" | Existing copy or URL text | Test clarity, hierarchy, CTA, stakes, success | Rewrite and priority fixes | No — applies the same SB7 sequence |
+| One-liner creation | "What is my pitch?" | Customer, problem, solution, result | Problem + solution + result | One-liner variants | No — narrow asset from SB7 |
+| CTA and funnel design | "What should the CTA be?" | Buying stage, friction, trust level | Direct and transitional CTA mapping | CTA set and placement | No — Dimension 5 application |
+| Asset rewrite | "Rewrite this email/ad/page" | Draft copy, audience, goal | Reframe customer as hero and brand as guide | Revised copy | No — channel-specific application |
+
+**Architecture decision:** Keep this as a single-file skill. StoryBrand is one tightly coupled SB7 messaging workflow; BrandScripts, website reviews, one-liners, CTAs, and rewrites all reuse the same seven dimensions and usually share the same output assets. Splitting these into subskills would make routing heavier without improving decision quality.
 
 ## The SB7 Framework
 
-### 1. A Character
+### DIMENSION 1: A Character
 
 **Rule:** The customer is the hero, not the brand.
 
@@ -56,9 +58,15 @@ Clear messaging beats clever messaging. The user must leave with copy that quick
 - The customer's current state and desired future state create a story gap.
 - Company history and internal language are removed unless they prove guide authority.
 
+**Warning signals:**
+
+- The copy opens with company history, credentials, or founder story before naming the customer's want.
+- Multiple audiences or desires compete in the same headline, pitch, or page section.
+- The offer is framed as what the company does rather than what the customer gets.
+
 **Agent instruction:** Name the customer's concrete want before writing any brand copy. If the user provides many audiences or goals, ask them to pick the primary buyer for this pass.
 
-### 2. Has a Problem
+### DIMENSION 2: Has a Problem
 
 **Rule:** Customers buy relief from internal frustration, not only solutions to external problems.
 
@@ -75,9 +83,15 @@ Clear messaging beats clever messaging. The user must leave with copy that quick
 - The villain is a problem source such as complexity, waste, risk, or confusion.
 - The emotional problem is specific enough to make the buyer feel understood.
 
+**Warning signals:**
+
+- The message lists features without naming the buyer's practical problem.
+- The copy uses generic pain words such as "stress" or "frustration" without context.
+- The villain is a person or customer group rather than the obstacle the offer helps defeat.
+
 **Agent instruction:** Diagnose all three problem levels and choose the one most likely to move the customer. Do not stop at feature-level pain points.
 
-### 3. Meets a Guide
+### DIMENSION 3: Meets a Guide
 
 **Rule:** The brand must be the guide, not a competing hero.
 
@@ -93,9 +107,15 @@ Clear messaging beats clever messaging. The user must leave with copy that quick
 - Proof is used to reduce buyer risk, not to make the brand the protagonist.
 - The copy avoids "we are amazing" language unless tied to the customer's outcome.
 
+**Warning signals:**
+
+- The brand talks about itself as the hero of the story.
+- Authority claims are unsupported or disconnected from the customer's risk.
+- Empathy is absent, making proof feel like bragging instead of guidance.
+
 **Agent instruction:** Write one empathy line and one authority line. If proof is missing, mark it as a gap and suggest what evidence to collect.
 
-### 4. Gives Them a Plan
+### DIMENSION 4: Gives Them a Plan
 
 **Rule:** A confused buyer does not move. A guide gives a simple path.
 
@@ -111,9 +131,15 @@ Clear messaging beats clever messaging. The user must leave with copy that quick
 - Each step uses plain verbs.
 - The plan reduces perceived risk.
 
+**Warning signals:**
+
+- The buyer must infer the process from scattered copy.
+- The next step sounds operationally complex or risky.
+- The page gives a CTA but no path from action to result.
+
 **Agent instruction:** Produce a process plan for action and, when trust is low, an agreement plan that names guarantees, standards, or commitments.
 
-### 5. Calls Them to Action
+### DIMENSION 5: Calls Them to Action
 
 **Rule:** Customers do not act unless challenged to act.
 
@@ -129,9 +155,15 @@ Clear messaging beats clever messaging. The user must leave with copy that quick
 - Transitional CTA offers useful value while moving the relationship forward.
 - CTA text appears repeatedly where action is natural.
 
+**Warning signals:**
+
+- The main CTA uses vague language such as "learn more" when the buyer is ready to act.
+- The page has many competing actions with no priority.
+- Not-yet-ready buyers have no low-risk next step.
+
 **Agent instruction:** Always output both direct and transitional CTAs unless the channel only permits one.
 
-### 6. Helps Them Avoid Failure
+### DIMENSION 6: Helps Them Avoid Failure
 
 **Rule:** Stakes make action meaningful, but fearmongering breaks trust.
 
@@ -147,9 +179,15 @@ Clear messaging beats clever messaging. The user must leave with copy that quick
 - The cost of inaction is connected to the customer's stated problem.
 - The copy avoids exaggerated catastrophe.
 
+**Warning signals:**
+
+- The message never explains why acting now matters.
+- The stakes rely on exaggerated fear rather than a credible cost of delay.
+- Failure language appears without a nearby success vision.
+
 **Agent instruction:** Add one concise stakes statement, then quickly move to the success outcome.
 
-### 7. Ends in Success
+### DIMENSION 7: Ends in Success
 
 **Rule:** The brand must paint the customer's successful future.
 
@@ -164,6 +202,12 @@ Clear messaging beats clever messaging. The user must leave with copy that quick
 - Success language is concrete, visual, and outcome-oriented.
 - The outcome is about the customer, not the product.
 - The transformation is believable from the offer.
+
+**Warning signals:**
+
+- The promised result is abstract, such as "better outcomes" or "peace of mind," with no concrete before/after.
+- The copy celebrates product usage instead of customer transformation.
+- The identity shift is too grand for the offer to credibly support.
 
 **Agent instruction:** End major copy outputs with a before/after transformation and an aspirational identity statement.
 
@@ -238,6 +282,32 @@ For a complete messaging request, respond with:
 3. ...
 ```
 
+For a narrow rewrite, respond with:
+
+```markdown
+## Revised Copy
+...
+
+## Why This Works
+- Customer-as-hero shift:
+- Problem clarity:
+- CTA improvement:
+
+## Remaining Gaps
+- Proof needed:
+- Customer decision needed:
+```
+
+## Critical Reminders
+
+- Treat the BrandScript as a messaging filter, not a decorative worksheet.
+- Reduce every offer to one primary customer, one primary desire, and one primary action before writing copy.
+- Make external, internal, and philosophical problems explicit when diagnosing weak messaging.
+- Always position the brand as the guide: empathy plus authority, never self-hero language.
+- Use both direct and transitional CTAs when the customer journey includes ready and not-yet-ready buyers.
+- Balance stakes with success; do not use fear as a substitute for clarity.
+- For websites, prioritize the hero section, visible CTA, plan, proof, and success picture before lower-page refinements.
+
 ## CITATION RULES
 
 When making substantive StoryBrand-method claims, cite the quote files if the user asks for sources or if the answer is a formal audit.
@@ -250,7 +320,7 @@ When making substantive StoryBrand-method claims, cite the quote files if the us
 **Anchor mapping:**
 
 - `main-framework-quotes.md`: `#words-sell-things`, `#brain-drawn-to-clarity`, `#story-greatest-weapon`, `#customer-is-hero`, `#customer-looks-for-guide`, `#companies-sell-external`, `#trust-guide-with-plan`, `#call-to-action-required`, `#avoid-tragic-ending`, `#buying-transformation`, `#if-you-confuse-you-lose`, `#grunt-test`
-- `storybrand-principles-quotes.md`: `#story-organizes-information`, `#brain-survive-and-thrive`, `#story-makes-music`, `#hero-in-a-hole`, `#three-levels-problems`, `#guide-positioning`, `#story-gap-power`, `#conflict-gets-attention`, `#villain-focus`, `#plan-removes-confusion`, `#two-types-cta`, `#whats-at-stake`, `#aspirational-identity`, `#one-liner-formula`, `#website-hierarchy`
+- `storybrand-principles-quotes.md`: `#story-organizes-information`, `#brain-survive-and-thrive`, `#story-makes-music`, `#think-different-lesson`, `#hero-in-a-hole`, `#three-levels-problems`, `#guide-positioning`, `#tidal-fatal-mistake`, `#story-gap-power`, `#conflict-gets-attention`, `#villain-focus`, `#plan-removes-confusion`, `#two-types-cta`, `#whats-at-stake`, `#aspirational-identity`, `#one-liner-formula`, `#website-hierarchy`
 
 **Citation format:**
 
@@ -261,12 +331,3 @@ When making substantive StoryBrand-method claims, cite the quote files if the us
 ```
 
 Use only exact quote text from the quote files. If no exact quote fits, cite the closest anchor and state that the analysis is a paraphrased application.
-
-## Critical Reminders
-
-- Customer first, company second.
-- Clarity beats cleverness.
-- Internal problems often matter more than external ones.
-- Every serious page needs a direct CTA.
-- Use stakes honestly and briefly.
-- End with a concrete vision of success.
