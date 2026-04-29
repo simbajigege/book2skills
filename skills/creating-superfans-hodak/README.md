@@ -4,26 +4,26 @@ This skill applies Brittany Hodak's SUPER Model from *Creating Superfans* for fo
 
 ## What It Does
 
-- Diagnoses whether growth problems are awareness, apathy, retention, or advocacy problems.
-- Applies the SUPER Model: Start with your story, Understand your customer's story, Personalize, Exceed expectations, Repeat.
-- Designs repeatable customer experience moments that create word of mouth.
-- Structures service recovery with the 5 As of apology.
+- Routes customer loyalty, retention, referral, service recovery, and customer experience questions to focused subskills.
+- Diagnoses where customers are stuck on the path from apathy to advocacy.
+- Designs story, customer understanding, personalization, expectation-exceeding, and recovery workflows.
+- Turns customer experience ideas into repeatable team systems.
 
 ## When to Use It
 
-Use this skill for questions about customer loyalty, word-of-mouth growth, retention, referrals, reviews, customer experience design, brand differentiation, service recovery, and customer-centric team culture.
+Use this skill for questions about customer loyalty, word-of-mouth growth, retention, referrals, reviews, customer experience design, brand differentiation, personalization, service recovery, and customer-centric team culture.
 
 ## Installation
 
-### Option 1 — CLI (recommended)
+### Option 1 - CLI (recommended)
 
 ```bash
 npx skills add simbajigege/book2skills/skills/creating-superfans-hodak
 ```
 
-### Option 2 — Manual upload
+### Option 2 - Manual upload
 
-1. Download the skill folder or clone the repository.
+1. Download the skill folder or clone this repository.
 2. In Claude.ai, go to **Settings -> Skills** and upload the folder.
 3. The skill will appear in your available skills list.
 
@@ -31,10 +31,11 @@ npx skills add simbajigege/book2skills/skills/creating-superfans-hodak
 
 ```text
 creating-superfans-hodak/
-├── SKILL.md          # Main skill instructions
+├── SKILL.md          # Main orchestrator and routing rules
 ├── README.md         # This file
 ├── LICENSE.txt       # Book distillation license note
-└── quotes/           # Source quote anchors for citation-backed answers
+├── quotes/           # Source quote anchors for citation-backed answers
+└── subskills/        # Seven focused workflow modules
 ```
 
 ## License
