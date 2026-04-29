@@ -1,43 +1,42 @@
 # StoryBrand Messaging Framework
 
-A Claude skill that encodes Donald Miller's SB7 (StoryBrand 7-Part) framework from *Building a StoryBrand 2.0*. It helps businesses clarify their brand message by structuring communication like a compelling story — positioning the customer as the hero and the brand as their trusted guide.
+Apply Donald Miller's SB7 framework to clarify brand messaging, rewrite websites, create BrandScripts, sharpen one-liners, and design direct and transitional calls to action.
 
 ## What It Does
 
-- Guides you through all 7 elements of the SB7 framework to build a complete BrandScript
-- Identifies your customer's external, internal, and philosophical problems — and the "villain" causing them
-- Extracts actionable sound bites: one-liners, taglines, website hero text, CTAs, and email copy
-- Reviews existing messaging and rewrites it for clarity using the "grunt test"
+- Positions the customer as hero and the brand as guide.
+- Diagnoses external, internal, and philosophical customer problems.
+- Produces BrandScripts, one-liners, homepage copy, CTAs, and funnel messaging.
+- Audits websites with the StoryBrand grunt test.
 
 ## When to Use It
 
-- "Help me create a BrandScript for my business"
-- "Why isn't my marketing resonating with customers?"
-- "Rewrite my website homepage using StoryBrand"
-- "What's my one-liner / elevator pitch?"
-- "Am I positioning myself as the hero or the guide?"
-- "Write a tagline / call to action for [product/service]"
-- "Apply the SB7 framework to my [business/campaign]"
+Use this skill for prompts such as "clarify my message", "rewrite my homepage", "create a BrandScript", "what is my one-liner", "fix my CTA", or "apply StoryBrand to this business".
 
 ## Installation
+
+### Option 1 - CLI
 
 ```bash
 npx skills add simbajigege/book2skills/skills/storybrand-messaging-framework
 ```
 
-1. Download or clone this folder.
-2. In Claude.ai, go to Settings → Skills and upload the skill folder.
+### Option 2 - Manual Upload
+
+1. Download this skill folder or clone the repository.
+2. In Claude.ai, go to Settings -> Skills and upload the folder.
 3. The skill will appear in your available skills list.
 
 ## File Structure
 
-```
+```text
 storybrand-messaging-framework/
-├── SKILL.md        # Full framework, agent instructions, query types, output format
-├── README.md       # This file
-└── LICENSE.txt     # Usage terms
+├── SKILL.md
+├── README.md
+├── LICENSE.txt
+└── quotes/
 ```
 
 ## License
 
-See LICENSE.txt. This skill distills frameworks and methodologies from *Building a StoryBrand 2.0* by Donald Miller. It is not a verbatim reproduction of the source material.
+Skill distillation for personal/educational use. Do not reproduce source passages verbatim.

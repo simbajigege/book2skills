@@ -1,191 +1,272 @@
 ---
-name: StoryBrand Messaging Framework
-description: "Apply Donald Miller's SB7 framework to clarify brand messaging: position customer as hero, brand as guide, define problems, plan, and call to action."
-version: 1.0.0
-source_book: "Building a StoryBrand 2.0 by Donald Miller"
-source_isbn: "978-1-4002-4887-2"
+name: storybrand-messaging-framework
+description: Use StoryBrand for "clarify my message", "rewrite my homepage", "create a BrandScript", "what is my one-liner", or "fix my CTA".
 license: "Skill distillation for personal/educational use. Do not reproduce source passages verbatim."
-tags:
-  - marketing
-  - messaging
-  - branding
-  - copywriting
-  - content-marketing
 ---
 
-# StoryBrand Messaging Framework Skill
+# StoryBrand Messaging Framework
 
 ## Overview
-This skill encodes the SB7 (StoryBrand 7-part) framework from Donald Miller's *Building a StoryBrand*. It helps brands clarify their marketing message by structuring communication like a story — with the customer as the hero and the brand as the guide.
 
-The core insight: customers don't buy the best product; they buy the one whose message they understand most clearly. Confusion kills sales. Clarity drives growth.
+Use this skill to apply Donald Miller's StoryBrand SB7 framework to brand messaging, website copy, fundraising appeals, product positioning, sales pages, and marketing assets. The skill turns a confusing offer into a clear customer-centered story: the customer is the hero, the brand is the guide, the offer solves a real problem, and the next action is obvious.
 
-**Core Mantra:** "If you confuse, you'll lose."
+This is a messaging-clarity skill. It does not validate whether a market exists, set paid-media budgets, or replace customer research.
+
+## When to Use This Skill
+
+Invoke this skill when the user asks:
+
+- "Help me create a BrandScript for my business."
+- "Clarify my message."
+- "Rewrite my homepage using StoryBrand."
+- "Does this pass the grunt test?"
+- "What is my one-liner?"
+- "Am I positioning myself as the hero or the guide?"
+- "Write a better CTA, tagline, landing page, email, ad, or pitch."
+
+## Core Principle
+
+Clear messaging beats clever messaging. The user must leave with copy that quickly answers: what is being offered, how it improves the customer's life, and what the customer should do next.
+
+## Workflow Inventory
+
+| Workflow | User question pattern | Inputs | Steps | Output |
+|---|---|---|---|---|
+| BrandScript creation | "Apply StoryBrand to my business" | Offer, customer, problem, proof, desired action | Fill all seven SB7 elements | Complete BrandScript |
+| Website grunt test | "Review my homepage" | Existing copy or URL text | Test clarity, hierarchy, CTA, stakes, success | Rewrite and priority fixes |
+| One-liner creation | "What is my pitch?" | Customer, problem, solution, result | Problem + solution + result | One-liner variants |
+| CTA and funnel design | "What should the CTA be?" | Buying stage, friction, trust level | Direct and transitional CTA mapping | CTA set and placement |
+| Asset rewrite | "Rewrite this email/ad/page" | Draft copy, audience, goal | Reframe customer as hero and brand as guide | Revised copy |
 
 ## The SB7 Framework
 
-### Element 1: A Character (The Customer is the Hero)
-The customer — not the brand — is the hero of the story. Identify what the customer **wants** and make that the central narrative ambition. Open a "story gap" between where they are and where they want to be.
+### 1. A Character
 
-Key questions:
-- What does your customer want most?
-- What is the single ambition or desire you can help them fulfill?
-- Can you state it in one sentence?
+**Rule:** The customer is the hero, not the brand.
 
-### Element 2: Has a Problem (Three Levels)
-Every story requires conflict. Customers are "heroes in a hole" seeking a way out. Address three levels of problems:
+**Key questions:**
 
-1. **External Problem** — The practical, surface-level problem (e.g., "my lawn looks bad")
-2. **Internal Problem** — The emotional frustration beneath the external problem (e.g., "I feel embarrassed and incompetent")
-3. **Philosophical Problem** — The deeper "why this is wrong" injustice (e.g., "People shouldn't have to live with an ugly yard they can't fix")
+- What does the customer want?
+- Can the desire be stated in one clear sentence?
+- Is the copy centered on the customer's ambition rather than the company's story?
 
-Most companies only address external problems. The most powerful messaging addresses internal problems — because people make emotional buying decisions.
+**Decision criteria:**
 
-**The Villain:** Identify a villain (not a person, but a force) that is the root cause of the customer's problems. e.g., complexity, inefficiency, confusion, fear.
+- One primary desire is visible above all secondary messages.
+- The customer's current state and desired future state create a story gap.
+- Company history and internal language are removed unless they prove guide authority.
 
-### Element 3: And Meets a Guide (The Brand as Guide)
-Customers aren't looking for another hero — they're looking for a guide. The brand must position itself as Yoda, not Luke Skywalker.
+**Agent instruction:** Name the customer's concrete want before writing any brand copy. If the user provides many audiences or goals, ask them to pick the primary buyer for this pass.
 
-Two things establish a brand as a guide:
-1. **Empathy** — Show you understand how the customer feels ("We know how frustrating X is...")
-2. **Authority** — Demonstrate competence through testimonials, statistics, logos, awards
+### 2. Has a Problem
 
-Avoid being the hero. Brands that brag about themselves create competitive tension with customers. Brands that serve as guides earn trust.
+**Rule:** Customers buy relief from internal frustration, not only solutions to external problems.
 
-### Element 4: Who Gives Them a Plan
-Customers won't commit without a clear, simple path. Provide:
+**Key questions:**
 
-1. **Process Plan** — 3-4 step action sequence (e.g., "1. Schedule a call. 2. We build your plan. 3. Your business grows.")
-2. **Agreement Plan** — A set of principles/commitments that reduce perceived risk (e.g., "We believe in transparent pricing, no hidden fees, satisfaction guaranteed.")
+- What is the external practical problem?
+- What internal frustration, fear, delay, embarrassment, or uncertainty does it create?
+- What philosophical "this should not be this hard" statement makes the stakes feel meaningful?
+- What force can be named as the villain without attacking a person?
 
-Plans must be simple enough to remember and specific enough to reduce anxiety.
+**Decision criteria:**
 
-### Element 5: And Calls Them to Action
-Heroes don't act without being challenged. Use two types of calls to action:
+- The copy includes external, internal, and philosophical problem language.
+- The villain is a problem source such as complexity, waste, risk, or confusion.
+- The emotional problem is specific enough to make the buyer feel understood.
 
-1. **Direct CTA** — A clear request for a purchase or commitment ("Buy Now," "Schedule a Call," "Get a Quote")
-2. **Transitional CTA** — A lower-risk engagement that moves prospects toward purchase ("Download the Free Guide," "Watch the Demo," "Get the Free Assessment")
+**Agent instruction:** Diagnose all three problem levels and choose the one most likely to move the customer. Do not stop at feature-level pain points.
 
-Never use passive language ("Learn more," "Get started"). Be direct.
+### 3. Meets a Guide
 
-### Element 6: That Helps Them Avoid Failure
-Define what's at stake. Show the cost of NOT engaging your brand. Every hero needs something to lose.
+**Rule:** The brand must be the guide, not a competing hero.
 
-- What negative outcome will persist if they don't act?
-- What is the cost of inaction?
-- Paint stakes clearly but don't dwell on them — just enough to make the resolution feel significant
+**Key questions:**
 
-### Element 7: And Ends in a Success
-Never assume customers understand how your brand will improve their life. Tell them explicitly.
+- How can the brand show empathy for the customer's struggle?
+- What proof establishes authority without bragging?
+- Are testimonials, numbers, logos, credentials, or case results available?
 
-Three types of success to paint:
-1. **Status** — How will they gain recognition or respect?
-2. **Completeness/Wholeness** — How will they feel more whole, secure, or confident?
-3. **Self-acceptance/Transcendence** — How will this help them become who they want to be?
+**Decision criteria:**
 
-The most powerful brands help customers visualize their transformed identity.
+- Empathy appears before or beside authority.
+- Proof is used to reduce buyer risk, not to make the brand the protagonist.
+- The copy avoids "we are amazing" language unless tied to the customer's outcome.
 
-## The BrandScript Structure
-All seven elements combine into a single BrandScript:
+**Agent instruction:** Write one empathy line and one authority line. If proof is missing, mark it as a gap and suggest what evidence to collect.
 
+### 4. Gives Them a Plan
+
+**Rule:** A confused buyer does not move. A guide gives a simple path.
+
+**Key questions:**
+
+- What are the 3-4 steps from interest to success?
+- What fears or objections need an agreement plan?
+- Which step is the customer's next visible action?
+
+**Decision criteria:**
+
+- The plan has no more than four steps unless the user explicitly needs a complex process.
+- Each step uses plain verbs.
+- The plan reduces perceived risk.
+
+**Agent instruction:** Produce a process plan for action and, when trust is low, an agreement plan that names guarantees, standards, or commitments.
+
+### 5. Calls Them to Action
+
+**Rule:** Customers do not act unless challenged to act.
+
+**Key questions:**
+
+- What is the direct CTA for ready buyers?
+- What is the transitional CTA for not-yet-ready buyers?
+- Does the CTA use a clear action verb instead of vague browsing language?
+
+**Decision criteria:**
+
+- Direct CTA is concrete: buy, schedule, start, donate, subscribe, get quote.
+- Transitional CTA offers useful value while moving the relationship forward.
+- CTA text appears repeatedly where action is natural.
+
+**Agent instruction:** Always output both direct and transitional CTAs unless the channel only permits one.
+
+### 6. Helps Them Avoid Failure
+
+**Rule:** Stakes make action meaningful, but fearmongering breaks trust.
+
+**Key questions:**
+
+- What cost of inaction is honest and specific?
+- What frustration, loss, delay, risk, or missed opportunity continues without action?
+- Is the warning balanced with a positive success vision?
+
+**Decision criteria:**
+
+- Stakes are clear but not manipulative.
+- The cost of inaction is connected to the customer's stated problem.
+- The copy avoids exaggerated catastrophe.
+
+**Agent instruction:** Add one concise stakes statement, then quickly move to the success outcome.
+
+### 7. Ends in Success
+
+**Rule:** The brand must paint the customer's successful future.
+
+**Key questions:**
+
+- What specific result will the customer experience?
+- How will the customer feel, be seen, or operate differently?
+- What identity does the customer want to step into?
+
+**Decision criteria:**
+
+- Success language is concrete, visual, and outcome-oriented.
+- The outcome is about the customer, not the product.
+- The transformation is believable from the offer.
+
+**Agent instruction:** End major copy outputs with a before/after transformation and an aspirational identity statement.
+
+## Query Response Framework
+
+### Full BrandScript
+
+1. Identify product, customer, desired outcome, and buying action.
+2. Fill the seven SB7 elements in order.
+3. Flag missing proof, vague customer definition, weak stakes, or unclear CTA.
+4. Extract reusable messaging assets.
+
+### Website Review
+
+1. Apply the grunt test: what is offered, how it improves life, what to do next.
+2. Audit hero headline, subheadline, CTA, problem section, guide proof, plan, stakes, success.
+3. Rewrite the highest-impact sections first.
+4. Give prioritized fixes, not a generic critique.
+
+### One-Liner
+
+Use this structure:
+
+```text
+We help [customer] who struggle with [problem] get [solution] so they can [success].
 ```
-A character [CUSTOMER IDENTITY] who wants [DESIRE]
-has a problem: externally [EXTERNAL PROBLEM], internally [INTERNAL PROBLEM], philosophically [PHILOSOPHICAL PROBLEM].
-The villain is [VILLAIN FORCE].
-They meet a guide [YOUR BRAND] who has empathy [EMPATHY STATEMENT] and authority [PROOF].
-The guide gives them a plan [PROCESS STEPS].
-And calls them to action [DIRECT CTA] / [TRANSITIONAL CTA].
-That helps them avoid [FAILURE/STAKES].
-And ends in [SUCCESS VISION].
-```
 
-## Agent Instructions
+### Asset Rewrite
 
-When a user asks you to apply the StoryBrand framework, follow this process:
-
-### Step 1: Gather Context
-Ask for or identify:
-- What is the product/service/brand?
-- Who is the target customer?
-- What problem does it solve?
-
-### Step 2: Build the BrandScript
-Work through all 7 elements systematically. For each element:
-1. Present the principle
-2. Ask clarifying questions if needed
-3. Draft specific language
-
-### Step 3: Extract Sound Bites
-From the BrandScript, extract:
-- **One-liner** (elevator pitch, ≤30 words): "[Customer] who [external problem], we [solution], so they can [success]"
-- **Tagline**: A 3-7 word phrase capturing the core desire
-- **Website hero text**: Headline + subheadline + CTA button text
-- **Email subject line templates**
-- **Social media bio**
-
-### Step 4: Apply to Specific Assets
-Help user translate BrandScript into:
-- Website homepage structure
-- Email marketing sequences
-- Sales pitch scripts
-- Ad copy
-- Social media profiles
-
-## Query Types This Skill Handles
-
-### BrandScript Creation
-- "Help me create a BrandScript for [business]"
-- "I need to clarify my message for [product]"
-- "Apply StoryBrand to my [business]"
-
-### Website Review/Rewrite
-- "Review my website copy using StoryBrand"
-- "Rewrite my homepage using the SB7 framework"
-- "Does my website pass the grunt test?"
-
-### Messaging Clarity
-- "Why isn't my marketing working?"
-- "How do I make my message clearer?"
-- "What's my one-liner?"
-- "Write a tagline for my business"
-
-### Specific Asset Creation
-- "Write email subject lines for [product]"
-- "Create a call to action for [service]"
-- "What should my hero text say?"
-- "Write my elevator pitch"
-
-### Coaching/Analysis
-- "Am I positioning myself as the hero or the guide?"
-- "What problem am I really solving?"
-- "What's my villain?"
+1. Remove company-centered language.
+2. Put the customer's problem and desired success first.
+3. Add empathy, proof, plan, CTA, stakes, and success as appropriate for the channel.
+4. Deliver polished copy plus a short rationale.
 
 ## Output Format
 
-### Full BrandScript
-Present as a structured document with all 7 elements filled in with specific language.
+For a complete messaging request, respond with:
 
-### One-Liner Template
-```
-We help [CUSTOMER] who [PROBLEM] [SOLUTION] so they can [DESIRED OUTCOME].
+```markdown
+## StoryBrand Diagnosis
+- Customer:
+- Primary desire:
+- Main problem:
+- Current clarity issue:
+
+## BrandScript
+1. Character:
+2. Problem:
+   - External:
+   - Internal:
+   - Philosophical:
+   - Villain:
+3. Guide:
+   - Empathy:
+   - Authority:
+4. Plan:
+5. Calls to action:
+   - Direct:
+   - Transitional:
+6. Failure avoided:
+7. Success:
+
+## Copy Assets
+- One-liner:
+- Tagline options:
+- Website hero:
+- CTA set:
+
+## Priority Fixes
+1. ...
+2. ...
+3. ...
 ```
 
-### Website Hero Section
-```
-Headline: [Desire/Outcome — what the customer wants]
-Subheadline: [How you help them get it — 1-2 sentences, guide positioning]
-CTA Button: [Direct action — "Schedule a Call" / "Get Started" / "Buy Now"]
-Secondary CTA: [Transitional — "Download Free Guide" / "Watch Demo"]
+## CITATION RULES
+
+When making substantive StoryBrand-method claims, cite the quote files if the user asks for sources or if the answer is a formal audit.
+
+**Quote files:**
+
+- `quotes/main-framework-quotes.md` — SB7 rules, clarity, guide positioning, plan, CTA, stakes, transformation.
+- `quotes/storybrand-principles-quotes.md` — broader StoryBrand principles and implementation reminders.
+
+**Anchor mapping:**
+
+- `main-framework-quotes.md`: `#words-sell-things`, `#brain-drawn-to-clarity`, `#story-greatest-weapon`, `#customer-is-hero`, `#customer-looks-for-guide`, `#companies-sell-external`, `#trust-guide-with-plan`, `#call-to-action-required`, `#avoid-tragic-ending`, `#buying-transformation`, `#if-you-confuse-you-lose`, `#grunt-test`
+- `storybrand-principles-quotes.md`: `#story-organizes-information`, `#brain-survive-and-thrive`, `#story-makes-music`, `#hero-in-a-hole`, `#three-levels-problems`, `#guide-positioning`, `#story-gap-power`, `#conflict-gets-attention`, `#villain-focus`, `#plan-removes-confusion`, `#two-types-cta`, `#whats-at-stake`, `#aspirational-identity`, `#one-liner-formula`, `#website-hierarchy`
+
+**Citation format:**
+
+```markdown
+> "Author's exact words here."
+>
+> - [*Building a StoryBrand*, cited excerpt](https://github.com/simbajigege/book2skills/blob/main/skills/storybrand-messaging-framework/quotes/main-framework-quotes.md#customer-is-hero)
 ```
 
-### Grunt Test
-Apply to any messaging: "Could a caveman look at this and immediately know (1) what you offer, (2) how it will make their life better, and (3) what they need to do to get it?"
+Use only exact quote text from the quote files. If no exact quote fits, cite the closest anchor and state that the analysis is a paraphrased application.
 
-## Key Principles to Enforce
-1. Customer = hero, Brand = guide (never reverse this)
-2. Address internal problems, not just external ones
-3. Simple beats clever — clarity always wins
-4. Every page/email/ad must answer: "What do you want me to do?"
-5. Always define success — paint the positive vision
-6. Never assume — tell them explicitly how great their life will be
-7. Repeat your core message across all touchpoints to "brand" it into memory
+## Critical Reminders
+
+- Customer first, company second.
+- Clarity beats cleverness.
+- Internal problems often matter more than external ones.
+- Every serious page needs a direct CTA.
+- Use stakes honestly and briefly.
+- End with a concrete vision of success.
