@@ -1,260 +1,363 @@
 ---
 name: intelligent-investor-graham
-description: "Apply Benjamin Graham's value investing framework to evaluate stocks, portfolio allocation, and investment vs. speculation decisions. Trigger on: \"Is this stock worth buying?\", \"Is this investment or speculation?\", \"How should I allocate my portfolio?\", \"Is this company a good value?\", \"should I sell in a downturn?\", \"evaluate this stock for a defensive investor\"."
+description: "Apply Graham value investing to stock screening, margin of safety, Mr. Market, portfolio allocation, and investment vs speculation questions."
 license: "Skill distillation for personal/educational use. Do not reproduce source passages verbatim."
 ---
 
 ## Overview
 
-This skill encodes Benjamin Graham's framework from *The Intelligent Investor* (Revised Edition, 1973). It supports individual investors making decisions about stock valuation, portfolio allocation, and the psychology of market fluctuations. Designed for both defensive (passive) investors seeking safety and income, and enterprising (active) investors seeking superior returns through analysis.
+This skill applies Benjamin Graham's framework from *The Intelligent Investor* to practical investing decisions. It helps users evaluate whether an action is investment or speculation, screen stocks for defensive investors, estimate margin of safety, respond to market fluctuations, and choose a disciplined stock/bond allocation.
+
+Use it as a decision-support tool for long-term, businesslike investing. Do not use it to forecast markets, chase momentum, justify leverage, or provide personalized regulated financial advice.
 
 ## When to Use This Skill
 
-- User asks whether a specific stock is worth buying or fairly valued
-- User asks whether they are investing or speculating
-- User asks how to respond to a market decline or crash
-- User asks how to construct or rebalance a portfolio
-- User asks whether to sell after a large price drop or buy after a rise
-- User asks about margin of safety, P/E ratios, or book value in an investment context
-- User wants to screen stocks for a conservative, long-term portfolio
+Use this skill whenever the user asks questions such as:
+
+- "Is this stock worth buying under Graham's rules?"
+- "Does this company pass the defensive investor checklist?"
+- "What price would give me a margin of safety?"
+- "The market dropped. Should I sell?"
+- "Is this investment or speculation?"
+- "How should I split my portfolio between stocks and bonds?"
+- "Is this IPO, hot sector, or high-growth story investable?"
+
+## CITATION RULES
+
+Every substantive claim based on Graham's methodology must include a citation to the original text.
+
+**Quote files to load when needed:**
+
+- `value-investing-quotes.md` — core definitions, margin of safety, Mr. Market, defensive allocation, and Graham's central investing principles.
+- `market-philosophy-quotes.md` — market cycles, earnings skepticism, IPO warnings, index funds, adviser conflicts, net-current-asset bargains, and historical humility.
+
+**Citation format — always use this exact structure:**
+
+> "Author's exact words here."
+>
+> — [*The Intelligent Investor*, cited excerpt](https://github.com/simbajigege/book2skills/blob/main/skills/intelligent-investor-graham/quotes/FILENAME.md#ANCHOR)
+
+**Anchor mapping:**
+
+- `value-investing-quotes.md`: `#buffett-endorses-graham`, `#investment-vs-speculation`, `#margin-of-safety`, `#mr-market`, `#mr-market-servant`, `#defensive-portfolio-split`, `#price-matters-more`, `#graham-core-principles`, `#the-future-value-depends-on-price`, `#no-need-for-extraordinary`
+- `market-philosophy-quotes.md`: `#market-is-a-pendulum`, `#earnings-can-be-manipulated`, `#avoid-ipos`, `#index-funds-best`, `#advisers-misaligned`, `#net-current-asset-bargains`, `#simplicity-beats-cleverness`, `#santayana-warning`
+
+**Rules:**
+
+- Include at least one citation per major section of a Graham-method answer.
+- Match the citation anchor to the closest principle being applied.
+- Use quotes only from the `quotes/` files. Do not invent or paraphrase quotation text as if it were verbatim.
+- If no exact quote fits, cite the closest anchor and clearly state that your analysis is a paraphrased application.
+
+## Workflow Inventory
+
+| Workflow | User question pattern | Inputs | Steps | Output | Architecture |
+|---|---|---|---|---|---|
+| Investment/speculation classification | "Is this trade investing?" | Security, thesis, holding period, analysis done, leverage | Test analysis, principal safety, adequate return, separation of speculation funds | Clear classification and risk boundary | Dimension |
+| Defensive stock screen | "Does X pass Graham's criteria?" | Financial statements, price, EPS history, dividends, debt, book value | Apply seven criteria without exceptions | Pass/fail table and disqualification points | Dimension |
+| Margin of safety estimate | "What price is safe?" | Current price, average earnings, book value, bond yield, assumptions | Estimate value conservatively, compare price to value, calculate discount/premium | Buy zone, no-buy zone, data gaps | Dimension |
+| Market fluctuation response | "Stock fell. Should I sell?" | Price change, business change, valuation, investor constraints | Separate quotation from business value; assess permanent impairment | Hold/buy/sell framework, not prediction | Dimension |
+| Portfolio policy | "How should I allocate?" | Investor type, time/effort, income need, stock/bond yields | Choose 25/50/75 stock-bond range and rebalancing rule | Allocation recommendation with guardrails | Dimension |
+| Adviser/fund evaluation | "Should I use this fund/adviser?" | Fees, strategy, promises, incentives, benchmark | Check cost drag, incentive conflict, performance claims | Use/avoid verdict and index-fund default | Dimension |
+
+This is a single-file skill because the workflows are tightly coupled by the same final decision: protect principal, demand adequate return, and avoid emotional or promotional errors. The dimensions may be applied independently, but a complete Graham answer usually combines several of them.
 
 ## Core Principle
 
-**Investment is most intelligent when it is most businesslike.** A stock is an ownership interest in a real business; its value derives from the business's earning power, not from the market's daily quotation. The intelligent investor buys at prices that provide a demonstrable margin of safety — a gap between price paid and underlying value — that absorbs miscalculations and bad luck. Speculation is not immoral, but it must be recognized as such and kept strictly separate from investment.
-
----
+Investment is most intelligent when it is most businesslike. Treat a stock as an ownership interest in a business, estimate value independently, and buy only when the quoted price gives a margin of safety. Market prices are offers, not instructions. Forecasts, excitement, and cleverness are unreliable substitutes for arithmetic, discipline, and temperament.
 
 ## DIMENSION 1: Investment vs. Speculation
 
-**The Rule:** An investment operation is one which, upon thorough analysis, promises safety of principal and an adequate return. Everything else is speculation.
+**The Rule:** An investment operation requires thorough analysis, reasonable safety of principal, and an adequate return. Anything missing from that triad makes the operation speculative.
 
 ### Key questions to ask:
-- Has the purchase been preceded by thorough analysis of the business?
-- Is the principal reasonably protected against permanent loss?
-- Is the expected return adequate relative to risk taken?
-- Is the buyer using borrowed money (margin)? If yes → speculative by definition.
-- Is the buyer relying primarily on price momentum rather than business value?
+
+- What analysis has been done on the underlying business or security?
+- Is the expected protection of principal based on assets, earnings power, or contractual coverage?
+- Is the expected return adequate relative to the risk?
+- Is the user relying on price momentum, forecasts, promotion, or market timing?
+- Is leverage involved?
+- Is the user mixing speculative capital with long-term investment capital?
 
 ### Decision criteria / Checklist:
-- ✅ Investment: analysis-driven, safety of principal, adequate return
-- ✅ Investment: buying an established business at a known discount to value
-- ❌ Speculation: buying because price went up (momentum)
-- ❌ Speculation: buying a "hot" IPO or recently promoted issue
-- ❌ Speculation: buying on margin without business analysis
-- ❌ Speculation: relying on market timing or forecasting rather than valuation
+
+- Investment: business or security analyzed, principal protection explicit, return adequate.
+- Investment: price paid is justified by conservative facts, not optimistic projections.
+- Speculation: thesis depends mainly on price appreciation, market mood, a catalyst, or someone else paying more.
+- Speculation: IPOs, hot issues, promoted securities, and margin-financed trades require special warning.
+- Speculation may be allowed only if labeled honestly, sized small, and kept separate.
 
 ### Warning signals:
-- Believing you are investing when you are actually speculating
-- Mixing speculative and investment funds in the same account
-- Adding money to a speculative position because prices are rising
-- Using recent market gains as justification for higher risk-taking
+
+- "This time is different."
+- "Everyone is buying it."
+- "The company is great, so price does not matter."
+- "I will sell before the crowd does."
+- "I can borrow cheaply and improve returns."
 
 ### Agent instruction:
-When a user describes a purchase decision, first classify it as investment or speculation by checking: (1) Was thorough analysis done? (2) Is principal protected? (3) Is the expected return adequate? If any answer is no, label the operation speculation and warn clearly before proceeding with further analysis.
 
----
+When the user presents a buy/sell/trade decision, classify the operation before offering any valuation opinion. If the operation fails Graham's investment definition, label it speculation clearly and recommend a separate, limited speculation account rather than treating it as a core investment.
 
-## DIMENSION 2: The Mr. Market Mental Model
+## DIMENSION 2: Defensive vs. Enterprising Investor
 
-**The Rule:** The stock market is an obliging but emotionally unstable business partner who offers to buy or sell your interest every day — use his irrational moods to your advantage; never let them determine your view of value.
+**The Rule:** Graham's advice depends on temperament and effort. Defensive investors seek safety, simplicity, and freedom from effort; enterprising investors may seek better results only by applying more work, discipline, and selectivity.
 
 ### Key questions to ask:
-- Is the current price driven by business fundamentals or by market sentiment?
-- Is Mr. Market currently in a state of fear (depressing prices) or greed (inflating them)?
-- Can you calculate an independent estimate of intrinsic value?
-- Would you feel comfortable owning this business if no market quotation existed?
+
+- How much time and skill will the user realistically devote to analysis?
+- Is the user trying to avoid serious mistakes or to pursue above-average returns?
+- Does the user have the temperament to act against market emotion?
+- Is the user willing to hold a diversified portfolio and rebalance mechanically?
 
 ### Decision criteria / Checklist:
-- Use market prices as an opportunity scanner, not as a valuation authority
-- Buy from Mr. Market when he is irrationally pessimistic
-- Sell to Mr. Market when he is irrationally optimistic
-- Ignore Mr. Market when his price is neither clearly cheap nor clearly expensive
-- The investor is NEVER forced to sell — this is the core advantage over a speculator
+
+- Defensive investor: default to diversified high-grade bonds plus leading common stocks or broad index funds.
+- Defensive investor: use strict stock selection criteria; do not stretch for popular growth stories.
+- Enterprising investor: may search for bargain issues, secondary companies, and special situations, but only with rigorous analysis.
+- Enterprising investor: extra return must come from extra discipline and work, not from extra risk or optimism.
 
 ### Warning signals:
-- Feeling anxiety or excitement based solely on price movements
-- Selling a fundamentally sound position because the price declined
-- Paying more for a stock because its price has recently risen
-- Letting daily market news drive investment decisions
+
+- A defensive investor trying to behave like a trader.
+- An enterprising investor relying on tips instead of analysis.
+- Treating effort as a substitute for margin of safety.
+- Concentrating because of confidence rather than demonstrable value.
 
 ### Agent instruction:
-When a user is reacting to a price movement (a stock fell 30%, market is crashing, stock surged), apply the Mr. Market model: ask whether the underlying business has changed. If not, a price decline is an opportunity, not a threat. Reframe the decision around business value, not price action.
 
----
+Ask or infer the user's investor type early. If the user has not provided enough evidence of time, discipline, and analytical skill, default to defensive-investor recommendations.
 
-## DIMENSION 3: Defensive Investor Stock Selection (7 Criteria)
+## DIMENSION 3: Defensive Investor Stock Selection
 
-**The Rule:** The defensive investor should only buy stocks that satisfy all seven quantitative criteria simultaneously — these criteria filter out both unsafe businesses and overpriced securities.
+**The Rule:** A defensive stock must pass Graham's quantitative tests for size, financial strength, earnings stability, dividends, earnings growth, and moderate valuation. A wonderful business can still fail the screen if the price is too high.
 
 ### Key questions to ask:
-- What is the company's annual sales revenue and total asset size?
-- What is the current ratio (current assets / current liabilities)?
-- Does long-term debt exceed net current assets?
-- Has the company earned a profit in each of the past 10 years?
-- Has the company paid dividends continuously for 20+ years?
-- Has earnings per share grown at least 1/3 over the past 10 years?
-- What is the P/E ratio based on the past 3 years' average earnings?
-- What is the price-to-book value ratio?
+
+- Is the company large enough to avoid small-company fragility?
+- Does the balance sheet show strong liquidity and moderate debt?
+- Has the company earned money in every year of the last decade?
+- Has it paid uninterrupted dividends for roughly two decades?
+- Has per-share earnings grown meaningfully across a decade?
+- Is the P/E ratio moderate using average earnings, not a single peak year?
+- Is price-to-book moderate, or does the P/E x P/B product stay within Graham's combined limit?
 
 ### Decision criteria / Checklist:
-1. **Size**: Annual sales ≥ $100M (industrial) or total assets ≥ $50M (utility)
-2. **Financial strength**: Current ratio ≥ 2.0; long-term debt ≤ net current assets (for industrials); for utilities, debt ≤ 2× equity
-3. **Earnings stability**: Positive earnings in each of the past 10 years (no deficits)
-4. **Dividend record**: Uninterrupted dividends for at least 20 consecutive years
-5. **Earnings growth**: EPS growth ≥ 33% over the past 10 years (using 3-year averages at start and end)
-6. **Moderate P/E**: Current price ÷ average EPS (past 3 years) ≤ 15
-7. **Moderate price-to-book**: Price ÷ book value ≤ 1.5; OR (P/E) × (P/B) ≤ 22.5
+
+Use these thresholds as Graham-style tests, while noting that dollar-size thresholds should be interpreted in today's market context:
+
+1. Adequate size: large, established enterprise.
+2. Strong financial condition: current ratio around 2.0 or better for industrials; debt not excessive relative to working capital or equity.
+3. Earnings stability: positive earnings for each of the past 10 years.
+4. Dividend record: long, uninterrupted dividend history, ideally 20 years.
+5. Earnings growth: at least one-third growth in per-share earnings over 10 years, using multi-year averages.
+6. Moderate P/E: no more than about 15 times average earnings.
+7. Moderate assets multiple: price-to-book no more than about 1.5, or P/E x P/B no more than about 22.5.
 
 ### Warning signals:
-- P/E above 15 without correspondingly low price-to-book (product > 22.5 is a fail)
-- Any deficit year in the past decade
-- Dividend history interrupted by even one year
-- Current ratio below 2.0 — financial fragility
-- Rapidly expanding debt not matched by asset growth
+
+- High P/E justified by "quality" or "AI/platform/brand premium."
+- Book value ignored entirely for an asset-heavy or financial business.
+- Dividend record broken or too short for a defensive investor.
+- Earnings boosted by one-time items.
+- Balance sheet strength assumed from reputation rather than tested.
 
 ### Agent instruction:
-When asked to evaluate a stock for a defensive investor, apply all 7 criteria. Present a pass/fail table for each criterion with the actual figure. A single fail is disqualifying. Stocks that pass all 7 represent suitable defensive investments. If data is incomplete, state clearly what is missing and that the evaluation cannot be completed.
 
----
+For a defensive stock evaluation, present a pass/fail table with the actual figure for each criterion. Do not average the score into a soft rating. If a criterion fails, state that the stock does not qualify for the defensive investor at the current price.
 
 ## DIMENSION 4: Margin of Safety
 
-**The Rule:** Never buy a security unless the price paid is demonstrably below the appraised value — the gap between price and value is the margin of safety that absorbs errors and adverse events.
+**The Rule:** The margin of safety is the central concept of sound investing. Buy only when the price is sufficiently below conservatively estimated value to absorb errors, adverse events, and ordinary uncertainty.
 
 ### Key questions to ask:
-- What is the intrinsic or appraised value of this security?
-- How much below that value is the current price?
-- Is the margin wide enough to survive a material decline in earnings?
-- For bonds: does earnings coverage exceed interest charges by 5× or more (historically)?
-- For stocks: is the earnings yield (E/P) meaningfully above the prevailing bond yield?
-- Is the discount supported by arithmetic, not by optimistic forecasts?
+
+- What conservative value estimate is justified by current assets, normalized earnings, or bond-like coverage?
+- How far below that value is the current price?
+- Does the discount remain after adjusting for cyclicality, accounting quality, and business deterioration?
+- Is the earnings yield attractive relative to high-grade bond yields?
+- Is the margin based on facts already present, not hoped-for growth?
 
 ### Decision criteria / Checklist:
-- **Acceptable margin**: Price ≤ 2/3 of estimated intrinsic value (for bargain issues)
-- **Earnings yield test**: E/P ratio should exceed the current high-grade bond yield
-- **Asset backing**: For defensive stocks, price close to or below tangible book value strengthens safety
-- **Diversification multiplies safety**: 20+ positions turn individual uncertainty into statistical advantage
-- **Growth premium limit**: Even for growth stocks, price must be justifiable by conservative earnings projections, not hoped-for future glory
+
+- Conservative valuation first; current market price second.
+- Prefer normalized multi-year earnings to peak-year earnings.
+- For defensive stocks, P/E and P/B limits are part of the safety test.
+- For bargain issues, a large discount to net current asset value is especially strong evidence.
+- Diversification is part of safety: one cheap stock can disappoint; a diversified group of cheap securities is more reliable.
 
 ### Warning signals:
-- Paying today for earnings growth that has not yet materialized
-- Assuming future prospects can substitute for demonstrated past earning power
-- Concentrating positions — removes the statistical protection of diversification
-- Buying quality companies at any price (quality does not equal margin of safety)
+
+- Paying full price for future growth.
+- Reducing the required discount because the story is exciting.
+- Calling a 5-10% discount a margin of safety when inputs are uncertain.
+- Using aggressive terminal multiples or heroic growth rates.
+- Ignoring dilution, debt, or accounting quality.
 
 ### Agent instruction:
-When asked whether a stock is a good buy, compute the earnings yield (most recent EPS ÷ current price × 100) and compare it to prevailing bond yields. Compute the P/B ratio. Estimate a rough intrinsic value using 15× average 3-year earnings and compare to current price. State the margin of safety explicitly as a percentage discount. If the stock is priced above intrinsic value, say so clearly.
 
----
+When asked "is it cheap?" compute or request enough data to estimate normalized earnings value, earnings yield, P/E, P/B, and discount/premium to value. State the margin of safety as a percentage. If the result is a premium, say "negative margin of safety."
 
-## DIMENSION 5: Portfolio Allocation (Stocks vs. Bonds)
+## DIMENSION 5: Mr. Market and Market Fluctuations
 
-**The Rule:** The defensive investor should always hold a meaningful portion of both stocks and bonds — never less than 25% in either — and adjust the split based on relative valuations, not market forecasts.
+**The Rule:** Market quotation is there to serve the investor, not instruct the investor. Price declines are dangerous only when value deteriorates or the investor is forced to sell.
 
 ### Key questions to ask:
-- What is the current earnings yield on a representative stock index?
-- What is the current yield on high-grade bonds?
-- Does the investor need growth (inflation protection) or income (stability)?
-- Is the investor defensive or enterprising in temperament and time commitment?
-- Is the overall market level clearly high or clearly reasonable by historical value standards?
+
+- Has the underlying business value changed, or only the quoted price?
+- Is the price movement caused by temporary sentiment, cyclical fear, or permanent impairment?
+- Would the user still want to own the business if the market closed for several years?
+- Is the user leveraged or otherwise forced to sell?
+- Does the new price create a better margin of safety?
 
 ### Decision criteria / Checklist:
-- **Default**: 50% stocks / 50% high-grade bonds
-- **Minimum**: 25% stocks / 25% bonds (never go below either floor)
-- **Shift toward bonds**: When earnings yield on stocks is clearly below bond yields
-- **Shift toward stocks**: When stocks are demonstrably cheap relative to bonds and historical valuations
-- **Rebalancing trigger**: Restore 50/50 when market moves the ratio by more than 5 percentage points
-- **Dollar-cost averaging**: Investing a fixed amount at regular intervals (monthly) produces satisfactory long-run returns even through market cycles
+
+- If business value is intact and price falls, expected return may improve.
+- If business value deteriorates, a lower price may still be unsafe.
+- If price rises far above value, consider selling or reducing.
+- Never let daily quotations define intrinsic value.
+- Use rebalancing and pre-set criteria to reduce emotional decisions.
 
 ### Warning signals:
-- Moving to 100% stocks or 100% bonds based on a market prediction
-- Selling all stocks because the market looks high (very likely to miss the subsequent advance)
-- Treating market timing as a substitute for sound asset allocation
-- Ignoring inflation risk in a 100% bond portfolio
+
+- Selling because price fell, without business analysis.
+- Buying because price rose, without margin of safety.
+- Treating volatility as risk for a long-term unleveraged investor.
+- Reading market news as if it were valuation.
 
 ### Agent instruction:
-When asked about portfolio allocation, start by asking the investor's type (defensive vs. enterprising). Recommend the 25/50/75 range system. If the user provides current market yield data, compare stock earnings yield to bond yields to suggest direction of tilt. Never recommend exiting equities entirely. Emphasize rebalancing as a mechanical, emotion-free process.
 
----
+For any market-move question, begin by separating price change from value change. Then test whether the user's original thesis, balance sheet, earnings power, and margin of safety have changed.
+
+## DIMENSION 6: Portfolio Allocation and Funds
+
+**The Rule:** The defensive investor should hold both stocks and high-grade bonds, normally around 50/50 and never less than 25% in either category. Fund and adviser choices should be judged by cost, incentives, and realistic expectations.
+
+### Key questions to ask:
+
+- Is the user defensive or enterprising?
+- What are current stock earnings yields relative to high-grade bond yields?
+- Does the user need income stability, inflation protection, or long-term growth?
+- What are the fees and incentives of any fund or adviser?
+- Is the adviser promising market-beating results?
+
+### Decision criteria / Checklist:
+
+- Default allocation: 50% stocks / 50% high-grade bonds.
+- Range: 25-75% stocks and 25-75% bonds.
+- Shift only when relative valuations are clearly attractive or unattractive.
+- Rebalance mechanically rather than forecasting market direction.
+- For most defensive investors, low-cost index funds are preferable to expensive active funds.
+- Evaluate advisers as risk managers and behavior coaches, not fortune-tellers.
+
+### Warning signals:
+
+- 100% stock or 100% bond allocation justified by a forecast.
+- High fees sold as expertise.
+- Adviser compensation that rewards activity or product sales.
+- Recent fund performance marketed as repeatable skill.
+
+### Agent instruction:
+
+For allocation questions, recommend a stock/bond range, a rebalancing rule, and the data that would justify a tilt. Do not recommend all-in or all-out market timing.
 
 ## Query Response Framework
 
-### Query Type 1: "Should I buy [stock X] at [price Y]?"
+### Query Type 1: "Should I buy stock X?"
 
-1. Identify investor type: defensive or enterprising?
-2. **For defensive investors**: Apply all 7 criteria from Dimension 3. Present pass/fail table. If any criterion fails, the stock does not qualify.
-3. **For all investors**: Calculate earnings yield, P/B ratio, compare to intrinsic value estimate (15× 3-year average EPS). State the margin of safety.
-4. Apply Mr. Market test: Is current price driven by fear, greed, or fundamentals?
-5. Deliver verdict with explicit margin of safety figure.
+1. Identify investor type: defensive or enterprising.
+2. Classify the proposed action as investment or speculation.
+3. Run the defensive screen if the user is defensive or asks for Graham criteria.
+4. Estimate margin of safety using normalized earnings, P/E, P/B, earnings yield, and conservative value.
+5. Apply Mr. Market: is the current price an opportunity or a euphoric quotation?
+6. Give a verdict: qualifies, watchlist only, speculative, or reject.
 
-### Query Type 2: "The market / my stock dropped X%. Should I sell?"
+### Query Type 2: "What price would be attractive?"
 
-1. Apply Mr. Market model: Has the underlying business changed?
-2. Reassess whether the original investment thesis is intact.
-3. If business is unchanged or improving and price has fallen: this is an opportunity, not a crisis.
-4. If the investor is leveraged or speculating: acknowledge the difference in risk profile.
-5. Remind: the intelligent investor is never forced to sell. Time is the ally of the good business bought at a fair price.
+1. Normalize earnings with multi-year averages.
+2. Apply conservative valuation multiples rather than market multiples.
+3. Compute maximum defensive price and a stricter safety price.
+4. Explain what business deterioration would require lowering the estimate.
+5. Output a buy zone, no-buy zone, and required monitoring data.
 
-### Query Type 3: "Am I investing or speculating?"
+### Query Type 3: "The market dropped. Should I sell?"
 
-1. Apply Dimension 1 checklist: analysis? principal safety? adequate return?
-2. Check for margin use, momentum motivation, short-term horizon.
-3. Classify clearly as investment or speculation (or mixed).
-4. If speculation: quantify what the investor can afford to lose. Recommend keeping speculative funds strictly separate.
+1. Separate price movement from value movement.
+2. Check business fundamentals and debt/liquidity.
+3. Recalculate margin of safety at the new price.
+4. Check whether the user is forced to sell.
+5. Recommend hold, add, reduce, or sell based on value impairment and allocation discipline.
 
 ### Query Type 4: "How should I allocate my portfolio?"
 
-1. Determine investor type (defensive/enterprising).
-2. Check current valuations: earnings yield vs. bond yields.
-3. Recommend a stocks/bonds split within the 25–75% range.
-4. Recommend index funds or diversified blue-chip stocks for defensive investor.
-5. Emphasize mechanical rebalancing and dollar-cost averaging.
+1. Determine defensive vs. enterprising profile.
+2. Start from 50/50 stocks/bonds.
+3. Use the 25/75 guardrails.
+4. Compare stock earnings yields with bond yields if data is available.
+5. Recommend rebalancing rules and suitable low-cost vehicles.
 
----
+### Query Type 5: "Should I trust this fund, adviser, IPO, or promoted idea?"
+
+1. Identify incentives, fees, and promises.
+2. Ask whether the opportunity has enough operating history and analyzable facts.
+3. Treat aggressive promotion and hot issuance as warning signals.
+4. Compare to a low-cost index or simple defensive portfolio.
+5. Give a use/avoid verdict with the specific Graham reason.
 
 ## Output Format
 
-**For stock evaluation:**
-```
-## [Company Name] — Investment Evaluation
+### For Stock Evaluation
 
-**Investor Type:** Defensive / Enterprising
+```markdown
+## [Company] — Graham Investment Evaluation
 
-### 7-Criteria Checklist (Defensive)
-| Criterion | Required | Actual | Pass/Fail |
-|-----------|----------|--------|-----------|
-| Size | ≥$100M revenue | $XXXm | ✅/❌ |
-| Current Ratio | ≥ 2.0 | X.X | ✅/❌ |
-| Earnings Stability | 10 years positive | X years | ✅/❌ |
-| Dividend Record | 20+ years | X years | ✅/❌ |
-| Earnings Growth | ≥ 33% / 10yr | X% | ✅/❌ |
-| P/E Ratio | ≤ 15× | X× | ✅/❌ |
-| P/B Ratio | ≤ 1.5× (or P/E×P/B ≤ 22.5) | X× | ✅/❌ |
+**Investor type:** Defensive / Enterprising / Unknown
+**Operation classification:** Investment / Speculation / Mixed
+
+### Defensive Criteria
+| Criterion | Graham requirement | Current data | Pass/Fail |
+|---|---:|---:|---|
 
 ### Margin of Safety
-- Estimated intrinsic value: $XX (15× 3-year avg. EPS)
-- Current price: $XX
-- Discount / Premium: X%
-- Earnings yield: X% vs. bond yield X%
+- Normalized earnings value:
+- Current price:
+- Discount / premium to value:
+- Earnings yield vs bond yield:
+- P/B and P/E x P/B:
+
+### Mr. Market Check
+- What changed in price:
+- What changed in business value:
+- Emotional risk:
 
 ### Verdict
-> [QUALIFIES / DOES NOT QUALIFY] for defensive investor.
-> Margin of safety: [ADEQUATE / THIN / NEGATIVE].
-> [1–2 sentence investment/speculation classification.]
+- Graham classification:
+- Action: buy / watchlist / hold / reduce / avoid / speculative only
+- Missing data:
+- Citation:
 ```
 
-**For market reaction questions:** Lead with the Mr. Market framework, then business fundamentals assessment. End with a clear action recommendation.
+### For Portfolio Allocation
 
-**For portfolio allocation:** State the recommended stock/bond split with rationale. Include a rebalancing rule.
+```markdown
+## Graham Portfolio Policy
 
----
+- Investor type:
+- Starting allocation:
+- Recommended range:
+- Valuation tilt:
+- Rebalancing rule:
+- Fund/adviser cautions:
+- Citation:
+```
 
 ## Critical Reminders
 
-1. **Price and value are different things.** A rising price does not make a stock safer; a falling price does not make it more dangerous — unless the underlying business has deteriorated.
-2. **The margin of safety is not optional.** It is the single concept that separates investment from speculation. Never waive it for an "exciting" opportunity.
-3. **Never forecast the market.** The future of security prices is never predictable. Allocation decisions should be based on current valuations vs. historical standards, not predictions.
-4. **Separate investment and speculation accounts.** If the user insists on speculating, help them do it safely in a separate, limited fund — never mixed with investment capital.
-5. **Diversification is the mechanical realization of the margin of safety.** A single stock with a margin of safety can still lose money; 20 stocks with margins of safety almost certainly will not produce aggregate loss.
-6. **The intelligent investor's greatest enemy is themselves.** Emotional responses to Mr. Market are the primary source of investment losses. The framework exists to make decisions mechanical and emotion-free.
-7. **Quality is not a substitute for price.** The best company in the world bought at 40× earnings provides no margin of safety. Even mediocre businesses become sound investments at sufficiently low prices.
+1. Price and value are different. Treat price as an offer, not a command.
+2. Margin of safety is not optional; it is the central protection against error.
+3. Never forecast the market as the basis for an investment policy.
+4. A great company can be a poor investment at the wrong price.
+5. Speculation must be named honestly, sized modestly, and kept separate.
+6. Defensive investors should prefer simplicity, diversification, and low costs.
+7. Earnings require skepticism; normalize them and watch for accounting distortions.
+8. The investor's temperament is part of the method. Panic and enthusiasm both destroy discipline.
