@@ -1,15 +1,3 @@
-This skill contains distilled knowledge from the source listed in SKILL.md.
-It is not a verbatim reproduction.
-
-Skill distillation for personal and educational use only.
-
-This skill summarizes analytical frameworks from "The Most Important Thing
-Illuminated" by Howard Marks (Columbia University Press, 2013). All intellectual
-property rights in the underlying work belong to Howard Marks and Columbia
-University Press. This skill does not reproduce any passages from the book
-verbatim, and is intended solely as a personal productivity tool for applying
-the book's investment frameworks.
-
-Redistribution of this skill for commercial purposes is not permitted.
-Users who share this skill should ensure it remains a framework distillation
-and does not incorporate any verbatim excerpts from the source work.
+Skill distillation for personal/educational use.
+This skill encodes frameworks and methodologies from the source book listed in SKILL.md.
+It is not a verbatim reproduction of the source material.

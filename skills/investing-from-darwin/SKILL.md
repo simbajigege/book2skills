@@ -1,165 +1,211 @@
 ---
 name: investing-from-darwin
-description: "Applies Darwinian evolutionary principles to long-term stock investing: reject dangerous businesses (Type I errors), screen by historical ROCE, assess multi-level robustness, read honest vs. dishonest signals, and hold quality companies with extreme patience. Trigger: 'evaluate this stock Darwin-style', 'should I buy or avoid this company', 'assess business quality', 'is this a good long-term investment', 'analyze company robustness'."
-license: "Skill distillation for personal/educational use. Do not reproduce source passages verbatim."
+description: Apply Pulak Prasad evolutionary investing rules for avoiding big losses,
+  buying resilient quality, rejecting fragile forecasts, and being very lazy.
+license: Skill distillation for personal/educational use. Do not reproduce source
+  passages verbatim.
 ---
 
-# Investing From Darwin
 
-A framework for permanent ownership of high-quality businesses, derived from Pulak Prasad's *What I Learned About Investing from Darwin* (2023). Nalanda Capital's investment philosophy — managing $5B+ in Indian equities with 20%+ annualized returns — distilled into five evolutionary lenses.
+# What I Learned About Investing from Darwin — Evolutionary Investing Skill
 
-## Core Philosophy
+**Knowledge source:** *What I Learned About Investing from Darwin* by Pulak Prasad.
 
-> "We want to be permanent owners of high-quality businesses."
+## Overview
 
-Three pillars, mirroring Darwinian survival strategy:
-1. **Avoid Big Risks** — be a great rejector (Section I)
-2. **Buy High Quality at a Fair Price** — use ROCE + robustness + honest signals (Section II)
-3. **Don't Be Lazy — Be Very Lazy** — buy rarely, hold forever (Section III)
+Use this skill to evaluate investments through evolutionary survival logic: avoid big risks, buy high-quality resilient businesses at fair prices, and stay very patient. It supports investors who want to avoid permanent capital loss, resist over-trading, and prefer robustness over fragile forecasting.
 
----
+## When to Use This Skill
 
-## Dimension 1: Avoid Big Risks (The Great Rejector)
+Use this skill when the user asks:
+- "Is this business resilient enough to own?"
+- "What big risks could permanently hurt this investment?"
+- "Is this cheap stock a trap?"
+- "Should I rely on this DCF?"
+- "How patient should I be?"
+- "How would Darwin-inspired investing judge this company?"
 
-**Evolutionary parallel:** Animals minimize Type I errors (errors of commission) at the cost of Type II errors (errors of omission). Deer flee when uncertain. Cheetahs skip prey they can't safely kill.
+## Core Principle
 
-**Agent instruction:** When asked to evaluate whether to invest in or avoid a company, first apply the rejection checklist. Flag any of these as automatic disqualifiers. The goal is to identify what NOT to own before asking what to own.
+Investment survival comes before investment brilliance. Like evolution, investing rewards robustness, adaptation, and patience more reliably than precision forecasts, frequent action, or bargain-hunting in fragile businesses.
 
-### Automatic Rejection Criteria
-- **Governance problems:** History of fraud, related-party abuse, misleading disclosures, or controlling shareholders with a reputation for cheating minority investors
-- **Turnaround stories:** Businesses described as "being fixed" or "recovering" — a bad business with a brilliant manager remains a bad business
-- **High leverage:** Debt-to-equity above 0.5–1.0x (industry-dependent); any business where interest consumes significant operating profit
-- **Fast-changing industry:** Technology shifts, regulatory disruption, or platform risk that could make the business obsolete within a decade
-- **Acquisition-hungry management:** Serial acquirers, especially large transformative deals funded with debt
-- **Concentrated customer/supplier base:** Top 3 customers >50% of revenue = pricing power held by counterparty
-- **Complex, opaque businesses:** Conglomerates, financial companies with hidden leverage, businesses requiring trust in management forecasts
+## Workflow Inventory
 
-**Key insight:** Reducing Type I errors (bad investments) by 10 percentage points improves portfolio performance by ~16 pp. Reducing Type II errors by the same amount improves performance by only ~3 pp. **Rejection skill is worth 5x discovery skill.**
+| Workflow | User question pattern | Inputs | Steps | Output | Independent trigger? | Distinct references? | Triage score | Should be subskill? | Reason |
+|---|---|---|---|---|---|---:|---:|---|---|
+| Big-risk screen | "What could kill this investment?" | Business model, debt, disruption, governance, valuation | Identify permanent-loss scenarios | Avoid/continue risk verdict | Yes | Yes | 3 | No | First rule of the same investing framework. |
+| Quality-at-fair-price review | "Is this a quality company?" | Moat, returns, industry, price, scenarios | Test resilience, causation, robustness | Quality verdict | Yes | Yes | 3 | No | Must follow risk screen. |
+| Forecast skepticism | "Does this DCF justify buying?" | Model assumptions, horizon, uncertainty | Stress precision and replay-the-tape fragility | Forecast reliability rating | Yes | Yes | 3 | No | Same robustness lens. |
+| Very-lazy holding policy | "Should I trade or wait?" | Current holding, thesis, new data, opportunity set | Check rare-opportunity threshold | Hold/wait/act rule | Yes | Yes | 3 | No | Same three-rule framework. |
 
----
+## Architecture Justification
 
-## Dimension 2: ROCE as the Single Filter
+The three sections form a sequential framework: avoid big risks, buy quality at a fair price, then be very lazy. Since each later judgment depends on survival and quality screens, a single-file architecture keeps the dependency explicit.
 
-**Evolutionary parallel:** Dmitri Belyaev's Siberian fox experiment — select for one trait (tameness), get correlated beneficial traits for free. High historical ROCE is the single trait that cascades into all signs of business quality.
+## DIMENSION 1: Avoid Big Risks
 
-**Agent instruction:** Use historical ROCE (Return on Capital Employed) as the primary screen. ROCE = EBIT ÷ Capital Employed. Look for 10+ years of data. Target threshold: consistently ≥20% ROCE. Reject businesses where ROCE is below cost of capital (<10–12%) or highly volatile.
+**The Rule:** The first job is to avoid permanent capital loss.
 
-### Why ROCE, Not Other Metrics
-| Metric | Problem |
-|--------|---------|
-| Great management | Unmeasurable; interview performance is a dishonest signal |
-| Revenue growth | Hides poor unit economics (dot-com era, leveraged growth) |
-| Net margin | Misses capital efficiency (Costco 3% margin beats Tiffany 19% on ROCE) |
-| ROE | Distorted by leverage and tax optimization; hides operating weakness |
-| DCF | Requires future assumptions that no one can reliably make |
+### Key questions to ask:
+- What could cause a large, unrecoverable loss?
+- Is the business exposed to debt, disruption, fraud, regulation, customer concentration, or obsolescence?
+- Would a 50% loss require unrealistic recovery?
+- Is the investor underestimating extinction risk?
 
-**ROCE cascade:** A business sustaining high ROCE over a decade almost certainly has: strong competitive advantage, pricing power over customers, bargaining power over suppliers, disciplined management, and durable economics.
+### Decision criteria / Checklist:
+- Identify existential business risks.
+- Test balance-sheet resilience.
+- Avoid situations where one adverse event can permanently impair capital.
+- Prefer adaptable businesses over fragile strength.
 
-### Historical vs. Projected
-- Use **historical** financials only — 10-year minimum; 15–20 years preferred
-- Never rely on analyst projections or management guidance for buy decisions
-- Ask: "Has this business delivered high ROCE?" not "Will it?"
+### Warning signals:
+- Leverage plus uncertain cash flows.
+- Cheap valuation masking structural decline.
+- Single-product, single-customer, or single-regulation dependence.
 
----
+### Agent instruction:
+Before discussing upside, produce a big-risk screen and reject investments that fail survival tests.
 
-## Dimension 3: Robustness Assessment
+## DIMENSION 2: Buy Quality at a Fair Price
 
-**Evolutionary parallel:** Organic life survives not by being strong but by being robust at multiple levels. Neutral mutations allow evolution without disrupting current functioning.
+**The Rule:** Resilient quality beats apparent cheapness.
 
-**Agent instruction:** After ROCE screening, assess multi-level robustness. A robust business can withstand shocks and evolve through "neutral strategies" (experiments that don't threaten the core).
+### Key questions to ask:
+- What durable advantage helps the company survive changing environments?
+- Is quality natural and embedded, or dependent on constant restructuring?
+- Are high returns caused by real advantages or merely correlated indicators?
+- Is the price fair enough for quality without requiring heroic forecasts?
 
-### Robustness Checklist
-| Dimension | Fragile | Robust |
-|-----------|---------|--------|
-| ROCE trend | Declining or volatile | Stable or rising ≥20% |
-| Leverage | Debt/equity >1× | Zero or minimal debt |
-| Customer concentration | Top 3 >50% revenue | Fragmented customer base |
-| Supplier concentration | Dependent on 1–2 key suppliers | Fragmented supplier base |
-| Industry pace | Fast-changing (tech, media) | Slow-changing (consumer staples, industrials) |
-| Management stability | Frequent CEO changes | Long-tenured, founder-mentality team |
-| Competitive position | Losing market share | Gaining or stable market share |
+### Decision criteria / Checklist:
+- Durable moat or adaptive advantage.
+- Simple focused business.
+- Robust economics across multiple scenarios.
+- Fair price, not necessarily bargain-basement price.
 
-**Neutral strategy test:** When a business considers expansion (new product, new geography, acquisition), ask: "If this fails, does it threaten the core?" If yes → risky, avoid. If no → neutral strategy, acceptable calculated risk.
+### Warning signals:
+- Turnaround stories requiring continuous consultant intervention.
+- Confusing correlation with causation.
+- Low multiple used as substitute for business quality.
 
----
+### Agent instruction:
+When evaluating cheapness, force the user to prove business resilience before calling the opportunity attractive.
 
-## Dimension 4: Honest vs. Dishonest Signals
+## DIMENSION 3: Robustness Over Forecast Precision
 
-**Evolutionary parallel:** Zahavi's handicap principle — signals that are costly to fake are honest (guppy coloration, peacock tail). Signals that are cheap to produce are dishonest (fiddler crab's regenerated claw).
+**The Rule:** Long-term precision forecasts are fragile; prefer businesses that can survive many futures.
 
-**Agent instruction:** When evaluating information about a company, classify signals as honest or dishonest. Weight honest signals heavily; ignore or discount dishonest ones.
+### Key questions to ask:
+- Which DCF assumptions drive most of the valuation?
+- Would the thesis survive if growth, margins, or terminal value were wrong?
+- If history replayed differently, would the business still do well?
+- What scenarios break the thesis?
 
-### Dishonest Signals (Ignore or Discount)
-- Press releases and investor relations communications
-- Management meeting impressions ("they talk so well!")
-- Analyst target prices and consensus ratings
-- Single-quarter earnings beats/misses
-- Awards, ESG ratings, and CEO charisma
-- Guidance and forward projections of any kind
+### Decision criteria / Checklist:
+- Stress test key assumptions.
+- Prefer qualitative robustness over point-estimate precision.
+- Avoid investments that need a narrow future path.
+- Treat DCF as a discipline, not proof.
 
-### Honest Signals (Trust and Study)
-- **Long-term ROCE trend** (10+ years): Costly to sustain without genuine competitive advantage
-- **Market share trend**: Consistently gaining share = genuine differentiation
-- **Free cash flow generation**: Actual cash; impossible to fake over a decade
-- **Balance sheet quality**: Zero debt reveals management conservatism
-- **Dividend history**: Sustained or growing dividends over 10+ years
-- **Customer retention**: High switching costs are revealed by repeat behavior
+### Warning signals:
+- Purchase thesis depends on precise terminal growth.
+- Model hides uncertainty behind decimal-point accuracy.
+- Bull case requires everything to go right.
 
----
+### Agent instruction:
+For model-based pitches, critique forecast fragility and replace false precision with scenario robustness.
 
-## Dimension 5: Extreme Patience (GKPI — Good Karma, Patience, Inertia)
+## DIMENSION 4: Be Very Lazy
 
-**Evolutionary parallel:** Punctuated equilibrium (Gould & Eldredge) — species remain in stable stasis for millions of years, punctuated by brief rapid change. Investment windows are punctuation events.
+**The Rule:** Trade rarely; most good investing is waiting.
 
-**Agent instruction:** Apply GKPI when deciding whether to buy, hold, or sell. Default to inaction. Buy only during punctuation events (price dislocation). Sell only for fundamental deterioration — never for valuation reasons.
+### Key questions to ask:
+- Has the thesis changed or is the user reacting to noise?
+- Is this a rare opportunity or routine market movement?
+- Would action improve expected outcome after costs and errors?
+- Is patience being confused with laziness, or laziness with discipline?
 
-### When to Buy
-- A high-ROCE, robust business becomes temporarily mispriced
-- Punctuation event: market panic, sector rotation, short-term earnings miss, macro fear
-- These windows are rare (1–2% of holding period)
-- **When the window opens: buy a lot, not a little**
+### Decision criteria / Checklist:
+- Low turnover by default.
+- Act decisively only when opportunity is rare and evidence strong.
+- Hold resilient businesses through ordinary fluctuations.
+- Keep a high bar for replacing existing holdings.
 
-### When to Sell (Only Three Triggers)
-1. **Governance deterioration**: Evidence of fraud or minority shareholder abuse
-2. **Egregious capital misallocation**: Large debt-funded acquisitions in unrelated industries
-3. **Irreparable business damage**: Sustained market share loss (3+ years), ROCE collapse
+### Warning signals:
+- Pavlovian reaction to quarterly news.
+- Trading to relieve boredom.
+- Mistaking constant research activity for better decisions.
 
-**Never sell on valuation alone.** Maximum loss is capped at investment amount; maximum gain is unlimited. Asymmetry favors holding quality.
-
----
+### Agent instruction:
+When the user wants to act, require evidence that the situation is a rare opportunity or thesis-breaking change.
 
 ## Query Response Framework
 
-### For "Should I invest in [Company X]?"
-1. **Rejection screen** (Dim 1): Does it fail any automatic rejection criterion? → If yes, stop.
-2. **ROCE filter** (Dim 2): 10-year ROCE history. Consistently ≥20%? → If no, stop.
-3. **Robustness audit** (Dim 3): Score all 7 robustness dimensions. Majority robust?
-4. **Signal audit** (Dim 4): List 3 honest and 3 dishonest signals present.
-5. **GKPI context** (Dim 5): Is this a punctuation event (rare price dislocation)?
-6. **Verdict**: Present as Avoid / Monitor / Buy on Dip / Buy Now, with primary reasoning.
+### Query Type 1: Evaluate a stock
+1. Run Avoid Big Risks.
+2. Test Quality at Fair Price.
+3. Challenge forecast precision.
+4. Decide whether to buy, avoid, hold, or wait very lazily.
 
-### For "Should I sell [Company X]?"
-1. Apply the three sell triggers only. Does any apply? → If none, default to hold.
-2. Distinguish: Is the concern a dishonest signal (noise) or an honest signal (trend)?
-3. Remind: Asymmetry favors holding — maximum loss is capped, maximum gain is not.
+### Query Type 2: Review a DCF or model
+1. Identify fragile assumptions.
+2. Stress multiple futures.
+3. Decide whether robustness exists without precise prediction.
 
-### For "Is this a good business / industry?"
-- Translate to historical ROCE: Does the 10-year track record confirm the moat claim?
-- Apply market share trend as corroborating evidence.
-- Assess industry pace: slow-changing = investable; fast-changing = avoid.
-
----
+### Query Type 3: Sell/hold decision
+1. Check whether thesis changed.
+2. Separate noise from extinction risk.
+3. Apply very-lazy discipline.
 
 ## Output Format
 
-For investment evaluations, structure responses as:
+```markdown
+## Darwin-Inspired Investment Review
+**Company / Decision:** ...
+**Verdict:** Avoid / Watch / Quality at fair price / Hold lazily / Needs data
 
-**[Company Name] — Darwin Investment Assessment**
+| Rule | Evidence | Result |
+|---|---|---|
 
-**Rejection Screen:** Pass / Fail (list any triggers)
-**ROCE Filter:** [X]% median 10-yr ROCE — Pass / Conditional / Fail
-**Robustness Score:** [X/7 dimensions robust] — key strengths and vulnerabilities
-**Signal Analysis:** Honest signals pointing to [quality/risk]; dishonest signals to ignore
-**GKPI Verdict:** [Avoid / Monitor / Buy on Dip / Buy Now] — [1-sentence rationale]
+## Big Risks
+...
 
-Keep the tone direct. Acknowledge uncertainty. Never provide a price target or DCF.
+## Robustness Check
+...
+
+## Action Discipline
+...
+
+## Citations
+...
+```
+
+## Critical Reminders
+
+1. Avoiding big losses comes before seeking big gains.
+2. Quality is not the same as cheapness.
+3. Forecast precision is often false comfort.
+4. Correlation is not causation.
+5. Being very lazy means disciplined inaction, not neglect.
+
+## CITATION RULES
+
+Every substantive Prasad-method claim must include a citation to the original text.
+
+**Quote files:**
+- `evolutionary-investing-quotes.md` — Darwin/investing connection, survival, adaptation, moat, long-term perspective, diversification, selection, extinction, ecosystem, and patience.
+- `investing-principles-quotes.md` — avoiding big losses, quality over price, DCF skepticism, replay-the-tape, very lazy behavior, punctuated equilibrium, rare opportunities, and three rules.
+
+**Citation format:**
+
+> "Author's exact words here."
+>
+> — [*What I Learned About Investing from Darwin*, cited excerpt](https://github.com/simbajigege/book2skills/blob/main/skills/investing-from-darwin/quotes/FILENAME.md#ANCHOR)
+
+**Anchor mapping:**
+- `evolutionary-investing-quotes.md`: `#darwin-investing-connection`, `#survival-of-the-fittest`, `#adaptation-key`, `#moat-as-adaptation`, `#long-term-perspective`, `#diversification-nature`, `#selection-criteria`, `#extinction-warning`, `#mutation-innovation`, `#ecosystem-thinking`, `#fitness-landscape`, `#patience-discipline`
+- `investing-principles-quotes.md`: `#avoid-big-losses`, `#survival-before-thriving`, `#not-strongest-but-adaptable`, `#quality-over-price`, `#darwin-ate-my-dcf`, `#replay-the-tape`, `#be-very-lazy`, `#punctuated-equilibrium`, `#rare-opportunities`, `#three-rules-from-darwin`
+
+**Rules:**
+- Cite a survival or quality anchor before any buy verdict.
+- Use DCF anchors when critiquing model precision.
+- Do not provide personalized regulated financial advice.

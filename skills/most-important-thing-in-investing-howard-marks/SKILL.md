@@ -1,115 +1,242 @@
 ---
-name: howard-marks-most-important-thing
-description: |
-  Apply Howard Marks's investment philosophy to evaluate stocks, assess risk,
-  and identify buy/sell timing. Use when asked about stock valuation, investment
-  research, market risk, portfolio positioning, or any question where an investor
-  needs a framework — e.g. "Is NVIDIA worth buying?", "What should I research
-  before investing in X?", "Is now a good time to invest?"
-  Trigger phrases: "is X worth buying", "should I invest in", "analyze this stock",
-  "assess the risk of", "is the market expensive", "when should I buy/sell",
-  "what should I research before investing", "is now a good time to invest".
-compatibility: claude.ai, Claude Code, API with code execution
-license: |
-  Skill distillation for personal and educational use only.
-  This skill summarizes analytical frameworks from "The Most Important Thing Illuminated"
-  (Columbia University Press, 2013) by Howard Marks. It does not reproduce book passages
-  verbatim. Do not use for commercial redistribution. All intellectual property belongs
-  to the respective authors and publisher.
+name: most-important-thing-in-investing-howard-marks
+description: Apply Howard Marks investing judgment for second-level thinking, price
+  versus value, risk control, cycles, contrarianism, and defensive investing.
+license: Skill distillation for personal/educational use. Do not reproduce source
+  passages verbatim.
 ---
 
-# Howard Marks — The Most Important Thing
 
-Source: *The Most Important Thing Illuminated* (Columbia University Press, 2013),
-annotated by Christopher C. Davis, Joel Greenblatt, Paul Johnson, and Seth A. Klarman.
+# The Most Important Thing — Risk Investing Skill
 
-**Core principle:** Successful investing requires simultaneous attention to all
-dimensions below. Never apply just one lens. For full detail on any dimension,
-read `references/dimensions.md`. For query-type response templates, read
-`references/query-playbook.md`. For condensed decision rules, read
-`references/reminders.md`.
+**Knowledge source:** *The Most Important Thing* by Howard Marks.
 
----
+## Overview
 
-## The 11 Dimensions (summary — load references/dimensions.md for full detail)
+Use this skill to evaluate investment opportunities, portfolio posture, market temperature, risk compensation, and contrarian decisions through Howard Marks's multi-factor framework. It supports investors asking whether to buy, hold, sell, wait, or become more defensive.
 
-| # | Dimension | One-line rule |
-|---|-----------|---------------|
-| 1 | **Second-level thinking** | Your view must differ from consensus AND be more correct. |
-| 2 | **Intrinsic value** | Estimate what the business is worth before touching price. |
-| 3 | **Price vs. value** | No asset is good or bad regardless of price. Buy things well, not good things. |
-| 4 | **Risk** | Risk = probability of permanent loss, not volatility. |
-| 5 | **Market cycles** | Everything is cyclical. "This time it's different" are the most dangerous words. |
-| 6 | **The pendulum** | Sentiment swings between euphoria and despair — exploit the extremes. |
-| 7 | **Psychology** | Biggest errors come from greed, fear, FOMO, herding — not bad analysis. |
-| 8 | **Contrarianism** | Best opportunities are found among things most others won't do. |
-| 9 | **Finding bargains** | Perception must be far worse than reality for a true bargain to exist. |
-| 10 | **Patient opportunism** | If nothing offers adequate margin of safety, cash is a valid position. |
-| 11 | **Defensive investing** | First goal: don't lose. Asymmetry (more upside than downside) is the target. |
+## When to Use This Skill
 
----
+Use this skill when the user asks:
+- "Is this asset worth buying?"
+- "What risks am I missing?"
+- "Where are we in the cycle?"
+- "Should I be contrarian here?"
+- "Is the price attractive relative to value?"
+- "How defensive should I be?"
 
-## How to respond to investor queries
+## Core Principle
 
-### Query type 1 — "Is [Stock X] worth investing in now?"
+There is no single most important thing. Superior investing requires second-level thinking across value, price, risk, cycles, psychology, contrarianism, patience, humility, and defense, with survival and risk control placed ahead of aggressive return seeking.
 
-Run all 7 steps. Read `references/query-playbook.md` → Query Type 1 for full detail.
+## Workflow Inventory
 
-1. **Second-level check** — What does consensus assume? How does the price reflect that?
-2. **Intrinsic value** — Estimate value range (P/FCF, EV/EBITDA, DCF). What does price imply?
-3. **Price vs. value** — Cheap / fair / expensive? What is the margin of safety?
-4. **Risk** — Business risk, valuation risk, leverage risk, macro risk. What causes permanent loss?
-5. **Cycle & sentiment** — Fearful, neutral, or euphoric? Where is the pendulum?
-6. **Contrarian test** — Universally loved → caution. Widely hated → look closer.
-7. **Verdict** — Always conditional: "At price X, given assumptions Y, risk-reward appears Z."
+| Workflow | User question pattern | Inputs | Steps | Output | Independent trigger? | Distinct references? | Triage score | Should be subskill? | Reason |
+|---|---|---|---|---|---|---:|---:|---|---|
+| Investment attractiveness | "Should I buy X?" | Asset, price, value estimate, risk, market context | Apply value, risk, cycles, psychology, margin | Buy/watch/avoid verdict | Yes | Yes | 4 | No | All dimensions are coupled in Marks's "no single thing" principle. |
+| Risk diagnosis | "What risks?" | Position, leverage, price, assumptions | Identify permanent-loss risks and unpriced risks | Risk register | Yes | Yes | 3 | No | Same final investment report. |
+| Cycle/temperature assessment | "Where are we?" | Market indicators, sentiment, valuations | Assess pendulum, psychology, risk appetite | Posture recommendation | Yes | Yes | 3 | No | Feeds buy/sell aggressiveness. |
+| Contrarian opportunity | "Should I go against crowd?" | Consensus, price, fundamentals, forced selling | Test bargain source and humility | Contrarian thesis check | Yes | Yes | 3 | No | Must be combined with value and risk. |
 
-### Query type 2 — "What should I research before investing in [Company X]?"
+## Architecture Justification
 
-Six areas: (1) business model & moat, (2) free cash flow & balance sheet,
-(3) management & capital allocation, (4) valuation (absolute + relative + implied growth),
-(5) sentiment & ownership structure, (6) bear case — what has to be true for this to fail?
+Several workflows score as subskill candidates, but the book explicitly argues that investing judgment fails when any "most important thing" is isolated. A single-file architecture is justified because every supported query must combine price-value, risk, psychology, cycle position, and humility.
 
-Read `references/dimensions.md` → Dimension 8 for the full due diligence checklist.
+## DIMENSION 1: Second-Level Thinking
 
-### Query type 3 — "When should I buy / sell [Stock X]?"
+**The Rule:** Outperformance requires thinking differently and better than the consensus.
 
-- **Buy:** Price meaningfully below value + fearful/indifferent sentiment + sound fundamentals.
-- **Sell:** Price at or above value + euphoric sentiment, OR thesis is broken.
-- **Wait:** Price is fair, margin of safety is thin, no clearly better alternative yet.
+### Key questions to ask:
+- What does the consensus believe?
+- What would a first-level answer say?
+- What must be true for the consensus to be wrong?
+- Is the user's view different for a reason or just different?
 
-### Query type 4 — "Is now a good time to invest in general?"
+### Decision criteria / Checklist:
+- Identify consensus expectations.
+- State variant perception.
+- Test whether evidence supports that variant.
+- Avoid contrarianism without value support.
 
-Assess: credit availability, risk premiums, leverage in system, valuations, sentiment.
-→ Cheap + fearful = aggressive. Fair + neutral = selective. Expensive + euphoric = defensive.
+### Warning signals:
+- "Good company, therefore good investment."
+- Being different only for identity or excitement.
+- Ignoring what is already in the price.
 
-Read `references/query-playbook.md` → Query Type 4 for full market thermometer checklist.
+### Agent instruction:
+Before giving any investment verdict, write the first-level view and the second-level counterview.
 
----
+## DIMENSION 2: Price, Value, and Bargains
 
-## Output format
+**The Rule:** Price determines return; value only matters if the price paid is attractive.
 
-Structure every stock analysis as:
+### Key questions to ask:
+- What is conservative intrinsic value?
+- What expectations are embedded in the price?
+- Why does this bargain exist?
+- Is the discount large enough for uncertainty?
 
+### Decision criteria / Checklist:
+- Estimate value conservatively.
+- Compare price to value.
+- Identify bargain source: neglect, forced selling, misunderstanding, fear.
+- Require margin for error.
+
+### Warning signals:
+- Paying any price for quality.
+- Calling something cheap because it has fallen.
+- No explanation for why the market is mispricing it.
+
+### Agent instruction:
+For any buy question, refuse to evaluate attractiveness without price versus value.
+
+## DIMENSION 3: Risk Recognition and Control
+
+**The Rule:** Risk is the probability of permanent loss, not mere volatility, and it often rises when people believe risk is absent.
+
+### Key questions to ask:
+- What can cause permanent impairment?
+- What risk is hidden by recent good performance?
+- Is risk compensated by price?
+- What happens under adverse scenarios?
+
+### Decision criteria / Checklist:
+- Separate volatility from impairment.
+- Identify leverage, overpayment, concentration, fragility, and ignorance.
+- Demand compensation for risk.
+- Favor survival in uncertain environments.
+
+### Warning signals:
+- "There is no risk."
+- Rising prices treated as proof of safety.
+- Leverage or optimism covering thin margins.
+
+### Agent instruction:
+Always produce a risk register before a return thesis.
+
+## DIMENSION 4: Cycles, Psychology, and Contrarianism
+
+**The Rule:** Markets swing between greed and fear; good posture depends on where we stand.
+
+### Key questions to ask:
+- Are investors euphoric, fearful, complacent, or capitulating?
+- Are valuations, credit, and narratives stretched?
+- Is the user being influenced by envy, fear, or conformity?
+- Is a contrarian action supported by value and risk?
+
+### Decision criteria / Checklist:
+- Assess market temperature.
+- Identify pendulum position.
+- Counter emotional extremes.
+- Act aggressively only when odds and price are favorable.
+
+### Warning signals:
+- "This time is different."
+- Fear of missing out.
+- Capitulation after price declines.
+- Crowded certainty.
+
+### Agent instruction:
+For market-timing or posture questions, recommend calibration rather than prediction.
+
+## DIMENSION 5: Patience, Humility, and Defense
+
+**The Rule:** Most of the time, the best action is patient defense until odds are favorable.
+
+### Key questions to ask:
+- What is knowable and what is not?
+- Is there pressure to act without a pitch?
+- Does the portfolio survive bad outcomes?
+- Are expectations reasonable?
+
+### Decision criteria / Checklist:
+- Avoid forecasts that require precision.
+- Prefer patient opportunism.
+- Emphasize defensive positioning when risk compensation is poor.
+- Separate luck from skill in past outcomes.
+
+### Warning signals:
+- Always needing to be fully invested.
+- Mistaking a lucky outcome for skill.
+- Ignoring unimaginable scenarios.
+
+### Agent instruction:
+When evidence is insufficient, recommend watchlist, data needs, or defensive posture instead of forcing a verdict.
+
+## Query Response Framework
+
+### Query Type 1: Should I buy or add?
+1. State first-level and second-level views.
+2. Analyze value vs price.
+3. Build risk register.
+4. Assess cycle/psychology.
+5. Give buy/watch/avoid verdict with missing data.
+
+### Query Type 2: What risks am I missing?
+1. Identify permanent-loss scenarios.
+2. Separate volatility from impairment.
+3. Test whether price compensates for risk.
+4. Recommend controls or position limits.
+
+### Query Type 3: Market posture
+1. Assess pendulum and market temperature.
+2. Identify emotional influences.
+3. Recommend offensive/defensive calibration.
+
+## Output Format
+
+```markdown
+## Howard Marks Investment Judgment
+**Asset / Decision:** ...
+**Verdict:** Buy / Watch / Avoid / Hold / Reduce / Needs data
+
+### First-Level vs Second-Level View
+...
+
+| Dimension | Finding | Implication |
+|---|---|---|
+
+### Risk Register
+...
+
+### Action Discipline
+...
+
+### Citations
+...
 ```
-## [Stock]: Investment Assessment
 
-### 1. Second-level thinking
-### 2. Intrinsic value estimate
-### 3. Price vs. value
-### 4. Risk factors
-### 5. Cycle / sentiment position
-### 6. Contrarian signal
-### 7. Verdict (conditional — never binary)
-```
+## Critical Reminders
 
----
+1. No asset is so good it cannot become overpriced.
+2. Risk often rises when people believe risk is gone.
+3. Contrarianism requires evidence, not reflex.
+4. Forecasting humility is part of the method.
+5. Defense and survival come before upside maximization.
 
-## Non-negotiable rules
+## CITATION RULES
 
-- Never separate price from value.
-- Always ask: what does everyone else think, and how does my view differ?
-- Risk = permanent loss, not short-term volatility.
-- Cycles always prevail — every trend eventually reverses.
-- Margin of safety is not optional.
+Every substantive Marks-method claim must include a citation to the original text.
 
-*Full principles in `references/reminders.md`.*
+**Quote files:**
+- `market-cycles-quotes.md` — cycles, pendulum, negative influences, market temperature, luck, expectations, survival, and bad lessons from good times.
+- `risk-quotes.md` — risk definition, invisibility, high prices, risk control, defensive investing, and down-market outperformance.
+- `second-level-thinking-quotes.md` — second-level thinking, efficiency limits, unconventional behavior, and thinking differently.
+- `value-investing-quotes.md` — price/value, bargains, patience, contrarianism, humility, and the no-single-thing principle.
+
+**Citation format:**
+
+> "Author's exact words here."
+>
+> — [*The Most Important Thing*, cited excerpt](https://github.com/simbajigege/book2skills/blob/main/skills/most-important-thing-in-investing-howard-marks/quotes/FILENAME.md#ANCHOR)
+
+**Anchor mapping:**
+- `market-cycles-quotes.md`: `#everything-cycles`, `#pendulum-swings`, `#six-negative-influences`, `#where-we-stand`, `#luck-not-skill`, `#reasonable-expectations`, `#survival-first`, `#good-times-teach-bad-lessons`
+- `risk-quotes.md`: `#risk-not-volatility`, `#risk-invisible`, `#high-prices-create-risk`, `#no-risk-is-the-risk`, `#rising-prices-create-risk`, `#risk-control-not-avoidance`, `#biggest-losses-unimaginable`, `#defensive-investing`, `#outperformance-down-markets`
+- `second-level-thinking-quotes.md`: `#second-level-defined`, `#first-vs-second`, `#outperformance-requires-difference`, `#be-wrong-look-foolish`, `#market-efficiency-limitations`, `#inefficiency-sources`, `#unconventional-behavior`, `#thinking-differently`
+- `value-investing-quotes.md`: `#second-level-thinking`, `#no-asset-so-good`, `#price-determines-return`, `#value-investing-defined`, `#finding-bargains`, `#patient-opportunism`, `#contrarianism-essential`, `#this-time-is-never-different`, `#know-what-you-dont-know`, `#no-single-most-important-thing`
+
+**Rules:**
+- Cite one anchor for each major section.
+- Never invent quote text.
+- For modern securities, label conclusions as applications of Marks's framework.

@@ -1,53 +1,42 @@
-# seo-metadata-audit
+# 10 Most Important SEO Metadata Tags
 
-A skill for performing comprehensive SEO metadata audits on webpages and HTML documents.
+This skill distills *10 Most Important SEO Metadata Tags* by 哥飞 into an agent-ready decision-support workflow for SEO, metadata, technical SEO.
+
+## What It Does
+
+- Applies the book's core framework to practical user questions.
+- Provides checklists, routing rules, warning signs, and output formats.
+- Uses quote anchors for source-grounded citations.
+- Keeps source passages in `quotes/` rather than workflow prose.
+
+## When to Use It
+
+Use this skill for questions involving SEO, metadata, technical SEO, search ranking, especially when the user wants a structured diagnosis, critique, or decision framework.
 
 ## Installation
+
+### Option 1 — CLI (recommended)
 
 ```bash
 npx skills add simbajigege/book2skills/skills/seo-metadata-audit
 ```
 
-## What it does
+### Option 2 — Manual upload
 
-Given a URL, HTML source, or page description, this skill audits the 10 most important HTML meta tags, scores each one, and produces a prioritized report with corrected code snippets.
+1. Download the skill folder or clone this repo.
+2. In Claude.ai, go to Settings -> Skills and upload the folder.
+3. The skill will appear in your available skills list.
 
-**The 10 tags covered:**
+## File Structure
 
-| # | Tag | SEO Impact |
-|---|---|---|
-| 1 | `<title>` | ✅ Direct (~15% ranking weight) |
-| 2 | `<meta name="description">` | CTR (not ranking) |
-| 3 | `<h1>`–`<h6>` Headings | 🔄 Indirect |
-| 4 | `<img alt="">` Image Alt | 🔄 Indirect |
-| 5 | `rel="nofollow"` | 🔄 Indirect |
-| 6 | `<meta name="robots">` | 🔄 Indirect |
-| 7 | `<link rel="canonical">` | ✅ Indirect (PageRank consolidation) |
-| 8 | Schema Markup / Structured Data | ✅ Direct (~1% + Rich Results) |
-| 9 | Open Graph / Twitter Cards | Social sharing |
-| 10 | `<meta name="viewport">` | 🔄 Indirect (mobile ~5%) |
-
-**Output:** a scored report (X/46) with grade A–F, tag-by-tag findings, priority fix list, and ready-to-paste corrected HTML.
-
-## File structure
-
-```
+```text
 seo-metadata-audit/
-├── SKILL.md                  — Main skill: audit workflow, principles, cheat sheet, tools
-└── references/
-    ├── tag-reference.md      — Per-tag checklists, scoring criteria, common mistakes
-    └── seo_10_meta_tags.md   — Background reading: ranking weights and concept explanations
+├── SKILL.md
+├── README.md
+├── LICENSE.txt
+├── quotes/
 ```
 
-## When it triggers
+## License
 
-- User shares a URL or HTML and asks about SEO
-- "Check my metadata / title / description / canonical"
-- "Why isn't my page ranking?"
-- "Audit my site's SEO"
-- "Generate an SEO report"
-- Questions about schema markup, Open Graph, robots tags, viewport, etc.
-
-## Sources
-
-Grounded in [SearchEngineJournal](https://www.searchenginejournal.com/) and [Google Search Central](https://developers.google.com/search) documentation.
+Skill distillation for personal/educational use. Do not reproduce source passages verbatim.

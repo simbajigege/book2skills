@@ -1,45 +1,42 @@
-# War of Art — Overcome Resistance Skill
+# The War of Art
 
-A Claude skill that applies Steven Pressfield's framework from *The War of Art* to help you identify and defeat Resistance — the universal internal force that prevents creative and entrepreneurial work.
+This skill distills *The War of Art* by Steven Pressfield into an agent-ready decision-support workflow for creativity, resistance, productivity.
 
 ## What It Does
 
-- **Names and diagnoses Resistance** in all its disguises: procrastination, self-doubt, rationalization, fear, finish-line panic, and more
-- **Prescribes the professional mindset** — the specific daily practices that separate those who create from those who don't
-- **Guides you through turning pro** — building a consistent, non-negotiable creative practice regardless of inspiration
-- **Reframes fear and failure** as part of the professional process, not as disqualifying signals
+- Applies the book's core framework to practical user questions.
+- Provides checklists, routing rules, warning signs, and output formats.
+- Uses quote anchors for source-grounded citations.
+- Keeps source passages in `quotes/` rather than workflow prose.
 
 ## When to Use It
 
-Trigger this skill with phrases like:
-- "I can't seem to start my project"
-- "I keep procrastinating on the thing that matters most"
-- "I'm afraid to publish / launch / show my work"
-- "How do I build a daily writing / creative practice?"
-- "I want to turn pro"
-- "I self-sabotage right before finishing"
-- "I have creative block"
-- "Is fear of failure normal for creative work?"
+Use this skill for questions involving creativity, resistance, productivity, creative work, especially when the user wants a structured diagnosis, critique, or decision framework.
 
 ## Installation
+
+### Option 1 — CLI (recommended)
 
 ```bash
 npx skills add simbajigege/book2skills/skills/war-of-art-pressfield
 ```
 
-1. Download or clone this folder.
-2. In Claude.ai, go to Settings → Skills and upload the skill folder.
+### Option 2 — Manual upload
+
+1. Download the skill folder or clone this repo.
+2. In Claude.ai, go to Settings -> Skills and upload the folder.
 3. The skill will appear in your available skills list.
 
 ## File Structure
 
-```
+```text
 war-of-art-pressfield/
-├── SKILL.md       # Core skill definition with all frameworks and agent instructions
-├── README.md      # This file
-└── LICENSE.txt    # Usage license
+├── SKILL.md
+├── README.md
+├── LICENSE.txt
+├── quotes/
 ```
 
 ## License
 
-See LICENSE.txt. Skill distillation for personal/educational use. Not a verbatim reproduction of the source material.
+Skill distillation for personal/educational use. Do not reproduce source passages verbatim.

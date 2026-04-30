@@ -1,42 +1,42 @@
-# Outsiders: CEO Capital Allocation Framework
+# The Outsiders
 
-A Claude skill distilled from *The Outsiders: Eight Unconventional CEOs and Their Radically Rational Blueprint for Success* by William N. Thorndike Jr.
+This skill distills *The Outsiders* by William N. Thorndike, Jr. into an agent-ready decision-support workflow for management, capital allocation, CEO.
 
 ## What It Does
 
-- Evaluates CEO capital allocation quality using the 8-point Outsider Checklist
-- Diagnoses how companies should deploy excess cash (buybacks vs. acquisitions vs. dividends)
-- Identifies whether management is focused on per-share value or institutional empire-building
-- Compares CEOs using a structured per-share value and FCF framework
+- Applies the book's core framework to practical user questions.
+- Provides checklists, routing rules, warning signs, and output formats.
+- Uses quote anchors for source-grounded citations.
+- Keeps source passages in `quotes/` rather than workflow prose.
 
 ## When to Use It
 
-Trigger this skill when asked:
-- "Is this CEO a good capital allocator?"
-- "Should this company buy back stock or make an acquisition?"
-- "Why is this company underperforming despite strong earnings?"
-- "Does this management team think like an owner?"
-- "How do I evaluate a CEO's track record?"
+Use this skill for questions involving management, capital allocation, CEO, investing, especially when the user wants a structured diagnosis, critique, or decision framework.
 
 ## Installation
+
+### Option 1 — CLI (recommended)
 
 ```bash
 npx skills add simbajigege/book2skills/skills/outsiders-ceo-capital-allocation-thorndike
 ```
 
-1. Download or clone this folder.
-2. In Claude.ai, go to **Settings → Skills** and upload the skill folder.
+### Option 2 — Manual upload
+
+1. Download the skill folder or clone this repo.
+2. In Claude.ai, go to Settings -> Skills and upload the folder.
 3. The skill will appear in your available skills list.
 
 ## File Structure
 
-```
+```text
 outsiders-ceo-capital-allocation-thorndike/
-├── SKILL.md          # Main skill instructions
-├── README.md         # This file
-└── LICENSE.txt       # License information
+├── SKILL.md
+├── README.md
+├── LICENSE.txt
+├── quotes/
 ```
 
 ## License
 
-Skill distillation for personal/educational use. This skill encodes frameworks and methodologies from *The Outsiders* by William N. Thorndike Jr. It is not a verbatim reproduction of the source material.
+Skill distillation for personal/educational use. Do not reproduce source passages verbatim.

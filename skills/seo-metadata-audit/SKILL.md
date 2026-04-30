@@ -1,167 +1,204 @@
 ---
 name: seo-metadata-audit
-description: Perform a comprehensive SEO metadata audit on any webpage or HTML document, grounded in the 10 most important HTML meta tags. Use this skill whenever the user shares a URL, HTML source, or page content and asks about SEO, metadata, title tags, meta descriptions, canonical tags, schema markup, open graph tags, social sharing, mobile optimization, or why a page might not be ranking well. Also trigger for requests like "check my SEO", "review my page's metadata", "audit this site", "improve my search ranking", "generate an SEO report", or "what's wrong with my page's SEO". When in doubt, use this skill — it's better to run a partial audit than to answer SEO questions without it.
-license: "Skill distillation for personal/educational use. Do not reproduce source passages verbatim."
+description: Audit SEO metadata such as title, description, headings, alt, robots,
+  canonical, schema, viewport, charset, and social tags.
+license: Skill distillation for personal/educational use. Do not reproduce source
+  passages verbatim.
 ---
 
-# SEO Metadata Audit
 
-Perform a structured audit of a webpage's HTML metadata against the 10 most important SEO meta tags. The framework is grounded in SearchEngineJournal and Google's official documentation.
+# SEO Metadata Audit Skill
 
-For detailed per-tag audit checklists, scoring criteria, and common mistakes, read `references/tag-reference.md`.
+**Knowledge source:** 影响SEO最重要的10个metadata by 哥飞.
 
----
+## Overview
 
-## Audit Workflow
+Use this skill to audit a webpage's most important SEO metadata and produce a prioritized repair plan. It supports SEO practitioners, developers, founders, and content teams who need to diagnose whether a page gives search engines clear, crawlable, canonical, mobile-friendly, and structured signals.
 
-### Step 1 — Collect the Data
+## When to Use This Skill
 
-Ask for or extract the following from the provided URL, HTML source, or page description:
+Use this skill when the user provides a URL, HTML, page spec, or metadata list and asks:
+- "Audit this page's SEO metadata."
+- "Are my title and description good?"
+- "Do I need canonical, robots, schema, or Open Graph tags?"
+- "Why is this page not ranking or showing correctly?"
+- "Create metadata for this page."
 
-- `<title>` tag content and character count
-- `<meta name="description">` content and character count
-- All `<h1>` through `<h6>` tags
-- Image `alt` attributes (sample if many)
-- External link `rel` attributes
-- `<meta name="robots">` tag
-- `<link rel="canonical">` tag
-- Any `<script type="application/ld+json">` blocks
-- Open Graph (`og:*`) meta tags
-- Twitter card meta tags
-- `<meta name="viewport">` tag
+## Core Principle
 
-If the user provides a URL, fetch the page to extract this data. If they provide HTML, parse it directly.
+SEO metadata works as a system: each tag clarifies what the page is about, how search engines should process it, and how users see it in search or social contexts. Do not optimize one tag while breaking crawlability, canonicalization, mobile rendering, or semantic structure.
 
-### Step 2 — Score Each Tag
+## Workflow Inventory
 
-Read `references/tag-reference.md` for the full checklist per tag.
+| Workflow | User question pattern | Inputs | Steps | Output | Independent trigger? | Distinct references? | Triage score | Should be subskill? | Reason |
+|---|---|---|---|---|---|---:|---:|---|---|
+| Full metadata audit | "Audit this page" | URL/HTML, target keyword, page purpose | Inspect all tag families; rank issues | Priority issue table | Yes | Yes | 3 | No | Primary workflow; all tags interact. |
+| Snippet optimization | "Fix title/description" | Title, description, keyword, intent | Check length, uniqueness, click value | Rewrite variants | Yes | Yes | 3 | No | Narrow but uses same metadata scoring. |
+| Crawl/index control | "Should this page be indexed?" | Page role, duplicates, robots/canonical | Decide index, follow, canonical | Indexing directive plan | Yes | Yes | 3 | No | Kept single-file because output rolls into audit plan. |
+| Structured/social preview | "Add schema/Open Graph" | Page type, entity data, social preview | Choose schema and OG/Twitter tags | Markup checklist | Yes | Yes | 3 | No | Same input and repair report. |
 
-Rate each tag from 0 to its max score and calculate a total out of 46 possible points.
+## Architecture Justification
 
-| Score Range | Grade | Assessment |
-|---|---|---|
-| 40–46 | A | Excellent — production ready |
-| 30–39 | B | Good — minor fixes needed |
-| 20–29 | C | Fair — several important issues |
-| 10–19 | D | Poor — significant gaps |
-| 0–9 | F | Critical — metadata severely lacking |
+Metadata tags can be checked independently, but mistakes often arise from interactions: canonical can override indexing intent, title affects snippet relevance, heading and schema affect semantic clarity, and viewport affects mobile rendering. A single audit skill keeps these dependencies visible.
 
-### Step 3 — Generate the Audit Report
+## DIMENSION 1: Relevance and Snippet Signals
 
-Use this exact structure:
+**The Rule:** Title, description, and headings must communicate page topic and search intent clearly without keyword stuffing.
 
-```
-# SEO Metadata Audit Report
-## Page: [URL or Page Name]
-## Date: [Date]
+### Key questions to ask:
+- Is the title unique, concise, and keyword-relevant?
+- Does the description improve click-through with natural language?
+- Is there one clear H1 and a logical H2-H6 hierarchy?
 
-### Executive Summary
-[2–3 sentence overview of key findings]
+### Decision criteria / Checklist:
+- Title around 50-60 characters where possible.
+- Description around 150-160 characters where possible.
+- One H1 aligned with page intent.
+- Headings structure the page rather than style text visually.
 
-### Score: XX / 46 — Grade: [A/B/C/D/F]
+### Warning signals:
+- Duplicate titles across pages.
+- Keyword stuffing in title or description.
+- Missing H1 or multiple confusing H1s.
 
-### Tag-by-Tag Results
+### Agent instruction:
+When the user shares HTML or metadata, audit snippet signals first because they determine both search understanding and user click behavior.
 
-| Tag | Score | Status | Key Finding |
-|---|---|---|---|
-| Title | X/5 | ✅/⚠️/❌ | ... |
-| Description | X/5 | ✅/⚠️/❌ | ... |
-| Headings | X/5 | ✅/⚠️/❌ | ... |
-| Image Alt | X/4 | ✅/⚠️/❌ | ... |
-| Nofollow | X/4 | ✅/⚠️/❌ | ... |
-| Robots | X/4 | ✅/⚠️/❌ | ... |
-| Canonical | X/5 | ✅/⚠️/❌ | ... |
-| Schema | X/5 | ✅/⚠️/❌ | ... |
-| Social (OG/Twitter) | X/5 | ✅/⚠️/❌ | ... |
-| Viewport | X/4 | ✅/⚠️/❌ | ... |
+## DIMENSION 2: Crawl, Index, and Canonical Control
 
-### Priority Fixes (Ordered by Impact)
-1. [Highest impact issue]
-2. [Second priority]
-3. [Third priority]
-...
+**The Rule:** Robots and canonical tags must tell search engines which URLs deserve indexing and authority consolidation.
 
-### Detailed Findings & Recommendations
-[Per tag: what was found, what should be done, example code if needed]
-```
+### Key questions to ask:
+- Should this page be indexed?
+- Does canonical point to the true preferred URL?
+- Are duplicate or parameterized pages consolidated correctly?
+- Are important pages accidentally blocked?
 
-### Step 4 — Provide Corrected Code
+### Decision criteria / Checklist:
+- Robots meta matches the page's business role.
+- Canonical points to the correct self or preferred equivalent URL.
+- Nofollow is reserved for untrusted, paid, or user-generated links.
+- Index control is not applied globally by accident.
 
-For any tag that fails or scores below 50% of its max, provide a corrected HTML snippet the user can copy directly into their page.
+### Warning signals:
+- Canonical on every page points to homepage.
+- Important pages marked noindex.
+- Nofollow used indiscriminately on internal links.
 
----
+### Agent instruction:
+For indexation questions, state the desired search-engine behavior first, then choose robots and canonical directives to match that behavior.
 
-## Key Principles
+## DIMENSION 3: Media, Mobile, and Encoding Foundations
 
-1. **Prioritize by ranking impact** — Fix `<title>` and `canonical` before social tags
-2. **Never keyword stuff** — Natural language always wins over mechanical repetition
-3. **Unique per page** — Title, description, canonical, and OG tags must all be page-specific
-4. **Test after changes** — Recommend Google Search Console, Rich Results Test, and Mobile-Friendly Test for validation
-5. **Mobile first** — If viewport is missing, flag it as high priority regardless of other scores
+**The Rule:** Search engines and users need accessible images, mobile rendering, and correct character interpretation.
 
----
+### Key questions to ask:
+- Do meaningful images have descriptive alt text?
+- Is viewport configured for responsive mobile display?
+- Is charset declared correctly?
 
-## Quick Cheat Sheet
+### Decision criteria / Checklist:
+- Alt describes image content or function naturally.
+- Viewport includes responsive width and scale settings.
+- Charset is declared early and matches the document.
 
+### Warning signals:
+- Empty alt on informative images.
+- Missing viewport on mobile-facing pages.
+- Encoding problems that break snippets or content display.
+
+### Agent instruction:
+When auditing technical metadata, flag these as foundational issues even if they are not the user's original focus.
+
+## DIMENSION 4: Structured and Social Context
+
+**The Rule:** Schema and social metadata help machines and platforms understand, classify, and preview the page.
+
+### Key questions to ask:
+- What schema type fits this page?
+- Are required structured fields present and accurate?
+- Do Open Graph or social tags match the intended share preview?
+
+### Decision criteria / Checklist:
+- Schema matches the page type and visible content.
+- Structured data is accurate, not spammy.
+- Social title, description, and image are deliberate.
+
+### Warning signals:
+- Schema claims content not visible on the page.
+- Missing social image or mismatched preview copy.
+- Structured data added without page-level purpose.
+
+### Agent instruction:
+Recommend schema and social tags only after identifying page type, entity, and user intent.
+
+## Query Response Framework
+
+### Query Type 1: Full SEO metadata audit
+1. Identify page purpose and target search intent.
+2. Audit relevance, crawl/index, technical foundations, and structured/social context.
+3. Rank issues by search impact and implementation risk.
+4. Provide corrected tag examples.
+
+### Query Type 2: Generate metadata
+1. Ask for page purpose, primary keyword, brand, canonical URL, page type, and locale if missing.
+2. Draft title, description, canonical, robots, OG, Twitter, viewport, charset, and schema recommendations.
+3. Explain why each tag is included or omitted.
+
+### Query Type 3: Diagnose ranking/indexing problem
+1. Check index eligibility and canonical first.
+2. Then inspect title, headings, content alignment, and schema.
+3. Separate metadata issues from broader content, authority, and technical SEO issues.
+
+## Output Format
+
+```markdown
+## SEO Metadata Audit
+**Page:** ...
+**Verdict:** Healthy / Needs fixes / Indexing risk / Snippet weak
+
+| Tag / Signal | Status | Issue | Recommended Fix | Priority |
+|---|---|---|---|---|
+
+## Corrected Metadata
 ```html
-<!-- 1. Title -->
-<title>Primary Keyword - Secondary Topic | Brand Name</title>
-
-<!-- 2. Description -->
-<meta name="description" content="1–2 natural sentences describing the page. Include keywords naturally. Under 160 characters.">
-
-<!-- 3. Headings — in HTML body -->
-<h1>Primary Keyword Topic</h1>
-<h2>Subtopic One</h2>
-<h3>Sub-subtopic</h3>
-
-<!-- 4. Image Alt -->
-<img src="product.jpg" alt="Descriptive alt text with keyword where natural">
-
-<!-- 5. Nofollow Links -->
-<a href="https://external.com" rel="noopener noreferrer nofollow">Link Text</a>
-
-<!-- 6. Robots (noindex example) -->
-<meta name="robots" content="noindex, nofollow">
-
-<!-- 7. Canonical -->
-<link rel="canonical" href="https://example.com/this-page-url">
-
-<!-- 8. Schema Markup -->
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Article",
-  "name": "Article Title",
-  "description": "Article description."
-}
-</script>
-
-<!-- 9. Open Graph + Twitter Cards -->
-<meta property="og:title" content="Page Title"/>
-<meta property="og:description" content="Page description."/>
-<meta property="og:url" content="https://example.com/page"/>
-<meta property="og:type" content="website"/>
-<meta property="og:image" content="https://example.com/image.jpg"/>
-<meta property="og:image:alt" content="Image description"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Page Title"/>
-<meta name="twitter:description" content="Page description."/>
-<meta name="twitter:image" content="https://example.com/image.jpg"/>
-
-<!-- 10. Viewport -->
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+...
 ```
 
----
+## Implementation Notes
+- ...
 
-## Useful Tools
+## Citations
+- ...
+```
 
-| Tool | URL | Purpose |
-|---|---|---|
-| AITDK Extension | https://aitdk.com/zh-CN/extension/ | Free browser plugin: Title, Description, Headings, traffic |
-| Detailed SEO Extension | https://detailed.com/extension/ | Check Canonical, OG tags, Robots, Schema |
-| Google Rich Results Test | https://search.google.com/test/rich-results | Validate structured data |
-| Google Mobile-Friendly Test | https://search.google.com/test/mobile-friendly | Check mobile optimization |
-| Google Search Console | https://search.google.com/search-console | Monitor indexing, coverage, and performance |
-| Google Structured Data Markup Helper | https://www.google.com/webmasters/markup-helper/ | Generate JSON-LD schema code |
+## Critical Reminders
+
+1. Title is important, but metadata is a system.
+2. Description influences clicks even when it is not a direct ranking factor.
+3. Canonical errors can erase good content from search visibility.
+4. Do not block important pages accidentally.
+5. Schema must describe real visible content.
+
+## CITATION RULES
+
+Every substantive metadata recommendation must include a citation to the source quote files.
+
+**Quote files:**
+- `seo-metadata-quotes.md` — strategy, title, description, H1, alt, nofollow, canonical, and canonical mistakes.
+- `seo-technical-quotes.md` — technical tag details, robots, viewport, charset, Open Graph, and schema markup.
+
+**Citation format:**
+
+> "Author's exact words here."
+>
+> — [*影响SEO最重要的10个metadata*, cited excerpt](https://github.com/simbajigege/book2skills/blob/main/skills/seo-metadata-audit/quotes/FILENAME.md#ANCHOR)
+
+**Anchor mapping:**
+- `seo-metadata-quotes.md`: `#comprehensive-strategy`, `#title-importance`, `#title-keyword-ranking`, `#semantic-matching`, `#description-click-rate`, `#h1-essential`, `#alt-for-image-search`, `#nofollow-weight`, `#canonical-weight-aggregation`, `#canonical-mistake`
+- `seo-technical-quotes.md`: `#comprehensive-seo-strategy`, `#title-length-importance`, `#title-brand-position`, `#description-length`, `#heading-hierarchy`, `#alt-description-best-practice`, `#nofollow-evolution`, `#robots-meta-control`, `#canonical-purpose`, `#viewport-mobile`, `#charset-encoding`, `#open-graph-social`, `#schema-markup`
+
+**Rules:**
+- Cite the closest tag-specific anchor for each major recommendation.
+- If auditing a real page, distinguish observed defects from general best practice.
+- Do not invent quote text; use exact quote files only.

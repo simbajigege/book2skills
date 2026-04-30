@@ -1,8 +1,11 @@
 ---
 name: intelligent-investor-graham
-description: Use Graham value investing for Is this investment or speculation, defensive stock screens, margin of safety, Mr. Market, allocation, funds, IPOs.
-license: "Skill distillation for personal/educational use. Do not reproduce source passages verbatim."
+description: Use Graham value investing for Is this investment or speculation, defensive
+  stock screens, margin of safety, Mr. Market, allocation, funds, IPOs.
+license: Skill distillation for personal/educational use. Do not reproduce source
+  passages verbatim.
 ---
+
 
 # The Intelligent Investor — Skill (Benjamin Graham)
 
@@ -87,15 +90,15 @@ Every substantive Graham-method claim must cite the original-text quote files wh
 
 ## Workflow Inventory
 
-| Workflow | User question pattern | Inputs | Steps | Output | Subskill |
-|---|---|---|---|---|---|
-| Investment/speculation classification | "Is this trade investing?" | Security, thesis, holding period, analysis, leverage, position sizing | Test analysis, principal safety, adequate return, promotional dependence | Investment/speculation verdict and boundary conditions | M1 |
-| Defensive stock screen | "Does X pass Graham's defensive checklist?" | 10-year earnings, dividends, balance sheet, price, EPS, book value | Apply seven defensive criteria without soft averaging | Pass/fail table and disqualifiers | M2 |
-| Margin of safety pricing | "What price is attractive?" | Normalized earnings, assets, book value, debt, bond yield, current price | Estimate conservative value, discount, and no-buy zone | Buy zone, watch zone, avoid zone | M3 |
-| Market fluctuation response | "The stock dropped. Should I sell?" | Price change, business change, valuation, liquidity needs, leverage | Separate quotation from value; test impairment and forced-selling risk | Hold/add/reduce/sell framework | M4 |
-| Portfolio policy | "How should I allocate?" | Investor type, income need, effort, risk capacity, yields | Start at 50/50, apply 25/75 guardrails, rebalance | Allocation range and rebalancing rule | M5 |
-| Fund/adviser/IPO review | "Should I buy this fund or IPO?" | Fees, incentives, operating history, marketing claims, alternatives | Check conflicts, costs, promotion, analyzable facts | Use/avoid verdict and safer default | M6 |
-| Enterprising bargain hunt | "How would Graham find cheap stocks?" | Screens, financials, NCAV data, special situation facts, diversification plan | Search low expectations, verify asset backing, diversify | Research list and rejection rules | M7 |
+| Workflow | User question pattern | Inputs | Steps | Output | Independent trigger? | Distinct references? | Triage score | Should be subskill? | Reason |
+|---|---|---|---|---|---|---:|---:|---|---|
+| Investment/speculation classification | "Is this trade investing?" | Security, thesis, holding period, analysis, leverage, position sizing | Test analysis, principal safety, adequate return, promotional dependence | Investment/speculation verdict and boundary conditions | Yes | Yes | 4 | Yes | Foundation for every proposed purchase or trade. |
+| Defensive stock screen | "Does X pass Graham's defensive checklist?" | 10-year earnings, dividends, balance sheet, price, EPS, book value | Apply seven defensive criteria without soft averaging | Pass/fail table and disqualifiers | Yes | Yes | 4 | Yes | Distinct inputs, rules, and pass/fail artifact. |
+| Margin of safety pricing | "What price is attractive?" | Normalized earnings, assets, book value, debt, bond yield, current price | Estimate conservative value, discount, and no-buy zone | Buy zone, watch zone, avoid zone | Yes | Yes | 4 | Yes | Distinct valuation artifact. |
+| Market fluctuation response | "The stock dropped. Should I sell?" | Price change, business change, valuation, liquidity needs, leverage | Separate quotation from value; test impairment and forced-selling risk | Hold/add/reduce/sell framework | Yes | Yes | 4 | Yes | Distinct behavioral and sell-discipline workflow. |
+| Portfolio policy | "How should I allocate?" | Investor type, income need, effort, risk capacity, yields | Start at 50/50, apply 25/75 guardrails, rebalance | Allocation range and rebalancing rule | Yes | Yes | 4 | Yes | Different input type and output artifact. |
+| Fund/adviser/IPO review | "Should I buy this fund or IPO?" | Fees, incentives, operating history, marketing claims, alternatives | Check conflicts, costs, promotion, analyzable facts | Use/avoid verdict and safer default | Yes | Yes | 4 | Yes | Product review workflow with distinct warnings. |
+| Enterprising bargain hunt | "How would Graham find cheap stocks?" | Screens, financials, NCAV data, special situation facts, diversification plan | Search low expectations, verify asset backing, diversify | Research list and rejection rules | Yes | Yes | 4 | Yes | Distinct research workflow and reference needs. |
 
 ## Routing Rules
 
