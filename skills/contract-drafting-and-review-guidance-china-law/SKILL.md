@@ -1,250 +1,352 @@
 ---
-name: "合同起草审查（中国法律适用）"
-description: "依据中国《民法典》及相关法律，运用三观四步法对合同进行起草与审查。触发词：审查合同、起草合同、合同风险、合同条款、交易结构分析、合同修改意见。"
+name: contract-drafting-and-review-guidance-china-law
+description: Apply China contract drafting review with San Guan Si Bu Fa. Trigger on contract review, drafting, clauses, or deal structure.
 license: "Skill distillation for personal/educational use. Do not reproduce source passages verbatim."
 ---
 
-# 合同起草审查（中国法律适用）
+## Overview
 
-本技能依据中国《民法典》及相关法律法规，运用"三观四步法"帮助律师、法务人员及法学学生对合同进行系统性起草与审查。适用于所有适用中华人民共和国法律的合同。
+This skill applies the Chinese contract drafting and review method known as "三观四步法" from *合同起草审查指南* (T/CAB 0121-2021). It helps lawyers, in-house counsel, business operators, and legal students structure contract review, draft contract frameworks, identify risks, and produce review comments under a China-law lens.
 
----
+This skill is a workflow and checklist tool. It does not replace current legal research or advice from a licensed lawyer.
 
-## 核心框架：三观四步法
+## When to Use This Skill
 
-### 三大工作原则
+- The user asks to review a contract, draft a contract, or identify contract risks.
+- The user asks how to structure a transaction before drafting documents.
+- The user asks whether a contract form, clause order, or clause wording is appropriate.
+- The user asks for a checklist for contract parties, subject matter, procedures, performance, breach, dispute resolution, or signing requirements.
+- The contract is governed by PRC law or the user asks for China-law contract drafting logic.
 
-在所有合同起草审查工作中，始终贯穿以下原则：
+## HOW TO USE THIS SKILL
 
-1. **促进交易**：以促成交易为目标，抓大放小，在风险提示的同时尽量帮助客户实现目的。
-2. **全面思考**：考虑异常情况、具体执行、合同各方诉求及潜在风险。
-3. **理性决策**：运用期望值分析（概率×后果）评估方案，结合客户风险承受能力给出建议。
+1. Identify the user's task: contract review, contract drafting, deal-structure design, clause rewrite, or checklist generation.
+2. Ask only for missing facts that are necessary: contract type, user role, transaction purpose, counterparty identity, subject matter, price/payment, timeline, and special risk tolerance.
+3. Apply the four-step process: communicate needs -> analyze through three perspectives -> review -> submit.
+4. Analyze in this order: macro transaction structure -> meso contract structure -> micro clause wording.
+5. If legal validity depends on current statutes, regulatory approvals, judicial interpretations, or local rules, tell the user to verify current law or consult qualified counsel.
 
----
+## CITATION RULES
 
-## 技能维度
+Every substantive claim based on the guide's methodology must include a citation to the original text.
 
-### 维度一：沟通需求（四步第一步）
+**Quote files (load the relevant one):**
 
-**作用**：在起草审查前厘清工作目标与客户预期。
+- `contract-drafting-quotes.md`: definitions of macro, meso, micro analysis; drafting principles; transaction structure; parties; three-points-one-line method.
+- `contract-review-quotes.md`: the complete 三观四步法 statement, review principles, transaction-structure framing, and comprehensive review.
 
-**代理指令**：
-- 收集交易背景信息：交易类型、各方身份、主要权利义务与交易目的。
-- 确认文本需求：意向书 / 初稿 / 正式稿 / 合同模板；如为审查，确认修改尺度。
-- 确认是否需要出具正式法律意见书。
-- 明确成果交付时间节点。
-- 询问客户特别关注的风险或条款。
+**Citation format - always use this exact structure:**
 
----
+> "Source text here."
+>
+> - *合同起草审查指南*, topic anchor: https://github.com/simbajigege/book2skills/blob/main/skills/contract-drafting-and-review-guidance-china-law/quotes/FILENAME.md#ANCHOR
 
-### 维度二：宏观—交易结构分析
+**Anchor mapping:**
 
-**作用**：判断"交易能否做、用何种结构做"，识别宏观层面的合规与风险问题。
+- `contract-drafting-quotes.md`: `#transaction-structure-importance`, `#meso-contract-structure`, `#micro-clause-expression`, `#four-steps-process`, `#promote-transaction-principle`, `#risk-control-balance`, `#legal-business-combination`, `#contract-types`, `#parties-identification`, `#three-points-one-line-method`, `#review-checklist`, `#standard-final-goal`
+- `contract-review-quotes.md`: `#three-perspectives-four-steps`, `#promote-transaction`, `#macro-transaction-structure`, `#three-points-one-line`, `#standard-purpose`, `#comprehensive-review`
 
-#### 2.1 合同类型审查
+**Rules:**
 
-**代理指令**：
-- 确认合同类型与实际交易是否相符（有名合同 vs 无名合同）。
-- 排查是否存在违法交易情形：无资质经营、违法分包、恶意串通、涉嫌贿赂、欺诈、违背公序良俗等。
-- 识别非常规交易风险：资产代持、明显低价、付款方式不合理、关联交易、我方责任无限扩大等。
-- 如存在违法或重大风险，建议停止交易或调整交易结构，并向客户充分提示风险。
+- Cite the guide when explaining 三观四步法, macro/meso/micro analysis, promote-transaction principle, or the three-points-one-line method.
+- Keep source passages brief. Use the quote files for exact text and paraphrase the workflow in the response.
+- If the user asks for binding legal advice, state that the skill provides review structure and drafting issues, not a formal legal opinion.
 
-#### 2.2 合同主体审查
+## Core Principle
 
-**代理指令**：
-- 核查合同主体与实际交易方是否一致；确认主体工商登记状态、是否被吊销/注销。
-- 识别主体资质缺失、履约能力不足（信用风险、缺乏授权许可、无相应资质）。
-- 检查是否有遗漏主体（如有权处分人未列为当事方）或无须列入主体被错误列入。
-- 考虑相关主体风险：共有人、担保物权人、配偶、优先权人等可能影响合同履行的主体。
-- 对上市公司、国有企业等特殊主体，审查内部决策程序要求。
+Contract drafting and review should promote viable transactions while controlling legal and business risk. The agent must analyze the transaction at three levels: whether the deal structure works, whether the contract structure fits the deal, and whether the individual clauses are complete, clear, and enforceable.
 
-#### 2.3 合同标的审查
+## Workflow Inventory
 
-**代理指令**：
-- 确认标的物/服务/权利是否可合法交易（排除禁止流通物、涉及人身权益的不可转让权利）。
-- 核查产权归属是否清晰，是否与合同主体一致；排查是否存在共有人、优先权人或权利争议。
-- 识别标的特殊风险：违建、小产权房、被查封/抵押/质押资产、禁售期内资产、资产毁损风险等。
-- 对国有资产、农村土地等特殊标的，审查交易模式限制。
+| Workflow | User question pattern | Inputs | Steps | Output | Independent trigger? | Distinct references? | Triage score | Should be subskill? | Reason |
+|---|---|---|---|---|---|---|---:|---|---|
+| Contract review | Please review this contract | Contract text, user role, concerns, governing law | Needs -> macro -> meso -> micro -> review comments -> risk summary | Structured review memo | Yes | Same guide | 3 | No | Primary workflow; uses all dimensions in sequence. |
+| Contract drafting | Draft a contract framework for this deal | Deal facts, parties, subject, price, timeline, risk allocation | Needs -> transaction structure -> form selection -> clause framework -> open questions | Drafting outline and clause checklist | Yes | Same guide | 3 | No | Shares the same analysis order as review, only output differs. |
+| Deal-structure diagnosis | Can this transaction be done this way? | Transaction goal, parties, assets/services, approvals, constraints | Macro analysis -> legal/business obstacles -> alternatives | Structure recommendation | Yes | Same guide | 3 | No | A macro slice that remains tightly coupled to later drafting. |
+| Clause rewrite | Is this clause clear or risky? | Clause text, role, commercial intent | Identify right/obligation/liability points -> rewrite -> residual risk | Revised clause and rationale | Yes | Same guide | 3 | No | Micro slice but still uses the same three-points-one-line method. |
+| Final review before signing | What should I check before signing? | Final draft, signing process, approvals | Macro/meso/micro spot check -> signing formalities -> submission note | Pre-signing checklist | Yes | Same guide | 2 | No | Review-gate step inside the main workflow. |
 
-#### 2.4 合同程序审查
+## Architecture Justification
 
-**代理指令**：
-- 排查是否需要行政审批（批准类程序）并确认取得情况。
-- 确认是否需要办理物权/知识产权/市场主体相关登记。
-- 检查备案要求，防范"阴阳合同"风险。
-- 审查主体内部程序：公司/合伙企业/集体经济组织的内部决议是否完备。
-- 排查是否涉及招投标、土地招拍挂等特殊交易程序。
-- 评估是否需要公证、律师见证、电子合同存证等附加程序。
+Use a single-file skill because the guide is one integrated standard rather than a multi-domain book. All user tasks route through the same 三观四步法 sequence and differ mainly in output format. Separate subskills would duplicate the same macro, meso, micro, and review rules.
 
-#### 2.5 交易结构设计（如遇障碍）
+## DIMENSION 1: Communicate Needs
 
-**代理指令**：
-- 当常规交易存在法律障碍时，评估以下解决方案：
-  - 设置担保措施（抵押、质押、保证、让与担保、所有权保留等）
-  - 选择"所有权模式"vs"使用权/控制权模式"（买卖 vs 租赁/许可）
-  - 是否需要新设主体（有限公司、合伙企业等）
-  - 直接交易 vs 间接交易
-  - 权利的分割与组合
-  - 法律关系的组合/选择/拆分
+**The Rule:** A contract cannot be reviewed or drafted properly until the transaction goal, user role, risk tolerance, and desired deliverable are clear.
 
-**宏观结论输出**：明确回答"交易是否能做"及"用何种交易结构做"。
+### Key questions to ask:
 
----
+- What type of contract or transaction is involved?
+- Who is the user in the transaction: buyer, seller, service provider, customer, licensor, licensee, investor, borrower, lender, landlord, tenant, or another role?
+- Is the task review, drafting, clause rewrite, risk spotting, or negotiation preparation?
+- What are the user's top concerns: payment, delivery, quality, termination, liability cap, IP, confidentiality, dispute forum, timing, or compliance?
+- Is a formal legal opinion, redline, email summary, or negotiation checklist needed?
 
-### 维度三：中观—合同形式选择
+### Decision criteria / Checklist:
 
-**作用**：根据交易场景选择适当的合同文本形式，避免形式错误带来的法律风险。
+- Confirm the transaction objective and business background.
+- Confirm the contract type and governing law assumption.
+- Confirm user-side role and desired risk posture.
+- Identify missing documents: annexes, orders, specifications, authorization files, board resolutions, permits, or prior agreements.
+- If the facts are insufficient, ask targeted questions before giving detailed drafting language.
 
-**代理指令**：
-针对以下各类合同形式进行逐一排查，判断是否适用，并采取对应措施：
+### Warning signals:
 
-| 合同形式 | 适用场景 | 审查要点 |
-|---------|---------|---------|
-| 意向书类文件 | 磋商前期，无约束力 | 明确法律效力范围；需要约束力时改为预约合同 |
-| 预约合同 | 无法立即签订本约 | 明确违约责任条款 |
-| 格式条款/格式合同 | 重复使用场景 | 避免格式条款认定；合理提示；调整不公平条款 |
-| 阴阳合同 | 避税等违法目的 | 坚决避免；已存在时明确以哪份文件为准 |
-| 履行中文件/和解类文件 | 补签、变更、解除 | 含"面向过去"条款；明确与原合同冲突适用规则 |
-| "合同+订单"模式 | 采购量不确定 | 明确订单生效程序；限制对接人员操作权限 |
-| 电子合同 | 互联网协议 | 评估可靠电子签名要求；注意格式条款风险 |
-| 集团合同 | 关联主体共同受约束 | 通过授权机制约束关联主体；明确连带责任 |
-| 成套合同 | 复杂交易 | 注意主合同与附件/配套合同效力冲突；统一管辖 |
+- The user provides only a clause but asks for a whole-contract conclusion.
+- The user's commercial goal conflicts with the contract form.
+- The user asks for maximum risk avoidance in a way that may block the transaction.
+- The user wants a final legal opinion without enough facts or current-law verification.
 
----
+### Agent instruction:
 
-### 维度四：微观—合同条款起草审查
+Start every contract review or drafting task by listing the minimum assumptions and missing facts. Do not invent deal facts. If the user provides enough context, proceed directly and mark unresolved assumptions.
 
-**作用**：确保合同条款全面、准确、结构合理，依法保护我方权益。
+## DIMENSION 2: Macro Transaction Structure
 
-#### 4.1 条款内容审查（按"三点一线"结构）
+**The Rule:** First decide whether the transaction can be done and what structure should express the parties' main rights and obligations.
 
-**代理指令**，按以下三版块逐项审查：
+### Key questions to ask:
 
-**合同首部**：
-- 合同标题与实际合同类型一致
-- 当事方信息准确完整
-- 鉴于条款内容（实质性条款应移至正文）
+- Is the chosen contract type consistent with the real transaction?
+- Are the parties legally capable, properly authorized, and commercially able to perform?
+- Is the subject matter legal, transferable, identifiable, and deliverable?
+- Are approvals, filings, registrations, bidding procedures, internal resolutions, or permits required?
+- Does the structure need guarantees, security, escrow, phased performance, conditions precedent, or alternative legal relationships?
 
-**交易条款**（核心）：
-- 标的：数量、质量、验收标准是否明确
-- 价款：计价标准、支付方式、部分履行下的价款安排
-- 交割条件与流程：与付款挂钩
-- 合同期限：主要权利义务的起止时间
-- 知识产权归属：明确成果权利归属
-- 合同解除/终止条件及提前解除违约责任
+### Decision criteria / Checklist:
 
-**配套条款**：
-- 违约责任：标准明确、适当（过高可能被调整）
-- 争议解决与管辖：选择对我方有利的管辖安排
-- 联系方式与送达地址
-- 其他配套条款（保密、不可抗力、通知方式等）
+- Contract type: named or unnamed contract, mixed contract, framework agreement, order model, lease/license/sale distinction.
+- Parties: legal status, authority, qualification, credit, performance capacity, affiliates, actual controller, guarantor, or missing necessary party.
+- Subject matter: ownership, defects, encumbrances, transfer restrictions, quality/specifications, IP ownership, service scope, compliance.
+- Procedure: approval, registration, filing, public bidding, internal decision, seal/signature authority, electronic signing validity.
+- Structure: direct or indirect transaction, single or multiple contracts, security arrangement, staged closing, condition precedent.
 
-#### 4.2 条款一般质量要求
+### Warning signals:
 
-**代理指令**：
-- 全面、准确表达权利与义务，避免遗漏重要场景。
-- 控制权利义务范围，避免我方责任过于宽泛。
-- 检查条款之间的协调性，避免内部矛盾。
-- 关键术语定义清晰，量化标准明确。
+- Counterparty identity differs from the actual performer or payee.
+- The subject matter is restricted, disputed, encumbered, or insufficiently described.
+- Required approvals or internal resolutions are absent.
+- The contract tries to hide an unlawful purpose through form.
+- A one-contract structure cannot capture the real transaction relationships.
 
----
+### Agent instruction:
 
-### 维度五：复核与提交（四步第三、四步）
+For review, produce a macro conclusion: `can proceed`, `can proceed after adjustment`, `high-risk`, or `do not proceed without counsel review`. For drafting, propose a structure before drafting clauses. Cite `contract-drafting-quotes.md#transaction-structure-importance` or `contract-review-quotes.md#macro-transaction-structure` when explaining macro analysis.
 
-**代理指令**：
-- 对宏观、中观、微观三个层面进行整体复核。
-- 核查文字表述、格式排版、签名盖章位置等形式要求。
-- 如有重大风险，在提交时以批注、邮件或法律意见书形式专门强调。
-- 对特别重要的风险提示和律师免责声明，建议以正式法律意见书形式书面留存。
+## DIMENSION 3: Meso Contract Structure
 
----
+**The Rule:** Select the contract form and clause order that fit the transaction stage, operational workflow, and legal effect the parties need.
 
-## 查询响应框架
+### Key questions to ask:
 
-### 接收到合同审查请求时：
+- Is this an intent letter, memorandum, reservation contract, framework contract, formal contract, order, settlement, supplement, or termination agreement?
+- Should the document be binding, partially binding, or non-binding?
+- Does a framework plus orders model fit repeated transactions?
+- Are attachments, specifications, statements of work, acceptance standards, or service levels integrated correctly?
+- Do clause order and definitions make the contract readable and internally consistent?
 
-1. **识别用户角色**：律师 / 法务 / 合同当事方 / 学生
-2. **澄清必要信息**（如未提供）：
-   - 合同类型（买卖 / 服务 / 租赁 / 合作等）
-   - 我方身份（出卖方/买方/甲方/乙方等）
-   - 特别关注点（价款 / 风险控制 / 期限 / 解除权等）
-3. **按三观顺序分析**：宏观 → 中观 → 微观
-4. **输出结构化审查意见**（见下方格式）
+### Decision criteria / Checklist:
 
-### 接收到合同起草请求时：
+- Match document form to deal stage.
+- Define legal effect for intent letters or negotiation-stage documents.
+- For order models, define order issuance, acceptance, conflict rules, authority, and record retention.
+- For electronic contracts, verify signature reliability, notice method, and format-clause risk.
+- For group or affiliated-party contracts, define authorization and liability boundary.
+- For package contracts, align main contract, annexes, side letters, and dispute-resolution clauses.
 
-1. 确认交易基本要素（类型、主体、标的、价款范围、期限）
-2. 运用三观分析设计交易结构
-3. 按"三点一线法"起草条款框架
-4. 提示需要进一步沟通的关键细节
+### Warning signals:
 
----
+- A supposedly non-binding document contains binding obligations without saying so.
+- Orders can be placed by unauthorized personnel.
+- Annexes conflict with the main body.
+- A later document modifies an earlier document without conflict rules.
+- The contract structure is copied from a template that does not fit the transaction.
 
-## 输出格式
+### Agent instruction:
 
-### 合同审查意见格式：
+When reviewing a contract's form, explain whether the document type matches the transaction and list structural fixes before line-level clause edits. Cite `contract-drafting-quotes.md#meso-contract-structure` when explaining meso analysis.
 
-```
+## DIMENSION 4: Micro Clause Expression and Three-Points-One-Line
+
+**The Rule:** Clause review must connect prerequisites, rights and obligations, and liability consequences so the contract can be performed and enforced.
+
+### Key questions to ask:
+
+- What must happen before each obligation arises?
+- Who has which right and who bears which obligation?
+- What happens if the obligation is late, defective, partial, impossible, or refused?
+- Are price, payment, delivery, acceptance, quality, IP, confidentiality, termination, breach, and dispute terms clear?
+- Are terms defined consistently and drafted in enforceable language?
+
+### Decision criteria / Checklist:
+
+- Contract header: title, parties, recitals, authority, definitions.
+- Core transaction clauses: subject, quantity/scope, quality, delivery or service process, acceptance, price, payment, invoice/tax, term, change process.
+- Risk allocation: warranties, representations, confidentiality, IP ownership, data/security, compliance, insurance, force majeure.
+- Exit and remedies: termination, rescission, cure period, liquidated damages, damages scope, liability cap, indemnity.
+- Boilerplate: notice, governing law, dispute resolution, assignment, severability, entire agreement, counterparts, effectiveness, signing/seal.
+- Expression quality: accurate, complete, unambiguous, non-contradictory, operationally executable.
+
+### Warning signals:
+
+- Rights exist without matching obligations or remedies.
+- Liability clauses do not connect to specific breaches.
+- Acceptance standards are subjective or missing.
+- Payment timing is disconnected from delivery or acceptance.
+- Broad obligations such as "all losses" or "best efforts" are undefined.
+
+### Agent instruction:
+
+For clause review, map the clause into prerequisite, right/obligation, and liability consequence. If any point is missing, propose revised language or a drafting instruction. Cite `contract-drafting-quotes.md#three-points-one-line-method` or `contract-review-quotes.md#three-points-one-line`.
+
+## DIMENSION 5: Review, Submit, and Risk Communication
+
+**The Rule:** A contract review is incomplete until macro, meso, and micro findings are checked together and communicated in a usable form.
+
+### Key questions to ask:
+
+- Do the proposed revisions support the user's business goal?
+- Are the highest-risk issues separated from minor wording issues?
+- Does the user need redlines, a risk memo, negotiation positions, or a final signing checklist?
+- Are assumptions, missing facts, and unresolved legal questions clearly marked?
+- Should any issue be escalated to licensed counsel, tax advisors, regulatory counsel, or business decision-makers?
+
+### Decision criteria / Checklist:
+
+- Re-check consistency across transaction structure, document form, and clauses.
+- Rank risks by severity and negotiability.
+- Provide exact amendment suggestions where possible.
+- Mark business decisions separately from legal defects.
+- Include signing formalities: names, seals, authority, dates, copies, annexes, electronic records.
+- Preserve a written trail for major risk warnings.
+
+### Warning signals:
+
+- A long list of comments without prioritization.
+- Treating minor drafting issues as deal blockers.
+- Failing to document major risk warnings.
+- Delivering clause edits without explaining business impact.
+
+### Agent instruction:
+
+End every review with a prioritized risk summary and next-action list. If the user needs a negotiation posture, classify each issue as `must change`, `should change`, `fallback`, or `business call`. Cite `contract-drafting-quotes.md#review-checklist` or `contract-review-quotes.md#comprehensive-review`.
+
+## Query Response Framework
+
+### Query Type 1: Review a contract
+
+1. State assumptions and missing facts.
+2. Identify contract type and user role.
+3. Apply macro transaction-structure review.
+4. Apply meso contract-structure review.
+5. Apply micro clause review using three-points-one-line.
+6. Rank risks and provide revision suggestions.
+7. End with signing or negotiation next steps.
+
+### Query Type 2: Draft a contract or contract outline
+
+1. Confirm transaction goal, parties, subject, price, timeline, and risk posture.
+2. Design the macro transaction structure.
+3. Select the contract form and document architecture.
+4. Produce a clause framework with key drafting points.
+5. List open questions and required supporting documents.
+
+### Query Type 3: Rewrite or evaluate a clause
+
+1. Identify the clause's function.
+2. Map prerequisite, rights/obligations, and liability consequences.
+3. Identify ambiguity, gaps, or overreach.
+4. Provide revised language or a drafting direction.
+5. State residual risks and negotiation notes.
+
+### Query Type 4: Pre-signing checklist
+
+1. Confirm final draft and parties.
+2. Check macro authority, approvals, and subject matter.
+3. Check meso document consistency and annexes.
+4. Check micro key clauses and signing formalities.
+5. Provide a go/no-go checklist.
+
+## Output Format
+
+### Contract Review Memo
+
+```markdown
 ## 合同审查意见
 
-**合同类型**：[合同类型]
-**我方角色**：[甲方/乙方等]
+**合同类型:** [type]
+**我方角色:** [role]
+**适用法律假设:** [China law / unknown / user-specified]
+**资料完整性:** [complete / missing items]
 
-### 一、宏观—交易结构
-- 合同类型：[✅无异议 / ⚠️建议调整：...]
-- 合同主体：[✅无异议 / ⚠️风险：...]
-- 合同标的：[✅无异议 / ⚠️风险：...]
-- 合同程序：[✅无需特别程序 / ⚠️需要：...]
-- **宏观结论**：交易[能做/需谨慎/建议停止]，建议采用[...]交易结构。
+### 一、宏观 - 交易结构
+| 项目 | 结论 | 风险 | 建议 |
+|---|---|---|---|
 
-### 二、中观—合同形式
-- 当前形式：[...]
-- 建议：[...]
+### 二、中观 - 合同结构
+| 项目 | 结论 | 风险 | 建议 |
+|---|---|---|---|
 
-### 三、微观—条款审查意见
-| 条款 | 问题 | 修改建议 |
-|------|------|---------|
-| [条款名] | [问题描述] | [修改建议] |
+### 三、微观 - 条款审查
+| 条款 | 问题 | 修改建议 | 优先级 |
+|---|---|---|---|
 
-### 四、主要风险提示
-1. [高风险项]
-2. [中风险项]
+### 四、主要风险排序
+1. [High-risk issue]
+2. [Medium-risk issue]
 
-### 五、综合建议
-[综合性结论与后续行动建议]
+### 五、下一步
+[Redline / negotiate / ask for documents / counsel review / signing checklist]
 ```
 
-### 合同起草提纲格式：
+### Contract Drafting Outline
 
-```
+```markdown
 ## 合同起草提纲
 
-**合同名称**：[...]
-**当事方**：[...]
+**交易目标:** [goal]
+**当事方:** [parties]
+**标的:** [subject]
 
 ### 一、交易结构设计
-[宏观层面结论与结构选择]
+[Macro structure and required approvals.]
 
 ### 二、合同形式
-[选用的合同形式及理由]
+[Document type and structure.]
 
 ### 三、条款框架（三点一线）
-**合同首部**：[主要内容]
-**交易条款**：[标的 / 价款 / 交割 / 期限 / 知识产权 / 解除]
-**配套条款**：[违约责任 / 管辖 / 其他]
+| 模块 | 应写内容 | 待确认事项 |
+|---|---|---|
 
-### 四、待确认事项
-[需要客户补充的信息]
+### 四、风险与谈判点
+[Must-have terms and fallback positions.]
 ```
 
----
+### Clause Rewrite Output
 
-## 法律依据
+```markdown
+## 条款审查与改写
 
-本技能以下列法律法规为主要依据，分析时应结合最新司法解释：
-- 《中华人民共和国民法典》（2021年起施行）
-- 最高人民法院关于适用《民法典》各编的司法解释
-- 《中华人民共和国公司法》
-- 其他交易涉及的行业性法律法规
+### 条款功能
+[What this clause is supposed to do.]
 
-> **免责声明**：本技能提供框架性分析参考，不构成正式法律意见。具体法律问题请咨询执业律师。
+### 三点一线检查
+| 点 | 是否完整 | 问题 |
+|---|---|---|
+
+### 修改建议
+[Revised clause or drafting instruction.]
+
+### 剩余风险
+[What still needs business/legal confirmation.]
+```
+
+## Critical Reminders
+
+1. Promote the transaction while controlling risk; do not make risk minimization the only goal.
+2. Always analyze macro before meso and meso before micro.
+3. Contract structure and clause wording must serve the real transaction, not the template.
+4. Separate legal defects, business risks, and negotiable preferences.
+5. Do not claim current legal validity without current-law verification.
+6. Do not fabricate missing facts; ask concise follow-up questions or state assumptions.
+7. This skill provides structured drafting and review support, not formal legal advice.
