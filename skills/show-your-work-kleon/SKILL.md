@@ -1,28 +1,8 @@
 ---
-name: Show Your Work — Kleon's Sharing Framework
-skill_code: show-your-work-kleon
-author: Austin Kleon
-version: 1.0.0
-description: Apply Austin Kleon's framework for building an audience by sharing your creative process publicly — not just finished work, but the daily reality of how it gets made.
-tags:
-  - creativity
-  - audience building
-  - personal brand
-  - content strategy
-  - creative process
-  - sharing
-query_types:
-  - What should I share about my work?
-  - How do I build an audience without being self-promotional?
-  - How do I document my creative process?
-  - What's worth posting? How do I know if something is too raw?
-  - How do I become findable online as a creator?
-  - How do I share work-in-progress without embarrassment?
-  - What's the difference between self-promotion and genuine sharing?
-  - How do I build a "stock" of durable content alongside daily updates?
+name: show-your-work-kleon
+description: 'Apply Austin Kleon''s sharing framework. Trigger on: "what should I share?", "build an audience", "document my creative process".'
+license: 'Skill distillation for personal/educational use. Do not reproduce source passages verbatim.'
 ---
-
-# Show Your Work — Kleon's Sharing Framework
 
 ## Core Philosophy
 
@@ -31,6 +11,11 @@ Austin Kleon's *Show Your Work!* makes a single counterintuitive argument: **you
 The fundamental reframe: stop thinking "I need to finish this before I can share it." Start thinking "sharing IS the work."
 
 ---
+
+
+## When to Use This Skill
+
+Use this skill for queries that match the trigger phrases in the description and require applying the decision framework from *Show Your Work!* rather than summarizing the book.
 
 ## The Framework
 
@@ -186,3 +171,39 @@ When designing a sharing practice:
 Kleon's framework is optimized for creators whose work has a visible process — artists, writers, makers, builders, designers. It applies with some translation to knowledge workers (consultants, researchers, analysts) but requires reinterpretation: "showing your work" when your work is confidential client deliverables means sharing the methodology, not the outputs.
 
 The framework also assumes genuine enthusiasm for the work being shared. It does not work as a marketing strategy applied cold to content you don't actually care about. Audiences can detect performed enthusiasm. The prerequisite for showing your work is actually doing work you find interesting.
+
+## Architecture Justification
+
+This is a single-file skill because the book supports one primary workflow: apply Austin Kleon's framework to diagnose a user-supplied situation and produce a practical recommendation. The dimensions are tightly coupled lenses inside that workflow rather than independent tools with different inputs or output formats.
+
+## Workflow Inventory
+
+| Workflow | User question pattern | Inputs | Steps | Output | Independent trigger? | Distinct references? | Triage score | Should be subskill? | Reason |
+|---|---|---|---|---|---|---|---:|---|---|
+| Framework diagnosis | User asks for analysis using the book's method | Situation, goal, constraints | Route to relevant dimensions; apply checks; identify warnings | Diagnosis and recommendation | Yes | Uses shared quote files | 2 | No | Primary workflow; all dimensions share one output |
+| Improvement plan | User asks how to improve a campaign, product, policy, or decision | Current state and desired outcome | Identify gaps; rank fixes; propose next actions | Prioritized action plan | Yes | Uses shared quote files | 2 | No | Same diagnostic workflow with prescriptive output |
+| Critique or second opinion | User asks whether advice, strategy, or reasoning is sound | Claim/recommendation and context | Test assumptions; flag incentives or missing criteria | Verdict with caveats | Yes | Uses shared quote files | 2 | No | Same dimensions, different framing |
+
+
+## Query Response Framework
+
+1. Identify the user's decision or artifact.
+2. Route the query to the relevant dimensions.
+3. Apply the checklist questions explicitly.
+4. Flag missing inputs, incentive conflicts, or anti-patterns.
+5. Produce a concise verdict and next actions.
+
+
+## Critical Reminders
+
+- Use the book-derived framework as a decision tool, not as a book summary.
+- Do not reproduce long source passages in responses.
+- Ask for missing context when the user's input is too thin to support a verdict.
+
+
+## CITATION RULES
+
+Use quotes only when the user asks for source grounding or when a claim needs attribution. Reference quote anchors by topic file and anchor. Keep quoted excerpts short.
+
+- `sharing-process-quotes.md`: `#today-taking-advantage-internet-social`, `#kinds-distinction-between-painter-process`, `#used-just-seeing-outcome`, `#daily-dispatch-even-better-portfolio`, `#once-anything-copied-brought-contact`, `#going-give-damn-want-made`, `#over-starving-artist-romanticism-idea`, `#traditionally-artist-been-trained-regard`
+- `audience-community-quotes.md`: `#alone-matters-process-experience-shaping`, `#standing-party-enjoying-drink-stranger`, `#almost-every-overnight-success-story`, `#fell-place-sons-explained-social`, `#these-deserve-rejections-undoubtedly-receive`, `#were-basically-trying-could-each`, `#actually-simple-easy-requires-incredible`, `#notice-pattern-technology-often-most`

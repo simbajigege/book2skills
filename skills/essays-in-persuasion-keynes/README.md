@@ -1,43 +1,43 @@
-# Essays in Persuasion: Keynes's Economic Reasoning Framework
+# Essays in Persuasion: Keynes Policy Reasoning
 
-A Claude skill distilled from *Essays in Persuasion* by John Maynard Keynes (1931).
+Apply Keynes's Essays in Persuasion to evaluate macro policy, debt capacity, inflation-deflation tradeoffs, fixed-rate traps, demand shortfalls, and economic persuasion.
 
 ## What It Does
 
-- Evaluates fiscal and monetary policy using Keynes's diagnostic frameworks
-- Diagnoses economic crises by type: demand shortfall, debt/transfer problem, currency trap, inflation vs. deflation
-- Applies the paradox of thrift, animal spirits, and multiplier frameworks to current economic conditions
-- Assesses whether austerity, stimulus, or monetary policy is appropriate for a given situation
+- Applies the book's core decision framework to a user-supplied situation.
+- Produces practical diagnoses, recommendations, and risk flags.
+- Uses short quote anchors only when source grounding is requested.
+- Routes distinct query types through focused subskills.
 
 ## When to Use It
 
-Trigger this skill when asked:
-- "Will this fiscal/monetary policy work?"
-- "Is inflation or deflation the bigger risk right now?"
-- "Was this central bank decision correct?"
-- "Analyze this economic crisis using Keynes's framework"
-- "Why is this recession so hard to escape?"
-- "Will austerity reduce the deficit?"
+Use this skill for prompts like: "will austerity work?", "inflation or deflation?", "analyze this crisis".
 
 ## Installation
+
+### Option 1 - CLI (recommended)
 
 ```bash
 npx skills add simbajigege/book2skills/skills/essays-in-persuasion-keynes
 ```
 
-1. Download or clone this folder.
-2. In Claude.ai, go to **Settings → Skills** and upload the skill folder.
+### Option 2 - Manual upload
+
+1. Download the skill folder or clone the repository.
+2. In Claude.ai, go to **Settings -> Skills** and upload the folder.
 3. The skill will appear in your available skills list.
 
 ## File Structure
 
-```
+```text
 essays-in-persuasion-keynes/
-├── SKILL.md          # Main skill instructions
-├── README.md         # This file
-└── LICENSE.txt       # License information
+├── SKILL.md
+├── README.md
+├── LICENSE.txt
+├── subskills/
+└── quotes/
 ```
 
 ## License
 
-Skill distillation for personal/educational use. This skill encodes frameworks and methodologies from *Essays in Persuasion* by John Maynard Keynes. It is not a verbatim reproduction of the source material.
+Skill distillation for personal/educational use. Do not reproduce source passages verbatim.

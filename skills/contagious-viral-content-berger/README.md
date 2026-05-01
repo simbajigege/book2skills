@@ -1,43 +1,41 @@
-# Contagious — STEPPS Viral Content Framework
+# Contagious: STEPPS Viral Content Framework
 
-A Claude skill that encodes Jonah Berger's STEPPS framework from *Contagious: Why Things Catch On*. Based on academic research at Wharton, it provides a science-backed system for engineering word-of-mouth: Social Currency, Triggers, Emotion, Public, Practical Value, and Stories.
+Apply Jonah Berger's STEPPS framework from Contagious to diagnose why ideas spread, redesign campaigns, and build shareable stories, triggers, and practical value.
 
 ## What It Does
 
-- Audits any piece of content, product, or campaign against all 6 STEPPS dimensions
-- Engineers specific improvements to make ideas more shareable — for any product, not just "naturally viral" ones
-- Explains why things go viral (and why they don't) using psychological mechanisms, not luck
-- Builds trigger strategies, emotional angles, and Trojan horse narratives for specific use cases
+- Applies the book's core decision framework to a user-supplied situation.
+- Produces practical diagnoses, recommendations, and risk flags.
+- Uses short quote anchors only when source grounding is requested.
 
 ## When to Use It
 
-- "Why isn't my content spreading / getting shared?"
-- "Help me apply STEPPS to my [product/campaign/idea]"
-- "How do I create organic word-of-mouth for my business?"
-- "What makes something remarkable enough to share?"
-- "Analyze why [viral piece of content] went viral"
-- "How do I make my product more observable / create behavioral residue?"
-- "Build a story around my product that people will want to tell"
+Use this skill for prompts like: "diagnose this", "improve this strategy", "apply the book's framework".
 
 ## Installation
+
+### Option 1 - CLI (recommended)
 
 ```bash
 npx skills add simbajigege/book2skills/skills/contagious-viral-content-berger
 ```
 
-1. Download or clone this folder.
-2. In Claude.ai, go to Settings → Skills and upload the skill folder.
+### Option 2 - Manual upload
+
+1. Download the skill folder or clone the repository.
+2. In Claude.ai, go to **Settings -> Skills** and upload the folder.
 3. The skill will appear in your available skills list.
 
 ## File Structure
 
-```
+```text
 contagious-viral-content-berger/
-├── SKILL.md        # Full STEPPS framework, agent instructions, query types
-├── README.md       # This file
-└── LICENSE.txt     # Usage terms
+├── SKILL.md
+├── README.md
+├── LICENSE.txt
+└── quotes/
 ```
 
 ## License
 
-See LICENSE.txt. This skill distills frameworks and methodologies from *Contagious: Why Things Catch On* by Jonah Berger. It is not a verbatim reproduction of the source material.
+Skill distillation for personal/educational use. Do not reproduce source passages verbatim.

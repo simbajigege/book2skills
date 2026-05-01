@@ -1,18 +1,8 @@
 ---
-name: Perennial Seller — Holiday's Longevity Framework
-description: "Apply Ryan Holiday's framework for creating work that lasts: prioritize craft over marketing, position for timelessness, build an owned platform, and think in decades not days."
-version: 1.0.0
-source_book: "Perennial Seller: The Art of Making and Marketing Work That Lasts by Ryan Holiday"
-license: "Skill distillation for personal/educational use. Do not reproduce source passages verbatim."
-tags:
-  - creative-process
-  - positioning
-  - platform-building
-  - content-strategy
-  - long-term-thinking
+name: perennial-seller-holiday
+description: 'Apply Ryan Holiday''s perennial seller framework. Trigger on: "will this work last?", "position my book/product", "build an enduring launch".'
+license: 'Skill distillation for personal/educational use. Do not reproduce source passages verbatim.'
 ---
-
-# Perennial Seller — Holiday's Longevity Framework
 
 ## Overview
 This skill encodes Ryan Holiday's framework from *Perennial Seller* for creating work that earns continued success over years and decades rather than fading after initial release. The book draws on Holiday's experience working with authors, businesses, and creative projects — and his own books that continue to sell steadily years after publication.
@@ -20,6 +10,11 @@ This skill encodes Ryan Holiday's framework from *Perennial Seller* for creating
 **Core thesis:** Most creators optimize for short-term success (what's trending, what gets clicks today). Perennial sellers optimize for longevity. The strategies are almost exactly opposite.
 
 **The fundamental rule:** "Promotion is not how things are made great — only how they're heard about." The work itself is the foundation; everything else builds on it.
+
+
+## When to Use This Skill
+
+Use this skill for queries that match the trigger phrases in the description and require applying the decision framework from *Perennial Seller: The Art of Making and Marketing Work That Lasts* rather than summarizing the book.
 
 ## Four-Part Framework
 
@@ -153,3 +148,47 @@ Rate the work on 5 dimensions (1-3):
 5. 10 true fans are worth more than 1,000 passive followers
 6. The long game always wins over the short game
 7. Test the work early and often, but don't let others' opinions replace your vision
+
+## Architecture Justification
+
+This is a single-file skill because the book supports one primary workflow: apply Ryan Holiday's framework to diagnose a user-supplied situation and produce a practical recommendation. The dimensions are tightly coupled lenses inside that workflow rather than independent tools with different inputs or output formats.
+
+## Workflow Inventory
+
+| Workflow | User question pattern | Inputs | Steps | Output | Independent trigger? | Distinct references? | Triage score | Should be subskill? | Reason |
+|---|---|---|---|---|---|---|---:|---|---|
+| Framework diagnosis | User asks for analysis using the book's method | Situation, goal, constraints | Route to relevant dimensions; apply checks; identify warnings | Diagnosis and recommendation | Yes | Uses shared quote files | 2 | No | Primary workflow; all dimensions share one output |
+| Improvement plan | User asks how to improve a campaign, product, policy, or decision | Current state and desired outcome | Identify gaps; rank fixes; propose next actions | Prioritized action plan | Yes | Uses shared quote files | 2 | No | Same diagnostic workflow with prescriptive output |
+| Critique or second opinion | User asks whether advice, strategy, or reasoning is sound | Claim/recommendation and context | Test assumptions; flag incentives or missing criteria | Verdict with caveats | Yes | Uses shared quote files | 2 | No | Same dimensions, different framing |
+
+
+## Query Response Framework
+
+1. Identify the user's decision or artifact.
+2. Route the query to the relevant dimensions.
+3. Apply the checklist questions explicitly.
+4. Flag missing inputs, incentive conflicts, or anti-patterns.
+5. Produce a concise verdict and next actions.
+
+
+## Output Format
+
+- Diagnosis: one-sentence interpretation of the situation.
+- Framework application: relevant dimensions and evidence.
+- Risks or anti-patterns: what could make the recommendation fail.
+- Recommendation: concrete next actions.
+
+
+## Critical Reminders
+
+- Use the book-derived framework as a decision tool, not as a book summary.
+- Do not reproduce long source passages in responses.
+- Ask for missing context when the user's input is too thin to support a verdict.
+
+
+## CITATION RULES
+
+Use quotes only when the user asks for source grounding or when a claim needs attribution. Reference quote anchors by topic file and anchor. Keep quoted excerpts short.
+
+- `creative-process-quotes.md`: `#means-perennial-seller-does-birthed`, `#just-take-breath-before-dive`, `#only-after-period-ended-begin`, `#must-willing-enough-jerk-ahem`, `#breakthrough-spend-weeks-just-looking`, `#better-focused-those-timeless-cases`, `#lasting-resonance-requires-something-novelty`, `#these-might-seem-like-small`
+- `marketing-platform-quotes.md`: `#instead-must-integrated-creative-process`, `#part-positioning-polishing-perfecting-packaging`, `#arrived-found-spaceship-wasn-being`, `#spend-months-building-website-start`, `#only-doing-least-partly-front`, `#promotion-talking-here-comes-later`, `#while-most-haven-heard-book`, `#after-release-many-bookstores-offered`

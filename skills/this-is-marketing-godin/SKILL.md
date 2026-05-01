@@ -1,23 +1,20 @@
 ---
-name: This Is Marketing — Godin's Framework
-description: "Apply Seth Godin's marketing philosophy: find the smallest viable audience, match their worldview, earn permission, and make change that spreads person-to-person."
-version: 1.0.0
-source_book: "This Is Marketing by Seth Godin"
-license: "Skill distillation for personal/educational use. Do not reproduce source passages verbatim."
-tags:
-  - marketing
-  - audience
-  - permission-marketing
-  - tribe
-  - content-marketing
+name: this-is-marketing-godin
+description: 'Apply Seth Godin''s marketing framework. Trigger on: "find my smallest viable audience", "position this offer", "earn trust".'
+license: 'Skill distillation for personal/educational use. Do not reproduce source passages verbatim.'
 ---
-
-# This Is Marketing — Godin's Framework
 
 ## Overview
 This skill encodes Seth Godin's marketing philosophy from *This Is Marketing*. It rejects mass-market manipulation in favor of generous, specific, and empathetic work: finding the smallest viable audience, understanding their worldview deeply, earning permission to communicate, and making change that spreads through peer-to-peer trust.
 
+## Core Principle
+
 Core premise: **Marketing is the generous act of helping someone solve a problem. It's not about you — it's about them.**
+
+
+## When to Use This Skill
+
+Use this skill for queries that match the trigger phrases in the description and require applying the decision framework from *This Is Marketing* rather than summarizing the book.
 
 ## The Core Framework
 
@@ -173,3 +170,47 @@ Map where your audience currently sits and what move brings them one step closer
 5. Permission is earned, not taken; build it slowly and protect it fiercely
 6. Tension is generative, not manipulative — it helps people become who they want to be
 7. Consistency over time beats any single campaign
+
+## Architecture Justification
+
+This is a single-file skill because the book supports one primary workflow: apply Seth Godin's framework to diagnose a user-supplied situation and produce a practical recommendation. The dimensions are tightly coupled lenses inside that workflow rather than independent tools with different inputs or output formats.
+
+## Workflow Inventory
+
+| Workflow | User question pattern | Inputs | Steps | Output | Independent trigger? | Distinct references? | Triage score | Should be subskill? | Reason |
+|---|---|---|---|---|---|---|---:|---|---|
+| Framework diagnosis | User asks for analysis using the book's method | Situation, goal, constraints | Route to relevant dimensions; apply checks; identify warnings | Diagnosis and recommendation | Yes | Uses shared quote files | 2 | No | Primary workflow; all dimensions share one output |
+| Improvement plan | User asks how to improve a campaign, product, policy, or decision | Current state and desired outcome | Identify gaps; rank fixes; propose next actions | Prioritized action plan | Yes | Uses shared quote files | 2 | No | Same diagnostic workflow with prescriptive output |
+| Critique or second opinion | User asks whether advice, strategy, or reasoning is sound | Claim/recommendation and context | Test assumptions; flag incentives or missing criteria | Verdict with caveats | Yes | Uses shared quote files | 2 | No | Same dimensions, different framing |
+
+
+## Query Response Framework
+
+1. Identify the user's decision or artifact.
+2. Route the query to the relevant dimensions.
+3. Apply the checklist questions explicitly.
+4. Flag missing inputs, incentive conflicts, or anti-patterns.
+5. Produce a concise verdict and next actions.
+
+
+## Output Format
+
+- Diagnosis: one-sentence interpretation of the situation.
+- Framework application: relevant dimensions and evidence.
+- Risks or anti-patterns: what could make the recommendation fail.
+- Recommendation: concrete next actions.
+
+
+## Critical Reminders
+
+- Use the book-derived framework as a decision tool, not as a book summary.
+- Do not reproduce long source passages in responses.
+- Ask for missing context when the user's input is too thin to support a verdict.
+
+
+## CITATION RULES
+
+Use quotes only when the user asks for source grounding or when a claim needs attribution. Reference quote anchors by topic file and anchor. Keep quoted excerpts short.
+
+- `audience-change-quotes.md`: `#seek-share-best-best-story`, `#focus-smallest-viable-could-find`, `#chapter-nine-like-like-deep`, `#chapter-five-search-better-beer`, `#along-joel-discovered-creating-better`, `#going-least-million-dollars-worth`, `#simple-promise-here-template-three`, `#shows-ability-respect-someone-enough`
+- `trust-permission-quotes.md`: `#matters-whether-changed-trust-connected`, `#enrollment-need-earn-permission-engage`, `#every-step-along-create-relieve`, `#show-world-story-want-hear`, `#actually-means-better-someone-might`, `#shows-respect-those-seek-serve`, `#leap-countless-micro-tribes-many`, `#means-going-back-hapless-fundraiser`

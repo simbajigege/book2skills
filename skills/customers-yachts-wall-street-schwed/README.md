@@ -1,44 +1,43 @@
-# Where Are the Customers' Yachts? — Wall Street Conflict of Interest Framework
+# Where Are the Customers' Yachts?: Schwed's Wall Street Conflict Framework
 
-A Claude skill distilled from *Where Are the Customers' Yachts? Or A Good Hard Look at Wall Street* by Fred Schwed Jr. (1940).
+Apply Fred Schwed Jr.'s Wall Street conflict framework to evaluate financial advice, forecasts, product complexity, speculation, and broker incentives.
 
 ## What It Does
 
-- Identifies structural conflicts of interest in financial advice and brokerage relationships
-- Evaluates the reliability of market forecasts, analyst predictions, and stock tips
-- Exposes financial complexity as a tool that often serves the seller rather than the buyer
-- Diagnoses speculator vs. investor psychology in investment decisions
-- Answers: whose interests does this financial recommendation actually serve?
+- Applies the book's core decision framework to a user-supplied situation.
+- Produces practical diagnoses, recommendations, and risk flags.
+- Uses short quote anchors only when source grounding is requested.
+- Routes distinct query types through focused subskills.
 
 ## When to Use It
 
-Trigger this skill when asked:
-- "Can I trust this broker/advisor?"
-- "Is this market forecast reliable?"
-- "Why is this financial product so complicated?"
-- "Whose interest does this recommendation serve?"
-- "Should I believe this analyst's prediction?"
-- "Why do brokers always seem to profit even when clients don't?"
+Use this skill for prompts like: "can I trust this advisor?", "is this forecast reliable?", "whose interest does this serve?".
 
 ## Installation
+
+### Option 1 - CLI (recommended)
 
 ```bash
 npx skills add simbajigege/book2skills/skills/customers-yachts-wall-street-schwed
 ```
 
-1. Download or clone this folder.
-2. In Claude.ai, go to **Settings → Skills** and upload the skill folder.
+### Option 2 - Manual upload
+
+1. Download the skill folder or clone the repository.
+2. In Claude.ai, go to **Settings -> Skills** and upload the folder.
 3. The skill will appear in your available skills list.
 
 ## File Structure
 
-```
+```text
 customers-yachts-wall-street-schwed/
-├── SKILL.md          # Main skill instructions
-├── README.md         # This file
-└── LICENSE.txt       # License information
+├── SKILL.md
+├── README.md
+├── LICENSE.txt
+├── subskills/
+└── quotes/
 ```
 
 ## License
 
-Skill distillation for personal/educational use. This skill encodes frameworks and methodologies from *Where Are the Customers' Yachts?* by Fred Schwed Jr. It is not a verbatim reproduction of the source material.
+Skill distillation for personal/educational use. Do not reproduce source passages verbatim.

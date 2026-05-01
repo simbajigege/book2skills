@@ -1,18 +1,8 @@
 ---
-name: Contagious — STEPPS Viral Content Framework
-description: "Apply Jonah Berger's STEPPS framework to engineer contagious content: Social Currency, Triggers, Emotion, Public, Practical Value, Stories."
-version: 1.0.0
-source_book: "Contagious: Why Things Catch On by Jonah Berger"
-license: "Skill distillation for personal/educational use. Do not reproduce source passages verbatim."
-tags:
-  - viral-content
-  - word-of-mouth
-  - marketing
-  - social-media
-  - content-strategy
+name: contagious-viral-content-berger
+description: 'Apply Jonah Berger''s STEPPS framework. Trigger on: "why is this not spreading?", "make this campaign contagious", "diagnose viral content".'
+license: 'Skill distillation for personal/educational use. Do not reproduce source passages verbatim.'
 ---
-
-# Contagious — STEPPS Viral Content Framework
 
 ## Overview
 This skill encodes Jonah Berger's STEPPS framework from *Contagious: Why Things Catch On*. Based on years of scientific research at Wharton, it explains why certain content, products, and ideas spread — and provides actionable principles for engineering virality.
@@ -20,6 +10,11 @@ This skill encodes Jonah Berger's STEPPS framework from *Contagious: Why Things 
 **Core insight:** Virality isn't born, it's made. The message matters more than the messenger. Any product or idea — even a boring blender — can be engineered to spread.
 
 **Key fact:** 93% of word of mouth happens offline, not on social media. The platform is not the strategy; the psychology of sharing is.
+
+
+## When to Use This Skill
+
+Use this skill for queries that match the trigger phrases in the description and require applying the decision framework from *Contagious: Why Things Catch On* rather than summarizing the book.
 
 ## The STEPPS Framework
 
@@ -158,3 +153,47 @@ For each STEPPS element, provide specific recommendations for how to engineer th
 5. Valuable virality — the brand must be integral to the story, not a footnote
 6. Behavioral residue extends word of mouth beyond the initial action
 7. "Built to show, built to grow" — observable behaviors spread; private ones don't
+
+## Architecture Justification
+
+This is a single-file skill because the book supports one primary workflow: apply Jonah Berger's framework to diagnose a user-supplied situation and produce a practical recommendation. The dimensions are tightly coupled lenses inside that workflow rather than independent tools with different inputs or output formats.
+
+## Workflow Inventory
+
+| Workflow | User question pattern | Inputs | Steps | Output | Independent trigger? | Distinct references? | Triage score | Should be subskill? | Reason |
+|---|---|---|---|---|---|---|---:|---|---|
+| Framework diagnosis | User asks for analysis using the book's method | Situation, goal, constraints | Route to relevant dimensions; apply checks; identify warnings | Diagnosis and recommendation | Yes | Uses shared quote files | 2 | No | Primary workflow; all dimensions share one output |
+| Improvement plan | User asks how to improve a campaign, product, policy, or decision | Current state and desired outcome | Identify gaps; rank fixes; propose next actions | Prioritized action plan | Yes | Uses shared quote files | 2 | No | Same diagnostic workflow with prescriptive output |
+| Critique or second opinion | User asks whether advice, strategy, or reasoning is sound | Claim/recommendation and context | Test assumptions; flag incentives or missing criteria | Verdict with caveats | Yes | Uses shared quote files | 2 | No | Same dimensions, different framing |
+
+
+## Query Response Framework
+
+1. Identify the user's decision or artifact.
+2. Route the query to the relevant dimensions.
+3. Apply the checklist questions explicitly.
+4. Flag missing inputs, incentive conflicts, or anti-patterns.
+5. Produce a concise verdict and next actions.
+
+
+## Output Format
+
+- Diagnosis: one-sentence interpretation of the situation.
+- Framework application: relevant dimensions and evidence.
+- Risks or anti-patterns: what could make the recommendation fail.
+- Recommendation: concrete next actions.
+
+
+## Critical Reminders
+
+- Use the book-derived framework as a decision tool, not as a book summary.
+- Do not reproduce long source passages in responses.
+- Ask for missing context when the user's input is too thin to support a verdict.
+
+
+## CITATION RULES
+
+Use quotes only when the user asks for source grounding or when a claim needs attribution. Reference quote anchors by topic file and anchor. Keep quoted excerpts short.
+
+- `stepps-framework-quotes.md`: `#game-mechanics-help-generate-social`, `#mars-bars-voting-triggers-affect`, `#language-other-chapters-book-high`, `#leveraging-game-mechanics-also-involves`, `#contain-practically-useful-information-something`, `#remarkability-also-shapes-stories-evolve`, `#word-mouth-also-come-voting`, `#every-time-proudly-shares-status`
+- `campaign-diagnosis-quotes.md`: `#students-exaggerated-details-make-story`, `#sports-fanatics-foodies-often-those`, `#kindling-fire-science-physiological-arousal`, `#making-something-observable-makes-easier`, `#tapping-genuine-enthusiasm-products-services`, `#once-inside-greeks-destroyed-town`, `#triggers-drive-talking-triggers-foundation`, `#product-idea-doesn-automatically-needs`
