@@ -1,0 +1,4 @@
+interface:
+  display_name: "Query Loop Implementation"
+  short_description: "Add a robust LLM query loop to AI apps."
+  default_prompt: "Add a query loop with tool calling, tool result feedback, exit conditions, and safety guards to my AI application."
