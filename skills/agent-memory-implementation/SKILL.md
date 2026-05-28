@@ -1,6 +1,6 @@
 ---
 name: agent-memory-implementation
-description: Restructures a chaotic or overgrown MEMORY.md into a clean 2-layer architecture based on how Claude Code's autoDream system organizes memory: a lightweight pointer index (always loaded) and topic files (loaded on demand). Stale or superseded memories are deleted or corrected in place — not archived. Use this skill whenever the user says "clean up MEMORY.md", "reorganize my memory files", "MEMORY.md is getting too long", "fix my memory structure", or when you observe that MEMORY.md exceeds 200 lines, contains full paragraphs instead of pointers, or mixes index entries with topic content.
+description: "Restructures a chaotic or overgrown MEMORY.md into a clean 2-layer architecture based on how Claude Code's autoDream system organizes memory — a lightweight pointer index (always loaded) and topic files (loaded on demand). Stale or superseded memories are deleted or corrected in place — not archived. Use this skill whenever the user says \"clean up MEMORY.md\", \"reorganize my memory files\", \"MEMORY.md is getting too long\", \"fix my memory structure\", or when you observe that MEMORY.md exceeds 200 lines, contains full paragraphs instead of pointers, or mixes index entries with topic content."
 license: "Skill implementation guide for personal/educational use."
 ---
 
