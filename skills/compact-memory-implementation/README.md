@@ -1,34 +1,46 @@
 # compact-memory-implementation
 
-为 Agent 构建 compact memory 能力的开发者指南。
+A developer implementation guide for adding **compact memory** to an Agent built with the Claude API or Claude Agent SDK. Covers the full pipeline: when to trigger compaction, how to fork a dedicated compactor sub-agent, what JSON schema to produce, and how to restore the compact in the next session.
 
-## 解决的问题
+## What It Does
 
-Agent 在长会话中上下文窗口会被耗尽。原始对话历史增长无上限，但模型 context 有上限。这个 skill 指导开发者实现一套 compact memory 机制：检测何时需要压缩、派生 compactor sub-agent 执行压缩、生成结构化摘要、在下一轮会话中恢复记忆。
+- Provides copy-paste Python code for a token-threshold trigger, a forked compactor, and session persistence
+- Specifies a structured JSON compact schema that captures task state, key decisions, eliminated approaches, and next steps
+- Shows two injection patterns: system prompt injection (recommended) and first-message injection for stateless callers
+- Explains how to chain compacts across sessions without accumulating stale context
 
-## 覆盖的能力
+## When to Use It
 
-| 能力 | 内容 |
-|---|---|
-| 触发时机 | token 阈值 / turn 计数 / 阶段边界三种策略 |
-| Fork agent 模式 | 派生独立 compactor sub-agent 执行压缩，与主 agent 解耦 |
-| 如何 compact | compact 输出 schema、compactor system prompt、历史格式化 |
-| compact 后如何使用 | 系统提示注入、跨会话持久化、多次 compact 的链式更新 |
+Trigger this skill when a developer:
+- Asks "how do I implement compact memory in my agent?"
+- Needs to manage context window limits in a long-running or multi-session agent
+- Wants agents that resume with full reasoning context, not just current state
+- Is building with the Anthropic API (`anthropic` SDK) or Claude Agent SDK
 
-## 使用场景
+## Installation
 
-- 构建需要跨会话保持状态的 Agent
-- Agent 会话长度不可预测，需要自动管理 context
-- 多轮研究型 / 执行型 Agent，中间决策不能丢失
-
-## 附带脚本
-
-```
-scripts/pre_compact_extract.py
-```
-
-从会话 JSONL 提取草稿，辅助判断哪些内容值得写入记忆（原 compact-with-memory 遗留工具，可按需使用）。
+### Option 1 — CLI (recommended)
 
 ```bash
-python scripts/pre_compact_extract.py --latest --check-memory
+npx skills add simbajigege/book2skills/skills/compact-memory-implementation
 ```
+
+### Option 2 — Manual upload
+
+1. Download the skill folder (or clone this repo).
+2. In Claude.ai, go to **Settings → Skills** and upload the folder.
+3. The skill will appear in your available skills list.
+
+## File Structure
+
+```
+compact-memory-implementation/
+├── SKILL.md          # Main skill instructions (7-step developer guide with full code)
+├── README.md         # This file
+└── scripts/
+    └── pre_compact_extract.py   # Helper: extract draft compact from session JSONL
+```
+
+## License
+
+Skill implementation guide for personal/educational use.
