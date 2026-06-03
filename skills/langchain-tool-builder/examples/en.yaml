@@ -1,0 +1,149 @@
+- human: |
+    I'm building a LangChain agent for internal developer tooling. I need a tool that searches our GitHub repos by keyword (calls the GitHub Search API), returns repo name, description, and star count. It's read-only and safe to run concurrently. Can you scaffold it?
+  ai: |
+    Sure. A search tool over a read-only API maps cleanly to `is_read_only=True`, `is_concurrency_safe=True`, `is_destructive=False`.
+
+    First, let me check if the base class is already in place:
+
+    ```bash
+    ls backend/utils/claude_style_tool.py
+    ```
+
+    Found it. Here's the generated tool:
+
+    **Suggested path:** `backend/tools/github_search_repos.py`
+
+    ```python
+    """github_search_repos.py — Search GitHub repositories by keyword"""
+
+    import os
+    import json
+    import requests
+    from typing import Optional
+    from pydantic import BaseModel, Field
+    from base.utils.claude_style_tool import ClaudeStyleTool
+
+
+    class GithubSearchReposInput(BaseModel):
+        query: str = Field(description="GitHub search keyword. e.g. 'langchain tool builder'")
+        limit: int = Field(default=10, description="Max results to return (1–30). Default 10.")
+
+
+    class GithubSearchReposTool(ClaudeStyleTool):
+        # — identity —
+        name: str = "github_search_repos"
+        description: str = "Search GitHub repositories by keyword. Returns repo name, description, and star count. Read-only."
+        args_schema = GithubSearchReposInput
+
+        # — security metadata —
+        is_read_only: bool = True
+        is_destructive: bool = False
+        is_concurrency_safe: bool = True
+        max_result_chars: int = 8_000
+
+        def _validate_input_semantics(self, query: str, limit: int) -> tuple[bool, Optional[str]]:
+            if len(query.strip()) < 2:
+                return False, "query too short (< 2 chars). Provide a more specific search term."
+            if not (1 <= limit <= 30):
+                return False, f"limit must be 1–30, got {limit}. Adjust and retry."
+            return True, None
+
+        def _call(self, query: str, limit: int = 10, **kwargs) -> str:
+            token = os.getenv("GITHUB_TOKEN", "")
+            headers = {"Authorization": f"Bearer {token}"} if token else {}
+            resp = requests.get(
+                "https://api.github.com/search/repositories",
+                params={"q": query, "per_page": limit, "sort": "stars"},
+                headers=headers,
+                timeout=10,
+            )
+            resp.raise_for_status()
+            items = resp.json().get("items", [])
+            results = [
+                {"name": r["full_name"], "description": r.get("description", ""), "stars": r["stargazers_count"]}
+                for r in items
+            ]
+            return json.dumps(results, ensure_ascii=False, indent=2)
+    ```
+
+    Security summary:
+
+    ```
+    GithubSearchReposTool: read_only=True  destructive=False  concurrency_safe=True  max_result=8K
+    ```
+
+    One note: `GITHUB_TOKEN` is read from the environment — never hardcode credentials in `_call`.
+
+- human: |
+    Now I need a write tool: the agent should be able to create a GitHub issue in a specified repo. It should only be allowed to create issues in repos under the `my-org` organization.
+  ai: |
+    Creating an issue is a POST — so `is_read_only=False`. It's not irreversible (issues can be closed), so `is_destructive=False`. And concurrent issue creation can cause duplicates, so `is_concurrency_safe=False`.
+
+    The org restriction goes in `_check_permissions`.
+
+    **Suggested path:** `backend/tools/github_create_issue.py`
+
+    ```python
+    """github_create_issue.py — Create a GitHub issue, restricted to my-org repos"""
+
+    import os
+    import json
+    import requests
+    from typing import Optional
+    from pydantic import BaseModel, Field
+    from base.utils.claude_style_tool import ClaudeStyleTool
+
+    ALLOWED_ORG = "my-org"
+
+
+    class GithubCreateIssueInput(BaseModel):
+        repo: str = Field(description="Full repo name (org/repo). e.g. 'my-org/backend-api'")
+        title: str = Field(description="Issue title. e.g. 'Fix null pointer in auth middleware'")
+        body: str = Field(default="", description="Issue body in Markdown. Optional.")
+
+
+    class GithubCreateIssueTool(ClaudeStyleTool):
+        # — identity —
+        name: str = "github_create_issue"
+        description: str = "Create a GitHub issue in a repository. Only allowed for repos under the my-org organization."
+        args_schema = GithubCreateIssueInput
+
+        # — security metadata —
+        is_read_only: bool = False
+        is_destructive: bool = False
+        is_concurrency_safe: bool = False
+        max_result_chars: int = 1_000
+
+        def _validate_input_semantics(self, repo: str, title: str, body: str) -> tuple[bool, Optional[str]]:
+            if "/" not in repo:
+                return False, f"repo must be 'org/name' format, got '{repo}'. e.g. 'my-org/backend-api'"
+            if not title.strip():
+                return False, "title cannot be empty. Provide a concise issue title."
+            return True, None
+
+        def _check_permissions(self, repo: str, title: str, body: str) -> tuple[bool, Optional[str]]:
+            org = repo.split("/")[0]
+            if org != ALLOWED_ORG:
+                return False, f"Only repos under '{ALLOWED_ORG}' are allowed. Got org '{org}'. Use a repo like '{ALLOWED_ORG}/your-repo'."
+            return True, None
+
+        def _call(self, repo: str, title: str, body: str = "", **kwargs) -> str:
+            token = os.environ["GITHUB_TOKEN"]
+            resp = requests.post(
+                f"https://api.github.com/repos/{repo}/issues",
+                headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"},
+                json={"title": title, "body": body},
+                timeout=10,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            return json.dumps({"issue_number": data["number"], "url": data["html_url"]}, indent=2)
+    ```
+
+    Security summary:
+
+    ```
+    GithubCreateIssueTool: read_only=False  destructive=False  concurrency_safe=False  max_result=1K
+    ```
+
+    Key point: `_check_permissions` rejects any org that isn't `my-org` with an actionable error — the agent knows exactly which org to use instead of retrying blindly.

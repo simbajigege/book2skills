@@ -1,0 +1,154 @@
+- human: |
+    我在用 LangChain 做一个 AI 助手，需要查询 MySQL 里的员工信息。想定义一个工具让 agent 能搜索员工，传入姓名关键词，返回匹配的员工列表（姓名、部门、职级）。这个工具是只读的，多个工具可以并发跑。帮我生成。
+  ai: |
+    好的，先梳理安全属性：查询类工具 `is_read_only=True`、`is_concurrency_safe=True`，不会删除数据所以 `is_destructive=False`。
+
+    先检查基类是否就位：
+
+    ```bash
+    ls /Users/jigege/ai-base/backend/base/utils/claude_style_tool.py
+    ```
+
+    文件存在，跳过安装。下面生成工具文件：
+
+    **建议路径：** `/Users/jigege/ai-base/backend/base/tools/hr_search_employees.py`
+
+    ```python
+    """hr_search_employees.py — 按姓名关键词搜索员工信息"""
+
+    from typing import Optional
+    from pydantic import BaseModel, Field
+    from base.utils.claude_style_tool import ClaudeStyleTool
+    import mysql.connector
+    import json
+
+
+    class HrSearchEmployeesInput(BaseModel):
+        keyword: str = Field(description="姓名搜索关键词，支持模糊匹配。e.g. '张伟'")
+        limit: int = Field(default=20, description="最多返回条数，默认 20，最大 50")
+        offset: int = Field(default=0, description="分页偏移量，默认 0")
+
+
+    class HrSearchEmployeesTool(ClaudeStyleTool):
+        # — identity —
+        name: str = "hr_search_employees"
+        description: str = "按姓名关键词搜索员工，返回姓名、部门、职级。只用于查询，不做任何写操作。"
+        args_schema = HrSearchEmployeesInput
+
+        # — security metadata —
+        is_read_only: bool = True
+        is_destructive: bool = False
+        is_concurrency_safe: bool = True
+        max_result_chars: int = 10_000
+
+        def _validate_input_semantics(self, keyword: str, limit: int, offset: int) -> tuple[bool, Optional[str]]:
+            if len(keyword.strip()) < 1:
+                return False, "keyword 不能为空。请提供至少 1 个字符的姓名关键词。"
+            if limit > 50:
+                return False, f"limit 最大 50，当前 {limit}。请将 limit 调小后重试。"
+            return True, None
+
+        def _call(self, keyword: str, limit: int = 20, offset: int = 0, **kwargs) -> str:
+            conn = mysql.connector.connect(
+                host="localhost", database="hr_db",
+                user="readonly_user", password="..."
+            )
+            cursor = conn.cursor(dictionary=True)
+            cursor.execute(
+                "SELECT name, department, level FROM employees WHERE name LIKE %s LIMIT %s OFFSET %s",
+                (f"%{keyword}%", limit, offset)
+            )
+            rows = cursor.fetchall()
+            cursor.execute("SELECT COUNT(*) AS total FROM employees WHERE name LIKE %s", (f"%{keyword}%",))
+            total = cursor.fetchone()["total"]
+            conn.close()
+
+            return json.dumps({
+                "items": rows,
+                "total": total,
+                "count": len(rows),
+                "offset": offset,
+                "has_more": (offset + limit) < total,
+                "next_offset": offset + limit,
+            }, ensure_ascii=False, indent=2)
+    ```
+
+    安全属性总结：
+
+    ```
+    HrSearchEmployeesTool: read_only=True  destructive=False  concurrency_safe=True  max_result=10K
+    ```
+
+    分页已内置：超过 50 条时 `has_more=True`，agent 可循环请求 `next_offset` 获取下一页。
+
+- human: |
+    我还需要一个写工具：把 agent 生成的员工报告存成 CSV 文件。路径要限制在 /data/reports/ 目录下，不能让 agent 随便写文件。
+  ai: |
+    这个工具有写操作，安全属性应该是 `is_read_only=False`、`is_concurrency_safe=False`（避免并发写同一文件覆盖）。权限检查放在 `_check_permissions` 里，拦截越权路径。
+
+    **建议路径：** `/Users/jigege/ai-base/backend/base/tools/hr_save_report.py`
+
+    ```python
+    """hr_save_report.py — 将员工报告保存为 CSV，限定写入 /data/reports/ 目录"""
+
+    import os
+    import csv
+    import json
+    from typing import Optional
+    from pydantic import BaseModel, Field
+    from base.utils.claude_style_tool import ClaudeStyleTool
+
+    ALLOWED_DIR = "/data/reports"
+
+
+    class HrSaveReportInput(BaseModel):
+        filename: str = Field(description="文件名（不含路径），e.g. 'q1_report.csv'")
+        rows: str = Field(description="JSON 格式的行数据，每行是一个对象。e.g. '[{\"name\":\"张伟\",\"dept\":\"研发\"}]'")
+
+
+    class HrSaveReportTool(ClaudeStyleTool):
+        # — identity —
+        name: str = "hr_save_report"
+        description: str = "将员工报告数据保存为 CSV 文件，写入路径限定在 /data/reports/ 目录。"
+        args_schema = HrSaveReportInput
+
+        # — security metadata —
+        is_read_only: bool = False
+        is_destructive: bool = False
+        is_concurrency_safe: bool = False
+        max_result_chars: int = 500
+
+        def _validate_input_semantics(self, filename: str, rows: str) -> tuple[bool, Optional[str]]:
+            if not filename.endswith(".csv"):
+                return False, f"filename 必须以 .csv 结尾，当前：'{filename}'。请修正后重试。"
+            try:
+                json.loads(rows)
+            except json.JSONDecodeError as e:
+                return False, f"rows 不是合法 JSON：{e}。请检查格式后重试。"
+            return True, None
+
+        def _check_permissions(self, filename: str, rows: str) -> tuple[bool, Optional[str]]:
+            if "/" in filename or "\\" in filename:
+                return False, f"filename 不能包含路径分隔符，当前：'{filename}'。请只传文件名，不含目录。"
+            return True, None
+
+        def _call(self, filename: str, rows: str, **kwargs) -> str:
+            data = json.loads(rows)
+            path = os.path.join(ALLOWED_DIR, filename)
+            os.makedirs(ALLOWED_DIR, exist_ok=True)
+            if not data:
+                return "rows 为空，未写入任何数据。"
+            with open(path, "w", newline="", encoding="utf-8") as f:
+                writer = csv.DictWriter(f, fieldnames=data[0].keys())
+                writer.writeheader()
+                writer.writerows(data)
+            return f"已写入 {len(data)} 行到 {path}"
+    ```
+
+    安全属性总结：
+
+    ```
+    HrSaveReportTool: read_only=False  destructive=False  concurrency_safe=False  max_result=500
+    ```
+
+    关键设计：`_check_permissions` 拦截文件名中的路径穿越（`/`、`\`），确保 agent 无法写到 `ALLOWED_DIR` 之外。
