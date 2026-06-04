@@ -1,6 +1,6 @@
 ---
 name: tool-permission-system
-description: Design and implement a layered, configurable permission/safety system for agent tools. Use this skill when building an agent that needs to control which tool calls are auto-allowed, which require user confirmation, and which are denied — especially when the system must be configurable across multiple scopes (project/user/enterprise) and extensible via hooks. Triggers on: "权限系统", "工具安全", "tool permission", "permission system", "tool safety", "allow/deny rules", "hook system", "构建安全机制".
+description: 'Design and implement a layered, configurable permission/safety system for agent tools. Use this skill when building an agent that needs to control which tool calls are auto-allowed, which require user confirmation, and which are denied — especially when the system must be configurable across multiple scopes (project/user/enterprise) and extensible via hooks. Triggers on: "权限系统", "工具安全", "tool permission", "permission system", "tool safety", "allow/deny rules", "hook system", "构建安全机制".'
 ---
 
 # Tool Permission System
