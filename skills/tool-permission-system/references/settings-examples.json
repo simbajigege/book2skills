@@ -1,0 +1,148 @@
+{
+  "_comment": "Agent 工具权限系统配置示例，基于 Claude Code settings.json 格式",
+
+  "permissions": {
+    "_comment_format": "规则格式: 'ToolName' 或 'ToolName(content)'",
+    "_comment_sources": "此文件放置位置决定规则来源（优先级）",
+
+    "allow": [
+      "ReadFile",
+      "ReadFile(/src/*)",
+      "Bash(git log*)",
+      "Bash(git status)",
+      "Bash(npm test*)",
+      "Bash(ls*)",
+      "mcp__readonly_server"
+    ],
+
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Bash(curl * | bash)",
+      "FileEdit(/prod/*)",
+      "FileEdit(/secrets/*)"
+    ],
+
+    "ask": [
+      "Bash(npm publish*)",
+      "Bash(git push*)",
+      "Bash(docker run*)",
+      "FileEdit(*.env*)"
+    ]
+  },
+
+  "defaultPermissionMode": "default",
+
+  "hooks": {
+    "_comment": "Hook 在工具生命周期各节点触发自定义逻辑",
+
+    "PreToolUse": [
+      {
+        "_example": "防止 agent 修改生产环境配置",
+        "matcher": "FileEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [[ \"$CLAUDE_TOOL_INPUT_PATH\" == */prod/* ]]; then echo 'Blocked: production files are read-only'; exit 2; fi"
+          }
+        ]
+      },
+      {
+        "_example": "记录所有 Bash 命令到审计日志",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "http",
+            "url": "https://audit.internal/api/log",
+            "method": "POST"
+          }
+        ]
+      },
+      {
+        "_example": "所有工具调用前的安全检查（无 matcher = 匹配所有工具）",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "security-check.sh",
+            "timeout": 5000
+          }
+        ]
+      }
+    ],
+
+    "PostToolUse": [
+      {
+        "_example": "文件修改后自动格式化",
+        "matcher": "FileEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "prettier --write \"$CLAUDE_TOOL_INPUT_PATH\" 2>/dev/null || true"
+          }
+        ]
+      },
+      {
+        "_example": "Bash 命令执行后运行 lint",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [[ \"$CLAUDE_TOOL_INPUT_COMMAND\" == *'npm install'* ]]; then npm audit; fi"
+          }
+        ]
+      }
+    ],
+
+    "PermissionRequest": [
+      {
+        "_example": "后台 agent 权限请求时，调用外部审批系统",
+        "hooks": [
+          {
+            "type": "http",
+            "url": "https://approval.internal/api/tool-permission",
+            "method": "POST"
+          }
+        ]
+      }
+    ],
+
+    "SessionStart": [
+      {
+        "_example": "会话开始时记录日志",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"Session started: $CLAUDE_SESSION_ID\" >> ~/.agent/sessions.log"
+          }
+        ]
+      }
+    ],
+
+    "Stop": [
+      {
+        "_example": "agent 完成后发送通知",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send 'Agent completed' 'Task finished'"
+          }
+        ]
+      }
+    ]
+  },
+
+  "enterprisePolicy": {
+    "_comment": "以下配置只在 policySettings（企业管理员）层有意义",
+    "allowManagedHooksOnly": true,
+    "_effect": "当此项为 true，用户/项目/本地的所有 hooks 配置被忽略，只执行此策略文件中的 hooks"
+  },
+
+  "dangerousPatterns": {
+    "_comment": "这些命令不应该出现在宽泛的 allow 规则中（如 Bash(python:*)），因为它们可以执行任意代码",
+    "_interpreters": ["python", "python3", "node", "deno", "tsx", "ruby", "perl", "php", "lua"],
+    "_packageRunners": ["npx", "bunx", "npm run", "yarn run", "pnpm run"],
+    "_shells": ["bash", "sh", "zsh", "fish", "eval", "exec"],
+    "_privileged": ["sudo", "env", "xargs", "ssh"],
+    "_rule": "上述命令的前缀 allow 规则（如 'Bash(node:*)'）等于开后门，在 auto mode 或高安全场景应禁止"
+  }
+}

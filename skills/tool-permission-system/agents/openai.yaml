@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tool Permission System"
+  short_description: "Design a layered, configurable permission pipeline for agent tools."
+  default_prompt: "Design a layered tool permission system for my agent with allow/deny/ask rules, per-tool checkPermissions, safety checks immune to bypass, and a hook system."
