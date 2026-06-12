@@ -1,6 +1,6 @@
 ---
 name: agent-tool-builder
-description: Define agent tools using the fail-closed design pattern — unified name/schema/security/execution in one class, with three-layer execution (validate → permission → call). Use this skill whenever the user wants to define a new agent tool, add permission or validation logic to an existing tool, or asks about "build a tool", "定义一个工具", "create a tool for X", "工具定义". Framework-agnostic: works with hermes-agent, LangChain, or any Python agent framework.
+description: "Define agent tools using the fail-closed design pattern — unified name/schema/security/execution in one class, with three-layer execution (validate → permission → call). Use this skill whenever the user wants to define a new agent tool, add permission or validation logic to an existing tool, or asks about 'build a tool', '定义一个工具', 'create a tool for X', '工具定义'. Framework-agnostic: works with hermes-agent, LangChain, or any Python agent framework."
 ---
 
 # Agent Tool Builder
