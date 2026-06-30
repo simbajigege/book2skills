@@ -1,7 +1,6 @@
 ---
 name: folded-memory-implementation
-description: Developer implementation guide for building hierarchical (folded) memory into an Agent — three-layer architecture where recent turns stay detailed, older content compresses progressively, and each layer is independently retrievable. Use when a developer needs more than single-pass compact: long-running agents where information loss across sessions is unacceptable, agents that need to recall decisions from many sessions ago, or when compact-memory-implementation isn't retaining enough. Prerequisite: understand compact-memory-implementation first.
-license: "Original implementation guide for developer use. Code examples are provided as-is for educational purposes."
+description: Developer implementation guide for building hierarchical (folded) memory into an Agent. Three-layer architecture where recent turns stay detailed, older content compresses into episodes, and the oldest distills into durable semantic facts. Use when compact-memory-implementation is not retaining enough, or when agents need to recall decisions from many sessions ago.
 ---
 
 # folded-memory-implementation
