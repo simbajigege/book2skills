@@ -91,12 +91,37 @@ async function hasPermission(tool, input, context): Promise<PermissionDecision> 
 }
 ```
 
-### 4. 为每个工具实现 checkPermissions()
+### 4. 为每个工具定义安全属性接口（fail-closed 默认值）
 
-每个工具可以有自己的内部权限逻辑：
+工具与权限系统的接合点是工具接口上的一组**安全属性**。关键设计：所有属性都遵循**失败关闭（fail-closed）**——开发者不声明时，系统按"最保守"假设处理，必须主动声明"我是安全的"才放宽。
+
+```typescript
+// 工厂函数用 TOOL_DEFAULTS 填充未声明的属性
+const TOOL_DEFAULTS = {
+  isEnabled:         () => true,
+  isConcurrencySafe: () => false,   // 默认不并发（怕数据竞争）
+  isReadOnly:        () => false,   // 默认假设会写入
+  isDestructive:     () => false,   // 默认假设不可逆操作要谨慎
+  checkPermissions:  (input) => ({ behavior: 'allow', updatedInput: input }), // 默认交给中央权限系统
+}
+function buildTool(def) { return { ...TOOL_DEFAULTS, ...def } }
+```
+
+| 属性 | 返回 | 谁来问 / 影响什么 |
+|---|---|---|
+| `isReadOnly(input)` | boolean | 权限系统：只读操作可绕过部分限制 |
+| `isDestructive(input)` | boolean | 权限系统：不可逆操作需更严格确认 |
+| `isConcurrencySafe(input)` | boolean | Agent Loop：能否与其他工具并发执行（默认 false → 串行） |
+| `checkPermissions(input, ctx)` | PermissionResult | 权限系统：工具专属权限逻辑（流水线 1c） |
+| `validateInput(input, ctx)` | ValidationResult | Agent Loop：执行前的输入合法性校验 |
+
+**`checkPermissions` 在流水线里的位置是"夹心结构"**：通用 deny/ask 规则在它**之前**（且 bypass 也拦不住），通用 allow 白名单在它**之后**。所以工具自检既挡不住企业 deny，也不必重复实现通用 allow——只管工具特有的逻辑：
 
 ```typescript
 class MyTool implements Tool {
+  isReadOnly = () => false
+  isConcurrencySafe = () => false
+
   async checkPermissions(input, context): Promise<PermissionResult> {
     // 检查工具特定规则（如 Bash 检查具体命令前缀）
     const allowRules = getRuleContentsForTool(context, this, 'allow')
@@ -104,7 +129,7 @@ class MyTool implements Tool {
       return { behavior: 'allow' }
     }
 
-    // 检查危险路径
+    // 检查危险路径（命中后 type:'safetyCheck' → bypass 也拦不住，见下方说明）
     if (isDangerousPath(input.path)) {
       return {
         behavior: 'ask',
@@ -113,10 +138,12 @@ class MyTool implements Tool {
       }
     }
 
-    return { behavior: 'passthrough', message: '...' }
+    return { behavior: 'passthrough', message: '...' }  // 没意见 → 交给外层
   }
 }
 ```
+
+**危险路径黑名单**（`safetyCheck`）是一份硬编码的敏感文件/目录清单，即使 bypass / acceptEdits / 配了 allow 规则也强制弹框，防两类攻击：① 代码执行（`.git/` hooks、`.bashrc`/`.zshrc` 等 shell 启动脚本、`.vscode`/`.idea` 任务配置）；② AI 改自己的护栏（`.claude/`、`.mcp.json`、`.claude.json` —— agent 不能通过"正常编辑文件"给自己提权）。完整清单见 `references/dangerous-patterns.ts`。
 
 ### 5. 实现 Hook 系统（可选但推荐）
 
@@ -197,7 +224,7 @@ async function checkPermission(toolName: string, input: unknown, ctx: Permission
 This skill owns:
 - 权限决策流水线的设计与实现
 - 分层规则来源（policySettings → session）的优先级架构
-- 工具级 `checkPermissions()` 接口设计
+- 工具级安全属性接口设计（`isReadOnly` / `isDestructive` / `isConcurrencySafe` / `checkPermissions` + fail-closed 默认值）
 - Hook 系统的配置格式和生命周期事件
 - AI 分类器 + Denial 追踪的 circuit breaker 模式
 - 危险操作硬编码黑名单的设计原则

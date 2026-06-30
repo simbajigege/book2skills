@@ -8,7 +8,7 @@ This skill helps engineers build the permission pipeline that runs before every 
 
 - Specifies a single permission pipeline (deny → ask → tool self-check → safety checks → bypass → allow → default prompt) that every tool call passes through
 - Defines layered rule sources (`policySettings → userSettings → projectSettings → localSettings → cliArg → command → session`) with a clear override order
-- Provides a tool-level `checkPermissions()` contract and a `safetyCheck` mechanism that stays immune to bypass modes
+- Defines a fail-closed tool safety interface (`isReadOnly` / `isDestructive` / `isConcurrencySafe` / `checkPermissions`) where undeclared attributes default to the most conservative assumption, plus a `safetyCheck` mechanism that stays immune to bypass modes
 - Covers the hook system configuration format and lifecycle, plus an AI-classifier denial-tracking circuit breaker for unattended runs
 
 ## When to Use It

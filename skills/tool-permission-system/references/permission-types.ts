@@ -8,6 +8,38 @@
  */
 
 // ============================================================================
+// 工具安全属性接口（工具 ↔ 权限系统的接合点）
+// ============================================================================
+//
+// 所有安全属性遵循 fail-closed（失败关闭）：未声明时取最保守默认值，
+// 工具必须主动声明"我是安全的"才放宽。由 buildTool 用 TOOL_DEFAULTS 填充。
+
+export interface ToolSafetyInterface {
+  // 是否启用（false → 工具对 agent 不可见）
+  isEnabled(): boolean
+  // 只读操作 → 权限系统可绕过部分限制（默认 false：假设会写入）
+  isReadOnly(input: unknown): boolean
+  // 不可逆操作 → 需更严格确认（默认 false）
+  isDestructive?(input: unknown): boolean
+  // 能否与其他工具并发执行（默认 false：串行，避免数据竞争）
+  isConcurrencySafe(input: unknown): boolean
+  // 工具专属权限检查（流水线步骤 1c，夹在通用 deny/ask 与通用 allow 之间）
+  checkPermissions(input: unknown, ctx: ToolPermissionContext): Promise<PermissionResult>
+  // 是否始终需要用户交互，即使 bypass 模式也弹框（流水线步骤 1e）
+  requiresUserInteraction?(): boolean
+}
+
+// fail-closed 默认值：buildTool({ ...TOOL_DEFAULTS, ...def })
+export const TOOL_DEFAULTS = {
+  isEnabled: () => true,
+  isConcurrencySafe: (_input?: unknown) => false, // 默认不并发
+  isReadOnly: (_input?: unknown) => false,         // 默认假设会写入
+  isDestructive: (_input?: unknown) => false,      // 默认假设可逆
+  checkPermissions: (input: { [k: string]: unknown }) =>
+    Promise.resolve({ behavior: 'allow' as const, updatedInput: input }), // 默认交给中央权限系统
+} as const
+
+// ============================================================================
 // 权限模式（总开关）
 // ============================================================================
 
