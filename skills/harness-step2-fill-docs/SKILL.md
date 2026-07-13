@@ -1,11 +1,11 @@
 ---
 name: harness-step2-fill-docs
 description: |
-  Harness Engineering 第一阶段第二步：深度分析项目代码，填充 docs/ 知识库各文件的实质内容。
+  Harness Engineering 第一阶段第二步：深度分析项目代码，填充业务解决方案、架构、约定、技术决策和质量标准等 docs/ 知识库内容。
   
   在 harness-step1-create-agents-md 创建好目录骨架之后使用。当用户说"填充文档内容"、
   "完善 docs/ 文件"、"让文档有实质内容"、"分析项目写架构文档"、"写 ARCHITECTURE.md"、
-  "写技术决策文档"时，立即使用此 skill。
+  "写技术决策文档"、"从业务视角理解项目"、"完善 business-solution.md"时，立即使用此 skill。
   
   前置条件：项目中已有 AGENTS.md 和 docs/ 目录骨架（由 harness-step1 创建）。
 ---
@@ -14,7 +14,7 @@ description: |
 
 ## 目标
 
-通过深度阅读项目代码，将隐藏在代码里的架构知识、命名约定、技术决策，
+通过深度阅读项目代码，将隐藏在代码里的业务能力、用户流程、架构知识、命名约定、技术决策，
 显式地写入 docs/ 各文件。让 agent 在任何 session 都能快速理解项目全貌。
 
 **核心原则**：推断出来的内容要标注来源，无法确定的内容标注「待补充」，
@@ -54,6 +54,10 @@ cat AGENTS.md 2>/dev/null
 ```
 
 扫描目标——在写文档前，必须能回答这些问题：
+- 这个项目服务哪些用户/角色？他们要完成什么任务？
+- 它解决哪些业务痛点，哪些能力已经由页面、路由、API 或 service 实现？
+- 用户从输入资料/发起操作到得到业务结果的核心流程是什么？
+- 哪些只是 README 宣传、路线图或合理二开设想，尚不能视为现有能力？
 - 这个项目分成哪几个主要模块？每个模块做什么？
 - 代码调用链是怎样的？（UI → ? → ? → 数据层）
 - 用了哪些主要的库/框架？能推断出选择原因吗？
@@ -62,7 +66,76 @@ cat AGENTS.md 2>/dev/null
 
 ---
 
-### Step 2：写 `docs/ARCHITECTURE.md`
+### Step 2：写 `docs/business-solution.md`
+
+**写什么**：从业务和需求视角说明项目服务谁、解决什么问题、如何产生价值，以及能力边界。不要把技术组件清单改写成业务价值，也不要把路线图或设想当成现有功能。
+
+**⚠️ 强制要求：业务能力必须验证可见入口或执行链路**
+
+README 可以用于发现候选能力，但在写“系统可以完成 X”之前，至少找到以下一种证据：
+- 用户入口：页面、CLI command、API route、IM/Embed/MCP 接口
+- 执行链路：handler/service/use case、任务 worker 或 provider registry
+- 验证材料：对应测试、API 文档、正式产品文档
+
+推荐搜索方法：
+
+```bash
+# 从路由和页面验证用户可见能力
+rg -n "path:|Register.*Routes|\.GET\(|\.POST\(" frontend/src/router internal/router
+
+# 从业务对象和服务验证执行能力
+rg -n "type .*Service|func New.*Service|Create|Search|Import|Sync|Evaluate" internal/application
+
+# 区分已实现、路线图和待办
+rg -n "Roadmap|TODO|planned|coming soon|路线图|规划" README.md docs/ frontend/ internal/
+```
+
+每项能力标记证据状态：
+- **已验证**：找到入口和执行/文档证据
+- **部分验证**：只有单侧证据，明确缺失什么
+- **待补充**：目标行业、商业模式、业务指标等仓库无法确定的信息
+
+**格式模板**：
+
+```markdown
+# 业务解决方案
+
+## 一句话定位
+[服务谁，用什么方式，解决什么核心问题]
+
+## 目标用户与核心任务
+| 用户/角色 | 核心任务 | 当前痛点 |
+|---|---|---|
+
+## 问题—能力—价值映射
+| 业务问题 | 已验证能力 | 产生的价值 | 证据 |
+|---|---|---|---|
+
+## 典型业务场景
+[3-8 个由代码/产品文档支持的场景，每个说明参与者、输入、过程和结果]
+
+## 核心业务流程
+[从用户输入到获得结果的端到端流程]
+
+## 能力边界
+- [不适用场景、依赖条件、安全/人工审核要求]
+
+## 二次开发机会
+[明确标注为建议，不得混入现有能力]
+
+## 待补充
+- [ ] [目标行业、指标、商业规则等需业务负责人确认的内容]
+```
+
+**写作要求**：
+- 使用用户能理解的语言，先写任务和结果，再提技术实现
+- “支持某集成”不等于“业务闭环已完成”，必须描述它在流程中的作用
+- 不承诺无法从代码或文档确认的性能、准确率、合规等级和 SLA
+- 能力边界至少覆盖数据质量、权限、高风险操作人工确认和运营维护
+
+---
+
+### Step 3：写 `docs/ARCHITECTURE.md`
 
 **写什么**：模块划分、依赖方向、主要数据流。写"是什么结构"和"为什么这样分"，不写具体实现。
 
@@ -113,7 +186,7 @@ grep -rl "ComponentName" src/ 2>/dev/null
 
 ---
 
-### Step 3：写 `docs/CONVENTIONS.md`
+### Step 4：写 `docs/CONVENTIONS.md`
 
 **写什么**：从代码里归纳出来的命名规律和文件组织规律。
 
@@ -159,7 +232,7 @@ type 可选：feat / fix / docs / refactor / test
 
 ---
 
-### Step 4：写 `docs/TECH_DECISIONS.md`
+### Step 5：写 `docs/TECH_DECISIONS.md`
 
 **写什么**：技术选型的原因。这是最难写的一份，因为原因往往不在代码里。
 
@@ -193,7 +266,7 @@ cat pyproject.toml | grep -A 30 '\[tool.poetry.dependencies\]' 2>/dev/null
 
 ---
 
-### Step 5：写 `docs/QUALITY.md`
+### Step 6：写 `docs/QUALITY.md`
 
 **写什么**：什么叫"完成"，以及代码审查的检查清单。
 
@@ -238,7 +311,7 @@ cat .github/workflows/*.yml 2>/dev/null | head -60
 
 ---
 
-### Step 6：写 `docs/exec-plans/tech-debt-tracker.md`
+### Step 7：写 `docs/exec-plans/tech-debt-tracker.md`
 
 **写什么**：扫描过程中发现的潜在问题和技术债务。
 
@@ -270,6 +343,8 @@ cat .github/workflows/*.yml 2>/dev/null | head -60
 
 - [ ] 有没有"待补充"的地方？→ 整理成清单告知用户
 - [ ] 有没有凭空捏造的内容？→ 删掉，换成「待补充」
+- [ ] business-solution.md 的每项现有能力是否有页面、路由、API、service、测试或正式文档证据？
+- [ ] business-solution.md 是否区分了现有能力、路线图和二开建议，并写明能力边界？
 - [ ] ARCHITECTURE.md 的依赖规则是否具体可执行？
 - [ ] CONVENTIONS.md 的规律是否有代码实例支撑？
 - [ ] QUALITY.md 的 DoD 是否包含项目特有的检查项？
@@ -282,9 +357,11 @@ cat .github/workflows/*.yml 2>/dev/null | head -60
 
 **已写入的内容**：列出每个文件写了什么
 
+**业务解决方案摘要**：列出目标用户、核心业务问题、已验证场景和能力边界
+
 **需要人工确认的「待补充」清单**：
 汇总所有文件里标注了「待补充」的条目，这是用户最需要关注的部分
 
 **下一步**：
 - 人工补充「待补充」的内容后，这份知识库就可以投入使用
-- 之后运行 `harness-step3-state-management` skill，建立跨 session 的状态管理（progress 文件 + tasks.json）
+- 之后运行 `harness-step3-session-management` skill，建立跨 session 的状态管理（progress 文件 + tasks.json）
