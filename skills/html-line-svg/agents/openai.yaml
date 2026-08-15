@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML 语义框线 SVG"
+  short_description: "把内容关系设计为克制、可访问、响应式的内联 SVG 教学图"
+  default_prompt: "使用 $html-line-svg 把这段内容提炼为语义框线教学图，并输出适合 HTML 内联的 SVG。"

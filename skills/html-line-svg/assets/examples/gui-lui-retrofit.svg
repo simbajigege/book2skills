@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" role="img" aria-labelledby="example-retrofit-title example-retrofit-desc">
+  <title id="example-retrofit-title">老产品补建 Agent 界面</title>
+  <desc id="example-retrofit-desc">左侧是已有的面向人的 GUI 页面框线，右侧是后来补建的、包含 name 与 desc 字段的虚线 LUI，二者以标注补建的单向蓝色箭头连接。</desc>
+  <style>
+    svg {
+      --canvas: #ffffff;
+      --ink: #0a0a0a;
+      --ink-soft: #171717;
+      --mid-gray: #737373;
+      --hairline: #e5e5e5;
+      --link: #0348ed;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .panel, .wire, .divider {
+      fill: var(--canvas);
+      stroke: var(--ink);
+      stroke-width: 1.5;
+      vector-effect: non-scaling-stroke;
+    }
+    .panel--added { stroke-dasharray: 5 4; }
+    .divider { stroke: var(--hairline); }
+    .label { fill: var(--mid-gray); font-size: 16px; font-weight: 600; letter-spacing: 0.4px; }
+    .code {
+      fill: var(--ink-soft);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 16px;
+    }
+    .key { fill: var(--link); font-weight: 700; }
+    .relation text { fill: var(--mid-gray); font-size: 16px; font-weight: 600; }
+    .relation path {
+      fill: none;
+      stroke: var(--link);
+      stroke-linecap: round;
+      stroke-width: 2;
+      vector-effect: non-scaling-stroke;
+    }
+    marker path { fill: var(--link); stroke: none; }
+  </style>
+  <defs>
+    <marker id="example-retrofit-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z"></path>
+    </marker>
+  </defs>
+  <g class="interface-frame">
+    <rect class="panel" x="18" y="18" width="210" height="214" rx="8"></rect>
+    <text class="label" x="34" y="46">GUI · for people</text>
+    <line class="divider" x1="34" y1="62" x2="212" y2="62"></line>
+    <rect class="wire" x="34" y="78" width="178" height="27" rx="2"></rect>
+    <rect class="wire" x="34" y="121" width="82" height="55" rx="2"></rect>
+    <rect class="wire" x="130" y="121" width="82" height="55" rx="2"></rect>
+    <line class="wire" x1="34" y1="194" x2="174" y2="194"></line>
+    <line class="wire" x1="34" y1="210" x2="132" y2="210"></line>
+  </g>
+  <g class="relation">
+    <text x="300" y="105" text-anchor="middle">补建</text>
+    <path d="M 258 143 H 340" marker-end="url(#example-retrofit-arrow)"></path>
+  </g>
+  <g class="interface-frame">
+    <rect class="panel panel--added" x="372" y="18" width="210" height="214" rx="8"></rect>
+    <text class="label" x="388" y="46">LUI · for Agent</text>
+    <line class="divider" x1="388" y1="62" x2="566" y2="62"></line>
+    <text class="code" x="388" y="100"><tspan class="key">name</tspan><tspan>: product_tool</tspan></text>
+    <text class="code" x="388" y="137"><tspan class="key">desc</tspan><tspan>: what it can</tspan><tspan x="388" dy="27">do</tspan></text>
+  </g>
+</svg>

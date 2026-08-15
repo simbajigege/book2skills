@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" role="img" aria-labelledby="example-distributed-title example-distributed-desc">
+  <title id="example-distributed-title">敏捷式分布式 Agent 协同</title>
+  <desc id="example-distributed-desc">左侧公共任务看板放置多项任务，右侧四个平级 Agent 自主认领任务，其中一项虚线任务仍在等待认领；蓝色箭头表示认领方向。</desc>
+  <style>
+    svg {
+      --canvas: #ffffff;
+      --ink: #0a0a0a;
+      --mid-gray: #737373;
+      --hairline: #e5e5e5;
+      --link: #0348ed;
+      --warning: #fe7e0f;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .node rect, .board > rect, .note rect {
+      fill: var(--canvas);
+      stroke: var(--ink);
+      stroke-width: 1.5;
+      vector-effect: non-scaling-stroke;
+    }
+    .board > rect { stroke-width: 2; }
+    .node text { fill: var(--ink); font-size: 18px; font-weight: 600; }
+    .board text, .relation text { fill: var(--mid-gray); font-size: 17px; font-weight: 600; }
+    .board line { stroke: var(--hairline); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+    .note-fold { fill: var(--warning); stroke: none; }
+    .note--waiting { opacity: 0.62; }
+    .note--waiting rect { stroke-dasharray: 5 4; }
+    .relation path {
+      fill: none;
+      stroke: var(--link);
+      stroke-linecap: round;
+      stroke-width: 2;
+      vector-effect: non-scaling-stroke;
+    }
+    marker path { fill: var(--link); stroke: none; }
+  </style>
+  <defs>
+    <marker id="example-distributed-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z"></path>
+    </marker>
+  </defs>
+  <g class="board">
+    <rect x="18" y="24" width="310" height="202" rx="8"></rect>
+    <text x="36" y="55">公共任务看板</text>
+    <line x1="36" y1="72" x2="310" y2="72"></line>
+  </g>
+  <g class="note" transform="translate(48 92)">
+    <rect width="38" height="38" rx="3"></rect><path class="note-fold" d="M 27 38 H 38 V 27 Z"></path>
+  </g>
+  <g class="note" transform="translate(128 92)">
+    <rect width="38" height="38" rx="3"></rect><path class="note-fold" d="M 27 38 H 38 V 27 Z"></path>
+  </g>
+  <g class="note" transform="translate(208 92)">
+    <rect width="38" height="38" rx="3"></rect><path class="note-fold" d="M 27 38 H 38 V 27 Z"></path>
+  </g>
+  <g class="note" transform="translate(88 158)">
+    <rect width="38" height="38" rx="3"></rect><path class="note-fold" d="M 27 38 H 38 V 27 Z"></path>
+  </g>
+  <g class="note note--waiting" transform="translate(168 158)">
+    <rect width="38" height="38" rx="3"></rect><path class="note-fold" d="M 27 38 H 38 V 27 Z"></path>
+  </g>
+  <g class="relation">
+    <text x="366" y="104" text-anchor="middle">认领</text>
+    <path d="M 346 130 H 386" marker-end="url(#example-distributed-arrow)"></path>
+  </g>
+  <g class="node">
+    <rect x="400" y="38" width="82" height="62" rx="7"></rect><text x="441" y="75" text-anchor="middle">Agent</text>
+  </g>
+  <g class="note" transform="translate(458 28)">
+    <rect width="22" height="22" rx="2"></rect><path class="note-fold" d="M 15 22 H 22 V 15 Z"></path>
+  </g>
+  <g class="node">
+    <rect x="500" y="38" width="82" height="62" rx="7"></rect><text x="541" y="75" text-anchor="middle">Agent</text>
+  </g>
+  <g class="note" transform="translate(558 28)">
+    <rect width="22" height="22" rx="2"></rect><path class="note-fold" d="M 15 22 H 22 V 15 Z"></path>
+  </g>
+  <g class="node">
+    <rect x="400" y="150" width="82" height="62" rx="7"></rect><text x="441" y="187" text-anchor="middle">Agent</text>
+  </g>
+  <g class="node">
+    <rect x="500" y="150" width="82" height="62" rx="7"></rect><text x="541" y="187" text-anchor="middle">Agent</text>
+  </g>
+  <g class="note" transform="translate(558 140)">
+    <rect width="22" height="22" rx="2"></rect><path class="note-fold" d="M 15 22 H 22 V 15 Z"></path>
+  </g>
+</svg>

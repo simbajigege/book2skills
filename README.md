@@ -25,6 +25,7 @@ By distilling a book's core frameworks, decision processes, and evaluation crite
 | Skill | Book | Author | Category | Status |
 |-------|------|--------|----------|--------|
 | [common-stocks-uncommon-profits](./skills/common-stocks-uncommon-profits/) | *Common Stocks and Uncommon Profits* | Philip Fisher | Investing | ✅ Released |
+| [html-line-svg](./skills/html-line-svg/) | Original Skill | simbajigege | Design & Visualization | ✅ Released |
 | *(more coming soon)* | | | | 🔜 |
 
 ---

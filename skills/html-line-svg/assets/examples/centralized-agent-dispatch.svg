@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" role="img" aria-labelledby="example-centralized-title example-centralized-desc">
+  <title id="example-centralized-title">父—子式中心化 Agent 协同</title>
+  <desc id="example-centralized-desc">上方一个中心 Agent 拆解任务，通过三条向下的蓝色派发箭头，把任务分别交给下方三个子 Agent；橙色折角表示任务纸。</desc>
+  <style>
+    svg {
+      --canvas: #ffffff;
+      --ink: #0a0a0a;
+      --link: #0348ed;
+      --warning: #fe7e0f;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .node rect, .note rect {
+      fill: var(--canvas);
+      stroke: var(--ink);
+      stroke-width: 1.5;
+      vector-effect: non-scaling-stroke;
+    }
+    .node--parent rect { stroke-width: 2; }
+    .node text { fill: var(--ink); font-size: 18px; font-weight: 600; }
+    .note-fold { fill: var(--warning); stroke: none; }
+    .flow path {
+      fill: none;
+      stroke: var(--link);
+      stroke-linecap: round;
+      stroke-width: 2;
+      vector-effect: non-scaling-stroke;
+    }
+    marker path { fill: var(--link); stroke: none; }
+  </style>
+  <defs>
+    <marker id="example-centralized-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z"></path>
+    </marker>
+  </defs>
+  <g class="flow">
+    <path d="M 300 76 V 102 C 300 122 100 116 100 170" marker-end="url(#example-centralized-arrow)"></path>
+    <path d="M 300 76 V 170" marker-end="url(#example-centralized-arrow)"></path>
+    <path d="M 300 76 V 102 C 300 122 500 116 500 170" marker-end="url(#example-centralized-arrow)"></path>
+  </g>
+  <g class="node node--parent">
+    <rect x="210" y="18" width="180" height="58" rx="8"></rect>
+    <text x="300" y="53" text-anchor="middle">中心 Agent</text>
+  </g>
+  <g class="note" transform="translate(248 8)">
+    <rect width="24" height="24" rx="2"></rect><path class="note-fold" d="M 16 24 H 24 V 16 Z"></path>
+  </g>
+  <g class="note" transform="translate(288 5)">
+    <rect width="24" height="24" rx="2"></rect><path class="note-fold" d="M 16 24 H 24 V 16 Z"></path>
+  </g>
+  <g class="note" transform="translate(328 9)">
+    <rect width="24" height="24" rx="2"></rect><path class="note-fold" d="M 16 24 H 24 V 16 Z"></path>
+  </g>
+  <g class="node">
+    <rect x="35" y="174" width="130" height="58" rx="7"></rect><text x="100" y="209" text-anchor="middle">Agent</text>
+  </g>
+  <g class="note" transform="translate(132 164)">
+    <rect width="24" height="24" rx="2"></rect><path class="note-fold" d="M 16 24 H 24 V 16 Z"></path>
+  </g>
+  <g class="node">
+    <rect x="235" y="174" width="130" height="58" rx="7"></rect><text x="300" y="209" text-anchor="middle">Agent</text>
+  </g>
+  <g class="note" transform="translate(332 164)">
+    <rect width="24" height="24" rx="2"></rect><path class="note-fold" d="M 16 24 H 24 V 16 Z"></path>
+  </g>
+  <g class="node">
+    <rect x="435" y="174" width="130" height="58" rx="7"></rect><text x="500" y="209" text-anchor="middle">Agent</text>
+  </g>
+  <g class="note" transform="translate(532 164)">
+    <rect width="24" height="24" rx="2"></rect><path class="note-fold" d="M 16 24 H 24 V 16 Z"></path>
+  </g>
+</svg>
